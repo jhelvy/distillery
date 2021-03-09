@@ -28,14 +28,8 @@ with a screen shot and the links to the site and source.
 
 ### List of sites in showcase:
 
--   jhelvy.github.io: [site](https://jhelvy.github.io/) \|
-    [source](https://github.com/jhelvy/jhelvy.github.io/)
-
--   The Mockup Blog: [site](https://themockup.netlify.app/) \|
-    [source](https://github.com/jthomasmock/radix_themockup)
-
--   Lisa Lendway: [site](https://lisalendway.netlify.app/) \|
-    [source](https://github.com/llendway/lisalendway_distill)
+-   Before I Sleep: [site](https://milesmcbain.xyz/) \|
+    [source](https://github.com/MilesMcBain/milesmcbain.com/)
 
 -   Emi Tanaka: [site](https://emitanaka.org/) \|
     [source](https://github.com/emitanaka/emitanaka.github.io)
@@ -43,8 +37,14 @@ with a screen shot and the links to the site and source.
 -   Ijeamaka Anyene: [site](https://ijeamaka-anyene.netlify.app/) \|
     [source](https://github.com/Ijeamakaanyene/ijeamaka-anyene)
 
--   Before I Sleep: [site](https://milesmcbain.xyz/) \|
-    [source](https://github.com/MilesMcBain/milesmcbain.com/)
+-   jhelvy.github.io: [site](https://jhelvy.github.io/) \|
+    [source](https://github.com/jhelvy/jhelvy.github.io/)
+
+-   Lisa Lendway: [site](https://lisalendway.netlify.app/) \|
+    [source](https://github.com/llendway/lisalendway_distill)
 
 -   Piping Hot Data: [site](https://www.pipinghotdata.com/) \|
     [source](https://github.com/shannonpileggi/pipinghotdata_distill)
+
+-   The Mockup Blog: [site](https://themockup.netlify.app/) \|
+    [source](https://github.com/jthomasmock/radix_themockup)

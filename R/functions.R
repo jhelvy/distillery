@@ -3,7 +3,8 @@ clean_sites <- function(sites) {
         mutate(
             name_clean = clean_name(name),
             path_png = file.path("images", "sites", paste0(name_clean, ".png"))
-        )
+        ) %>% 
+        arrange(name)
     return(sites)
 }
 
