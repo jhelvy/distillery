@@ -2,8 +2,7 @@ clean_sites <- function(sites) {
     sites <- sites %>%
         mutate(
             name_clean = clean_name(name),
-            path_png = file.path("images", "sites", paste0(name_clean, ".png")),
-            path_rmd = file.path("rmd_chunks", paste0(name_clean, ".Rmd"))
+            path_png = file.path("images", "sites", paste0(name_clean, ".png"))
         )
     return(sites)
 }
@@ -23,7 +22,7 @@ update_screenshots <- function(sites) {
     for (i in seq_len(nrow(sites))) {
         site <- sites[i,]
         if (!file.exists(site$path_png)) {
-            screenshot <- webshot(
+            screenshot <- webshot2::webshot(
                 site$url,
                 vwidth = 1200,
                 vheight = floor(1200*0.65),
@@ -33,44 +32,66 @@ update_screenshots <- function(sites) {
     }
 }
 
-update_child_docs <- function(sites) {
+make_rmd_chunks <- function(sites, image_width = NULL) {
+    chunks <- list()
     for (i in seq_len(nrow(sites))) {
         site <- sites[i,]
-        if (!file.exists(site$path_rmd)) {
-            make_child_doc(site)
+        if (is.null(image_width)) {
+            chunks[[i]] <- make_readme_chunk(site)
+        } else {
+            chunks[[i]] <- make_showcase_chunk(site, image_width)  
         }
     }
+    return(save_temp_chunks(chunks))
 }
 
-make_child_doc <- function(site) {
-
-    doc <- paste0(
-'### ', site$name, '
-
-[site](', site$url, ') | [source](', site$source, ')
-
-<center>
-<img src="', site$path_png, '" width=600>
-</center>
-'
+make_readme_chunk <- function(site) {
+    chunk <- paste0(
+        '- ', site$name, ': [site](', site$url, 
+        ') | [source](', site$source, ')'
     )
+    return(chunk)
+}
 
-    fileConn <- file(site$path_rmd)
-    writeLines(doc, fileConn)
+make_showcase_chunk <- function(site, image_width = 600) {
+    chunk <- paste0(
+        '### ', site$name, '\n\n',
+        '[site](', site$url, ') | [source](', site$source, ')\n\n',
+        '<center>\n',
+        '<img src="', site$path_png, '" width=', image_width, '>\n',
+        '</center>'
+    )
+    return(chunk)
+}
+
+save_temp_chunks <- function(x) {
+    temp_folder <- tempdir()
+    paths <- list()
+    for (i in seq_len(length(x))) {
+        path <- file.path(temp_folder, paste0(i, ".Rmd"))
+        paths[[i]] <- path
+        save_chunk(x[[i]], path)
+    }
+    return(unlist(paths))
+}
+
+save_chunk <- function(chunk, path) {
+    fileConn <- file(path)
+    writeLines(chunk, fileConn)
     close(fileConn)
 }
 
 create_footer <- function() {
 
   footer <- htmltools::HTML(paste0(
-  '<i class="fas fa-wrench"></i> Made with <i class="far fa-heart"></i>, <a href="https://github.com/jhelvy/distillery"><i class="fas fa-code-branch"></i></a>, and the <a href="https://cran.r-project.org/"><i class="fab fa-r-project"></i></a><a href="https://github.com/rstudio/distill"> distill</a> package.\n
-  <span style="font-size:0.8rem;">Last updated on ',
-  format(Sys.Date(), format="%B %d, %Y"), '</span>
-
-  <!-- Add function to open links to external links in new tab, from: -->
-  <!-- https://yihui.name/en/2018/09/target-blank/ -->
-
-  <script src="js/external-link.js"></script>'
+    '<i class="fas fa-wrench"></i> Made with <i class="far fa-heart"></i>, <a href="https://github.com/jhelvy/distillery"><i class="fas fa-code-branch"></i></a>, and the <a href="https://cran.r-project.org/"><i class="fab fa-r-project"></i></a><a href="https://github.com/rstudio/distill"> distill</a> package.\n\n',
+    '<span style="font-size:0.8rem;">Last updated on ',
+    format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
+  
+    '<!-- Add function to open links to external links in new tab, from: -->\n',
+    '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
+  
+    '<script src="js/external-link.js"></script>'
   ))
 
   fileConn <- file("_footer.html")

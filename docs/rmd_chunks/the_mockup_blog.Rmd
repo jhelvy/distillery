@@ -1,8 +1,0 @@
-### The Mockup Blog
-
-[site](https://themockup.netlify.app/) | [source](https://github.com/jthomasmock/radix_themockup)
-
-<center>
-<img src="images/sites/the_mockup_blog.png" width=600>
-</center>
-

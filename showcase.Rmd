@@ -16,21 +16,14 @@ knitr::opts_chunk$set(
 
 # Load libraries and functions
 library(tidyverse)
-library(webshot2)
 source(file.path("R", "functions.R"))
+```
 
-# Load data
+```{r build-content, include=FALSE}
 sites <- clean_sites(read_csv("sites.csv"))
-```
-
-```{r update-screenshots, echo=FALSE}
 update_screenshots(sites)
+rmd_chunks <- make_rmd_chunks(sites, image_width = 600)
 ```
 
-```{r insert-showcase, echo=FALSE}
-child_docs <- update_child_docs(sites)
-child_docs <- file.path("rmd_chunks", list.files("rmd_chunks"))
-```
-
-```{r, child = child_docs}
+```{r insert-showcase, child = rmd_chunks}
 ```

@@ -1,8 +1,0 @@
-### Before I Sleep
-
-[site](https://milesmcbain.xyz/) | [source](https://github.com/MilesMcBain/milesmcbain.com/)
-
-<center>
-<img src="images/sites/before_i_sleep.png" width=600>
-</center>
-

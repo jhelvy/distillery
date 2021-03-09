@@ -1,8 +1,0 @@
-### Lisa Lendway
-
-[site](https://lisalendway.netlify.app/) | [source](https://github.com/llendway/lisalendway_distill)
-
-<center>
-<img src="images/sites/lisa_lendway.png" width=600>
-</center>
-

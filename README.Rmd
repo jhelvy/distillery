@@ -1,0 +1,49 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse   = TRUE,
+  warning    = FALSE,
+  message    = FALSE,
+  comment    = "#>",
+  fig.path   = "images/",
+  fig.retina = 3
+)
+
+# Load functions
+library(tidyverse)
+source(file.path("R", "functions.R"))
+```
+
+### welcome to the distillery:
+
+a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
+
+### how to add your distill blog / website to the showcase:
+
+**Method 1**: [Open an issue](https://github.com/jhelvy/distillery/issues) and note your site `name`, the `url` to your site, and url to the `source` code and we'll add it to the showcase! 
+
+**Method 2**: If you're comfortable working with pull requests, follow these steps: 
+
+1. Fork this repo.
+2. Add your site to the `sites.csv` in the root directory (add a `name`, `url` to the site, and url to the `source`).
+3. Open the `distillery.Rproj` file and run `build_site.R`.
+4. Open a pull request to include your changes!
+
+That's it! Your site will be added to the [showcase](https://jhelvy.github.io/distillery/showcase.html), complete with a screen shot and the links to the site and source.
+
+### List of sites in showcase:
+
+```{r build-content, include=FALSE}
+sites <- clean_sites(read_csv("sites.csv"))
+rmd_chunks <- make_rmd_chunks(sites, image_width = NULL)
+```
+
+```{r insert-sitelist, child = rmd_chunks}
+```
