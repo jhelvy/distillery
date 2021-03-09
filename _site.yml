@@ -1,0 +1,18 @@
+name: "the distillery"
+title: "the distillery"
+description: |
+  A distill site dedicated to showcasing other distill websites and blogs
+output_dir: "docs"
+repository_url: https://github.com/jhelvy/distillery
+creative_commons: CC BY-SA
+navbar:
+  search: false
+  right:
+    - icon: fa-home
+      href: index.html
+    - text: "Showcase"
+      href: showcase.html
+    - icon: fab fa-github
+      href: https://github.com/jhelvy/distillery
+
+output: distill::distill_article

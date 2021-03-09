@@ -1,0 +1,15 @@
+---
+title: "welcome to the distillery:"
+image: images/distill_logo.png
+links:
+  - label: GitHub
+    url: "https://github.com/jhelvy/distillery"
+  - label: Showcase
+    url: "showcase.html"
+base_url: https://jhelvy.github.io/distillery
+site: distill::distill_website
+output:
+  postcards::jolla
+---
+
+a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
