@@ -4,6 +4,7 @@ theme: css/theme.css
 description: |
   A distill site dedicated to showcasing other distill websites and blogs
 output_dir: "docs"
+base_url: https://jhelvy.github.io/distillery
 repository_url: https://github.com/jhelvy/distillery
 creative_commons: CC BY-SA
 navbar:
