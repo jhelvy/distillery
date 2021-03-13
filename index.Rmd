@@ -1,12 +1,13 @@
 ---
 title: "welcome to the distillery:"
-image: images/distill_logo.png
+image: images/distillery.png
 links:
   - label: GitHub
     url: "https://github.com/jhelvy/distillery"
   - label: Showcase
     url: "showcase.html"
 base_url: https://jhelvy.github.io/distillery
+preview: images/distillery.png
 site: distill::distill_website
 output:
   postcards::jolla

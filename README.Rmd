@@ -21,18 +21,16 @@ library(tidyverse)
 source(file.path("R", "functions.R"))
 ```
 
-### welcome to the distillery:
+Welcome to the distillery: a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
 
-a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
-
-### how to add your distill blog / website to the showcase:
+## How to add your distill blog / website to the showcase:
 
 **Method 1**: [Open an issue](https://github.com/jhelvy/distillery/issues) and note your site `name`, the `url` to your site, and url to the `source` code and we'll add it to the showcase! 
 
 **Method 2**: If you're comfortable working with pull requests, follow these steps: 
 
 1. Fork this repo.
-2. Add your site to the `sites.csv` in the root directory (add a `name`, `url` to the site, and url to the `source`).
+2. Add your site to the `sites.csv` in the root directory (include a `name`, `url` to the site, and url to the `source`).
 3. Open the `distillery.Rproj` file and run `build_site.R`.
 4. Open a pull request to include your changes!
 

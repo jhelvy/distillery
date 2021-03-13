@@ -5,6 +5,7 @@ description: |
 output: 
   distill::distill_article:
     toc: true
+preview: images/distillery.png
 ---
 
 ```{r setup, include=FALSE}
