@@ -7,7 +7,7 @@ links:
   - label: Showcase
     url: "showcase.html"
 base_url: https://jhelvy.github.io/distillery
-preview: images/distillery.png
+preview: https://jhelvy.github.io/distillery/images/distillery.png
 site: distill::distill_website
 output:
   postcards::jolla
