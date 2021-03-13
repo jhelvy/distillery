@@ -57,10 +57,16 @@ make_readme_chunk <- function(site) {
 make_showcase_chunk <- function(site, image_width = 600) {
     chunk <- paste0(
         '### ', site$name, '\n\n',
-        '[site](', site$url, ') | [source](', site$source, ')\n\n',
         '<center>\n',
         '<img src="', site$path_png, '" width=', image_width, '>\n',
-        '</center>'
+        '</center>\n\n',
+        '<aside>',
+        link_button(
+          icon = "fas fa-external-link-alt", text = "Site", url = site$url),
+        '<br>',
+        link_button(
+          icon = "fab fa-github", text = "Source", url = site$url), 
+        '</aside>'
     )
     return(chunk)
 }
@@ -80,6 +86,17 @@ save_chunk <- function(chunk, path) {
     fileConn <- file(path)
     writeLines(chunk, fileConn)
     close(fileConn)
+}
+
+link_button <- function(
+  icon = NULL,
+  text = NULL,
+  url = NULL
+) {
+  if (!is.null(icon)) {
+    text <- htmltools::HTML(paste0('<i class="', icon, '"></i> ', text))
+  }
+  return(htmltools::a(href = url, text, class = "link-button"))
 }
 
 create_footer <- function() {
