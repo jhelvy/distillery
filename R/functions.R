@@ -55,7 +55,7 @@ make_showcase_chunk <- function(site, image_width = 600) {
           icon = "fas fa-external-link-alt", text = "Site", url = site$url),
         '<br>',
         icon_link(
-          icon = "fab fa-github", text = "Source", url = site$url),
+          icon = "fab fa-github", text = "Source", url = site$source),
         '</aside>'
     )
     return(chunk)
