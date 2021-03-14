@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 )
 
 # Load libraries and functions
-library(tidyverse)
 source(file.path("R", "functions.R"))
 ```
 

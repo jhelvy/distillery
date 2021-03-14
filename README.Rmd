@@ -22,7 +22,6 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 # Load functions
-library(tidyverse)
 source(file.path("R", "functions.R"))
 ```
 
