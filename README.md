@@ -75,6 +75,9 @@ with a screen shot and the links to the site and source\!
   - Sciencificity Blog: [site](https://sciencificity-blog.netlify.app/)
     | [source](https://github.com/sciencificity/Blog_Vebash)
 
+  - Serdar Balcı: [site](https://www.serdarbalci.com/) |
+    [source](https://github.com/sbalci/sbalci.github.io/)
+
   - Sharing Your Work with xaringan:
     [site](https://spcanelon.github.io/xaringan-basics-and-beyond) |
     [source](https://github.com/spcanelon/xaringan-basics-and-beyond)
@@ -84,3 +87,6 @@ with a screen shot and the links to the site and source\!
 
   - The Scrapbook: [site](https://eliocamp.github.io/scrapbook/) |
     [source](https://github.com/eliocamp/scrapbook)
+
+  - Umair Durrani: [site](https://udurrani.netlify.app/) |
+    [source](https://github.com/durraniu/udurrani_distill)
