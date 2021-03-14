@@ -5,9 +5,9 @@ Welcome to the distillery: a
 [distill](https://rstudio.github.io/distill/) website showcasing other
 distill websites and blogs\!
 
-If you have a distill blog, we would love you have you included in this
-list\! This is an inclusive community of blogs for everyone to learn
-from. Please, add yourself\!
+If you have a distill blog, we would love you included in this list\!
+This is an inclusive community of blogs for everyone to learn from.
+Please, add yourself\!
 
 ## How to add your distill blog / website to the showcase:
 
@@ -42,6 +42,12 @@ with a screen shot and the links to the site and source.
 
   - Ijeamaka Anyene: [site](https://ijeamaka-anyene.netlify.app/) |
     [source](https://github.com/Ijeamakaanyene/ijeamaka-anyene)
+
+  - Jannik Buhr: [site](https://jmbuhr.de) |
+    [source](https://github.com/jmbuhr/jmbuhr.github.io)
+
+  - jeremydata: [site](https://jeremydata.com/) |
+    [source](https://github.com/jeremy-allen/jeremydata_blog)
 
   - John Paul Helveston: [site](https://jhelvy.github.io/) |
     [source](https://github.com/jhelvy/jhelvy.github.io/)
