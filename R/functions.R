@@ -3,7 +3,7 @@ clean_sites <- function(sites) {
         mutate(
             name_clean = clean_name(name),
             path_png = file.path("images", "sites", paste0(name_clean, ".png"))
-        ) %>% 
+        ) %>%
         arrange(name)
     return(sites)
 }
@@ -40,7 +40,7 @@ make_rmd_chunks <- function(sites, image_width = NULL) {
         if (is.null(image_width)) {
             chunks[[i]] <- make_readme_chunk(site)
         } else {
-            chunks[[i]] <- make_showcase_chunk(site, image_width)  
+            chunks[[i]] <- make_showcase_chunk(site, image_width)
         }
     }
     return(save_temp_chunks(chunks))
@@ -48,7 +48,7 @@ make_rmd_chunks <- function(sites, image_width = NULL) {
 
 make_readme_chunk <- function(site) {
     chunk <- paste0(
-        '- ', site$name, ': [site](', site$url, 
+        '- ', site$name, ': [site](', site$url,
         ') | [source](', site$source, ')'
     )
     return(chunk)
@@ -61,11 +61,11 @@ make_showcase_chunk <- function(site, image_width = 600) {
         '<img src="', site$path_png, '" width=', image_width, '>\n',
         '</center>\n\n',
         '<aside>',
-        link_button(
+        icon_link(
           icon = "fas fa-external-link-alt", text = "Site", url = site$url),
         '<br>',
-        link_button(
-          icon = "fab fa-github", text = "Source", url = site$url), 
+        icon_link(
+          icon = "fab fa-github", text = "Source", url = site$url),
         '</aside>'
     )
     return(chunk)
@@ -77,18 +77,12 @@ save_temp_chunks <- function(x) {
     for (i in seq_len(length(x))) {
         path <- file.path(temp_folder, paste0(i, ".Rmd"))
         paths[[i]] <- path
-        save_chunk(x[[i]], path)
+        save_raw(x[[i]], path)
     }
     return(unlist(paths))
 }
 
-save_chunk <- function(chunk, path) {
-    fileConn <- file(path)
-    writeLines(chunk, fileConn)
-    close(fileConn)
-}
-
-link_button <- function(
+icon_link <- function(
   icon = NULL,
   text = NULL,
   url = NULL
@@ -96,7 +90,7 @@ link_button <- function(
   if (!is.null(icon)) {
     text <- htmltools::HTML(paste0('<i class="', icon, '"></i> ', text))
   }
-  return(htmltools::a(href = url, text, class = "link-button"))
+  return(htmltools::a(href = url, text, class = "icon-link"))
 }
 
 create_footer <- function() {
