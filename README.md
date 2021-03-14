@@ -54,6 +54,10 @@ with a screen shot and the links to the site and source.
 -   Sciencificity Blog: [site](https://sciencificity-blog.netlify.app/)
     \| [source](https://github.com/sciencificity/Blog_Vebash)
 
+-   Sharing Your Work with xaringan:
+    [site](https://spcanelon.github.io/xaringan-basics-and-beyond) \|
+    [source](https://github.com/spcanelon/xaringan-basics-and-beyond)
+
 -   The Mockup Blog: [site](https://themockup.netlify.app/) \|
     [source](https://github.com/jthomasmock/radix_themockup)
 

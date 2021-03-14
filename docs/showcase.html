@@ -53,35 +53,35 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ad0000; } /* Alert */
-code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
-code span.bn { color: #ad0000; } /* BaseN */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #545454; font-weight: bold; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #a1024a; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
-code span.ch { color: #20794d; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #5e5e5e; } /* Comment */
-code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #ad0000; } /* DataType */
-code span.dv { color: #ad0000; } /* DecVal */
-code span.er { color: #ad0000; } /* Error */
+code span.cf { color: #007faa; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #008000; } /* Char */
+code span.cn { color: #d91e18; } /* Constant */
+code span.co { color: #545454; } /* Comment */
+code span.cv { color: #545454; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #aa5d00; } /* DataType */
+code span.dv { color: #a1024a; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
-code span.fl { color: #ad0000; } /* Float */
-code span.fu { color: #4758ab; } /* Function */
+code span.fl { color: #a1024a; } /* Float */
+code span.fu { color: #4254a7; } /* Function */
 code span.im { } /* Import */
-code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
-code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
-code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
-code span.ss { color: #20794d; } /* SpecialString */
-code span.st { color: #20794d; } /* String */
-code span.va { color: #111111; } /* Variable */
-code span.vs { color: #20794d; } /* VerbatimString */
-code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+code span.in { color: #545454; font-weight: bold; } /* Information */
+code span.kw { color: #007faa; font-weight: bold; } /* Keyword */
+code span.op { color: #696969; } /* Operator */
+code span.ot { color: #007faa; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #008000; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #008000; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #008000; } /* VerbatimString */
+code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -130,7 +130,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var header = $('header').get(0);
       var headerHeight = header.offsetHeight;
       var headroom = new Headroom(header, {
-        tolerance: 5,
         onPin : function() {
           if (window.headroom_prevent_pin) {
             window.headroom_prevent_pin = false;
@@ -453,15 +452,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     top: 0;
   }
 
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -610,7 +602,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
-    overflow: auto;
+    overflow: hidden;
   }
 
   d-article div.sourceCode {
@@ -652,11 +644,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article pre a:hover {
     border-bottom: none;
     text-decoration: underline;
-  }
-
-  d-article details {
-    grid-column: text;
-    margin-bottom: 0.8em;
   }
 
   @media(min-width: 768px) {
@@ -813,17 +800,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
-  }
-
-  /* Citation hover box */
-
-  .tippy-box[data-theme~=light-border] {
-    background-color: rgba(250, 250, 250, 0.95);
-  }
-
-  .tippy-content > p {
-    margin-bottom: 0;
-    padding: 2px;
   }
 
 
@@ -1491,7 +1467,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var layout = $(this).attr('data-layout');
 
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      var elements = $(this).children().not('div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1606,20 +1582,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-
-      // hoverable references
-      $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
-        window.tippy(this, {
-          allowHTML: true,
-          content: refHtml,
-          maxWidth: 500,
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start'
-        });
-      });
 
       // clear polling timer
       clearInterval(tid);
@@ -1959,7 +1921,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   d-article div.sourceCode code,
   d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
+  	font-family: var(--mono-font), var(--mono-default);
   }
 
 
@@ -1984,116 +1946,104 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
+  /* only text inside of <p> tags */
+  d-article > p {
     color: var(--body-color, rgba(0, 0, 0, 0.8));
     font-size: var(--body-size, 1.06rem);
   }
 
-
   /*-- CODE --*/
   d-article div.sourceCode code,
   d-article pre code {
-    font-size: var(--code-size, 14px);
+  	font-size: var(--code-size, 14px);
   }
 
   /*-- ASIDE --*/
   d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
+  	font-size: var(--aside-size, 12px);
+  	color: var(--aside-color, rgba(0, 0, 0, 0.6));
   }
 
   /*-- FIGURE CAPTIONS --*/
   figure .caption,
   figure figcaption,
   .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+  	font-size: var(--fig-cap-size, 13px);
+  	color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
   }
 
   /*-- METADATA --*/
   d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
+  	font-size: var(--heading-size, 0.6rem);
+  	color: var(--heading-color, rgba(0, 0, 0, 0.5));
   }
 
   d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
+  	font-size: var(--body-size, 0.8rem);
+  	color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
 
   d-byline a,
   d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
+  	color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
 
   /*-- TABLE OF CONTENTS --*/
   .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
+  	font-size: var(--heading-size, 18px);
   }
 
   .d-contents nav a {
-    font-size: var(--contents-size, 13px);
+  	font-size: var(--contents-size, 13px);
   }
 
   /*-- APPENDIX --*/
   d-appendix h3 {
     font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
+  	color: var(--heading-color, rgba(0, 0, 0, 0.65));
   }
 
   d-appendix {
     font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
+  	color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
 
   d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
+  	color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
 
   /*-- WEBSITE HEADER + FOOTER --*/
   .distill-site-header .title {
-    font-size: var(--title-size, 18px);
+  	font-size: var(--title-size, 18px);
+  	font-family: var(--navbar-font), var(--heading-default);
+  }
+
+  .distill-site-header a {
     font-family: var(--navbar-font), var(--heading-default);
   }
 
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
+  .distill-site-header a:hover {
+  	color: var(--hover-color, white);
   }
 
   .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
+  	font-size: var(--text-size, 15px);
+  	color: var(--text-color, rgba(255, 255, 255, 0.8));
+  	background-color: var(--bkgd-color, #0F2E3D);
   }
 
   .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
+  	font-size: var(--text-size, 15px);
+  	color: var(--text-color, rgba(255, 255, 255, 0.8));
+  	background-color: var(--bkgd-color, #0F2E3D);
   }
 
   .distill-site-footer a:hover {
-    color: var(--hover-color, white);
+  	color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/header-attrs-2.6.2/header-attrs.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
@@ -2157,6 +2107,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#lisa-lendway">Lisa Lendway</a></li>
 <li><a href="#piping-hot-data">Piping Hot Data</a></li>
 <li><a href="#sciencificity-blog">Sciencificity Blog</a></li>
+<li><a href="#sharing-your-work-with-xaringan">Sharing Your Work with xaringan</a></li>
 <li><a href="#the-mockup-blog">The Mockup Blog</a></li>
 <li><a href="#the-scrapbook">The Scrapbook</a></li>
 </ul>
@@ -2234,6 +2185,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="https://sciencificity-blog.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://sciencificity-blog.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
 </aside>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="sharing-your-work-with-xaringan">Sharing Your Work with xaringan</h3>
+<center>
+<img src="images/sites/sharing_your_work_with_xaringan.png" width=600>
+</center>
+<aside>
+<a href="https://spcanelon.github.io/xaringan-basics-and-beyond" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://spcanelon.github.io/xaringan-basics-and-beyond" class="link-button"><i class="fab fa-github"></i> Source</a>
+</aside>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <h3 id="the-mockup-blog">The Mockup Blog</h3>
 <center>
 <img src="images/sites/the_mockup_blog.png" width=600>
@@ -2241,7 +2200,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <aside>
 <a href="https://themockup.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://themockup.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
 </aside>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <h3 id="the-scrapbook">The Scrapbook</h3>
 <center>
 <img src="images/sites/the_scrapbook.png" width=600>
@@ -2249,8 +2208,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <aside>
 <a href="https://eliocamp.github.io/scrapbook/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://eliocamp.github.io/scrapbook/" class="link-button"><i class="fab fa-github"></i> Source</a>
 </aside>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
