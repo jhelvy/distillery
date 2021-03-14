@@ -100,20 +100,25 @@ link_button <- function(
 }
 
 create_footer <- function() {
-
   footer <- htmltools::HTML(paste0(
-    '<i class="fas fa-wrench"></i> Made with <i class="far fa-heart"></i>, <a href="https://github.com/jhelvy/distillery"><i class="fas fa-code-branch"></i></a>, and the <a href="https://cran.r-project.org/"><i class="fab fa-r-project"></i></a><a href="https://github.com/rstudio/distill"> distill</a> package.\n\n',
-    '<span style="font-size:0.8rem;">Last updated on ',
-    format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
-  
-    '<!-- Add function to open links to external links in new tab, from: -->\n',
+    '<i class="fas fa-wrench"></i> Made with <i class="far fa-heart"></i>, ',
+    '<a href="https://github.com/jhelvy/distillery">',
+    '<i class="fas fa-code-branch"></i></a>',
+    ', and the <a href="https://cran.r-project.org/">',
+    '<i class="fab fa-r-project"></i></a>',
+    '<a href="https://github.com/rstudio/distill"> distill</a> package.',
+    '\n\n',
+    '<span style="font-size:0.8rem;">Last updated ',
+    'on ', format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
+    '<!-- Add function to open links to external links in new tab, from: -->',
     '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
-  
     '<script src="js/external-link.js"></script>'
   ))
+  save_raw(footer, "_footer.html")
+}
 
-  fileConn <- file("_footer.html")
-  writeLines(footer, fileConn)
+save_raw <- function(text, path) {
+  fileConn <- file(path)
+  writeLines(text, fileConn)
   close(fileConn)
-
 }
