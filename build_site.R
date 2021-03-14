@@ -6,7 +6,7 @@ create_footer()
 # Then render the README.Rmd file
 rmarkdown::render(
     input = "README.Rmd",
-    output_file = "README.md", 
+    output_file = "README/README.md",
     output_format = "github_document")
 
 # Then render the site
