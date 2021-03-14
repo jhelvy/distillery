@@ -26,28 +26,35 @@ source(file.path("R", "functions.R"))
 
 Welcome to the distillery: a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
 
-If you have a distill blog, we would love you included in this list!
+If you have a distill blog, we would love to have it included in this list!
 This is an inclusive community of blogs for everyone to learn from. Please,
 add yourself!
 
 ## How to add your distill blog / website to the showcase:
 
-**Method 1**: [Open an issue](https://github.com/jhelvy/distillery/issues) and note your site `name`, the `url` to your site, and url to the `source` code and we'll add it to the showcase!
+### Method 1
 
-**Method 2**: If you're comfortable working with pull requests, follow these steps:
+[Open an issue](https://github.com/jhelvy/distillery/issues) and note your site `name`, the `url` to your site, and url to the `source` code and we'll add it to the showcase!
+
+### Method 2
+
+If you're comfortable working with pull requests, follow these steps:
 
 1. Fork this repo.
 2. Add your site to the `sites.csv` in the root directory (include a `name`, `url` to the site, and url to the `source`).
-4. Open a pull request to include your changes!
+3. Open a pull request to include your changes!
 
-That's it! Your site will be automatically added to the README and [showcase](https://jhelvy.github.io/distillery/showcase.html), complete with a screen shot and the links to the site and source!
+That's it! Your site will be automatically added to the [showcase](https://jhelvy.github.io/distillery/showcase.html), complete with a screen shot and the links to the site and source!
 
 ### List of sites in showcase:
 
-```{r build-content, include=FALSE}
-sites <- clean_sites(read_csv("sites.csv"))
-rmd_chunks <- make_rmd_chunks(sites, image_width = NULL)
-```
-
-```{r insert-sitelist, child = rmd_chunks}
+```{r insert-sitelist, echo=FALSE}
+sites <- read_csv("sites.csv")
+sites %>% 
+  mutate(
+    site = paste0("[site](", url, ")"),
+    source = paste0("[source](", source, ")"),
+  ) %>% 
+  select(name, site, source) %>% 
+  knitr::kable()
 ```

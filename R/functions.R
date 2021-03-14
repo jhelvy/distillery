@@ -35,25 +35,13 @@ update_screenshots <- function(sites) {
     }
 }
 
-make_rmd_chunks <- function(sites, image_width = NULL) {
+make_rmd_chunks <- function(sites, image_width = 600) {
     chunks <- list()
     for (i in seq_len(nrow(sites))) {
         site <- sites[i,]
-        if (is.null(image_width)) {
-            chunks[[i]] <- make_readme_chunk(site)
-        } else {
-            chunks[[i]] <- make_showcase_chunk(site, image_width)
-        }
+        chunks[[i]] <- make_showcase_chunk(site, image_width)
     }
     return(save_temp_chunks(chunks))
-}
-
-make_readme_chunk <- function(site) {
-    chunk <- paste0(
-        '- ', site$name, ': [site](', site$url,
-        ') | [source](', site$source, ')'
-    )
-    return(chunk)
 }
 
 make_showcase_chunk <- function(site, image_width = 600) {
