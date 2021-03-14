@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
+  <link rel="alternate" type="application/rss+xml" href="https://jhelvy.github.io/distillery/tips_and_tricks.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -86,36 +87,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>the distillery: Showcase</title>
+  <title>the distillery: Tips &amp; Tricks</title>
   
-  <meta property="description" itemprop="description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)"/>
+  <meta property="description" itemprop="description" content="A collection of blog posts about building and customizing distill sites"/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="the distillery: Showcase"/>
+  <meta property="og:title" content="the distillery: Tips &amp; Tricks"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)"/>
-  <meta property="og:image" content="https://jhelvy.github.io/distillery/./images/distillery.png"/>
-  <meta property="og:image:width" content="282"/>
-  <meta property="og:image:height" content="282"/>
+  <meta property="og:description" content="A collection of blog posts about building and customizing distill sites"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="the distillery"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
-  <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:title" content="the distillery: Showcase"/>
-  <meta property="twitter:description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)"/>
-  <meta property="twitter:image" content="https://jhelvy.github.io/distillery/./images/distillery.png"/>
-  <meta property="twitter:image:width" content="282"/>
-  <meta property="twitter:image:height" content="282"/>
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="the distillery: Tips &amp; Tricks"/>
+  <meta property="twitter:description" content="A collection of blog posts about building and customizing distill sites"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output","base_url","preview"]}},"value":[{"type":"character","attributes":{},"value":["Showcase"]},{"type":"character","attributes":{},"value":["A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery"]},{"type":"character","attributes":{},"value":["images/distillery.png"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["Tips & Tricks"]},{"type":"character","attributes":{},"value":["A collection of blog posts about building and customizing distill sites"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2104,12 +2099,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Showcase","description":"A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)","authors":[]}
+{"title":"Tips & Tricks","description":"A collection of blog posts about building and customizing distill sites","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2135,141 +2130,159 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash && window.location.hash.startsWith("#category:")) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace(/^#category:/, "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+      // update the list_caption
+      var list_caption = $('.posts-list-caption');
+      var caption = (page_category || '').toLowerCase() === "articles"
+        ? list_caption.attr('data-caption')
+        : ('Category: ' + page_category.replace(/_/g," "));
+      list_caption.text(caption);
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+      // reset list caption
+      var list_caption = $('.posts-list-caption');
+      list_caption.text(list_caption.attr('data-caption'));
+
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // click handling for tags
+  $('.dt-tag').click(function(ev) {
+    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
+    return false;
+  })
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-apply-limit l-page">
+<div class="posts-list">
+<h1 class="posts-list-caption" data-caption="Tips &amp; Tricks">Tips &amp; Tricks</h1>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Showcase</h1>
+<h1>Tips &amp; Tricks</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A showcase of distill websites and blogs. Add yours <a href="https://github.com/jhelvy/distillery">here</a></p></p>
+<p>A collection of blog posts about building and customizing distill sites</p>
 </div>
 
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#alex-k.-gold">Alex K. Gold</a></li>
-<li><a href="#before-i-sleep">Before I Sleep</a></li>
-<li><a href="#emi-tanaka">Emi Tanaka</a></li>
-<li><a href="#ijeamaka-anyene">Ijeamaka Anyene</a></li>
-<li><a href="#john-paul-helveston">John Paul Helveston</a></li>
-<li><a href="#june-choe">June Choe</a></li>
-<li><a href="#lisa-lendway">Lisa Lendway</a></li>
-<li><a href="#piping-hot-data">Piping Hot Data</a></li>
-<li><a href="#r-vogg-blog">R-Vogg-Blog</a></li>
-<li><a href="#sciencificity-blog">Sciencificity Blog</a></li>
-<li><a href="#sharing-your-work-with-xaringan">Sharing Your Work with xaringan</a></li>
-<li><a href="#the-mockup-blog">The Mockup Blog</a></li>
-<li><a href="#the-scrapbook">The Scrapbook</a></li>
-</ul>
-</nav>
-</div>
-<h3 id="alex-k.-gold">Alex K. Gold</h3>
-<center>
-<img src="images/sites/alex_k__gold.png" width=600>
-</center>
-<aside>
-<a href="https://alexkgold.space/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://alexkgold.space/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
+<p>** Under Construction **</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="before-i-sleep">Before I Sleep</h3>
-<center>
-<img src="images/sites/before_i_sleep.png" width=600>
-</center>
-<aside>
-<a href="https://milesmcbain.xyz/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://milesmcbain.xyz/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="emi-tanaka">Emi Tanaka</h3>
-<center>
-<img src="images/sites/emi_tanaka.png" width=600>
-</center>
-<aside>
-<a href="https://emitanaka.org/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://emitanaka.org/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="ijeamaka-anyene">Ijeamaka Anyene</h3>
-<center>
-<img src="images/sites/ijeamaka_anyene.png" width=600>
-</center>
-<aside>
-<a href="https://ijeamaka-anyene.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://ijeamaka-anyene.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="john-paul-helveston">John Paul Helveston</h3>
-<center>
-<img src="images/sites/john_paul_helveston.png" width=600>
-</center>
-<aside>
-<a href="https://jhelvy.github.io/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://jhelvy.github.io/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="june-choe">June Choe</h3>
-<center>
-<img src="images/sites/june_choe.png" width=600>
-</center>
-<aside>
-<a href="https://yjunechoe.github.io/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://yjunechoe.github.io/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="lisa-lendway">Lisa Lendway</h3>
-<center>
-<img src="images/sites/lisa_lendway.png" width=600>
-</center>
-<aside>
-<a href="https://lisalendway.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://lisalendway.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="piping-hot-data">Piping Hot Data</h3>
-<center>
-<img src="images/sites/piping_hot_data.png" width=600>
-</center>
-<aside>
-<a href="https://www.pipinghotdata.com/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://www.pipinghotdata.com/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="r-vogg-blog">R-Vogg-Blog</h3>
-<center>
-<img src="images/sites/r-vogg-blog.png" width=600>
-</center>
-<aside>
-<a href="https://r-vogg-blog.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://r-vogg-blog.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="sciencificity-blog">Sciencificity Blog</h3>
-<center>
-<img src="images/sites/sciencificity_blog.png" width=600>
-</center>
-<aside>
-<a href="https://sciencificity-blog.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://sciencificity-blog.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="sharing-your-work-with-xaringan">Sharing Your Work with xaringan</h3>
-<center>
-<img src="images/sites/sharing_your_work_with_xaringan.png" width=600>
-</center>
-<aside>
-<a href="https://spcanelon.github.io/xaringan-basics-and-beyond" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://spcanelon.github.io/xaringan-basics-and-beyond" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="the-mockup-blog">The Mockup Blog</h3>
-<center>
-<img src="images/sites/the_mockup_blog.png" width=600>
-</center>
-<aside>
-<a href="https://themockup.netlify.app/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://themockup.netlify.app/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<h3 id="the-scrapbook">The Scrapbook</h3>
-<center>
-<img src="images/sites/the_scrapbook.png" width=600>
-</center>
-<aside>
-<a href="https://eliocamp.github.io/scrapbook/" class="link-button"><i class="fas fa-external-link-alt"></i> Site</a><br><a href="https://eliocamp.github.io/scrapbook/" class="link-button"><i class="fab fa-github"></i> Source</a>
-</aside>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

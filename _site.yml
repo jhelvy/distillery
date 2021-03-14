@@ -13,6 +13,8 @@ navbar:
   right:
     - icon: fa-home
       href: index.html
+    - text: "Tips & Tricks"
+      href: tips_and_tricks.html
     - text: "Showcase"
       href: showcase.html
     - icon: fab fa-github
