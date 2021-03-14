@@ -58,3 +58,4 @@ with a screen shot and the links to the site and source\!
 | Harry Fisher                    | [site](https://hfshr.xyz)                                      | [source](https://github.com/hfshr/distill_blog)                   |
 | Serdar Balcı                    | [site](https://www.serdarbalci.com/)                           | [source](https://github.com/sbalci/sbalci.github.io/)             |
 | Umair Durrani                   | [site](https://udurrani.netlify.app/)                          | [source](https://github.com/durraniu/udurrani_distill)            |
+| Kaija Gahm                      | [site](https://kaijagahm.netlify.app/)                         | [source](https://github.com/kaijagahm/kaija_bean)                 |
