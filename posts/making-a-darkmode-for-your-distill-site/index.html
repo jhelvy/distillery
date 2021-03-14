@@ -16,23 +16,27 @@
   </style>
 
  <!--radix_placeholder_import_source-->
- <!--/radix_placeholder_import_source-->
+
+<script type="text/json" id="radix-import-source">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["url","sha1"]}},"value":[{"type":"character","attributes":{},"value":["https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"]},{"type":"character","attributes":{},"value":["4df251d69fa45667367a085265045f3889f47fa3"]}]}
+</script>
+<!--/radix_placeholder_import_source-->
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +56,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -90,20 +94,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <meta property="description" itemprop="description" content="We build a darkmode for our distill site using css and a bit of java script."/>
 
-<link rel="canonical" href="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"/>
-<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="canonical" href="https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"/>
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-03-14"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-03-14"/>
+<meta property="article:published" itemprop="datePublished" content="2021-03-13"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-03-13"/>
 <meta name="article:author" content="Jannik Buhr"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="the distillery: Making a Darkmode for your distill site"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="We build a darkmode for our distill site using css and a bit of java script."/>
-<meta property="og:url" content="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"/>
-<meta property="og:image" content="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/images/cookies.png"/>
+<meta property="og:url" content="https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"/>
+<meta property="og:image" content="https://jhelvy.github.io/distillery/posts/making-a-darkmode-for-your-distill-site/images/cookies.png"/>
 <meta property="og:image:width" content="350"/>
 <meta property="og:image:height" content="263"/>
 <meta property="og:locale" content="en_US"/>
@@ -113,28 +117,28 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="the distillery: Making a Darkmode for your distill site"/>
 <meta property="twitter:description" content="We build a darkmode for our distill site using css and a bit of java script."/>
-<meta property="twitter:url" content="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"/>
-<meta property="twitter:image" content="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/images/cookies.png"/>
+<meta property="twitter:url" content="https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"/>
+<meta property="twitter:image" content="https://jhelvy.github.io/distillery/posts/making-a-darkmode-for-your-distill-site/images/cookies.png"/>
 <meta property="twitter:image:width" content="350"/>
 <meta property="twitter:image:height" content="263"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="the distillery: Making a Darkmode for your distill site"/>
-<meta name="citation_fulltext_html_url" content="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"/>
+<meta name="citation_fulltext_html_url" content="https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"/>
 <meta name="citation_fulltext_world_readable" content=""/>
-<meta name="citation_online_date" content="2021/03/14"/>
-<meta name="citation_publication_date" content="2021/03/14"/>
+<meta name="citation_online_date" content="2021/03/13"/>
+<meta name="citation_publication_date" content="2021/03/13"/>
 <meta name="citation_author" content="Jannik Buhr"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","preview","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Making a Darkmode for your distill site"]},{"type":"character","attributes":{},"value":["We build a darkmode for our distill site using css and a bit of java script."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jannik Buhr"]}]}]},{"type":"character","attributes":{},"value":["2021-03-14"]},{"type":"character","attributes":{},"value":["images/cookies.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","preview","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY"]},{"type":"character","attributes":{},"value":["Making a Darkmode for your distill site"]},{"type":"character","attributes":{},"value":["We build a darkmode for our distill site using css and a bit of java script."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jannik Buhr"]}]}]},{"type":"character","attributes":{},"value":["03-13-2021"]},{"type":"character","attributes":{},"value":["images/cookies.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"]},{"type":"character","attributes":{},"value":["https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["darkmode_files/anchor-4.2.2/anchor.min.js","darkmode_files/bowser-1.9.3/bowser.min.js","darkmode_files/distill-2.2.21/template.v2.js","darkmode_files/header-attrs-2.7.3/header-attrs.js","darkmode_files/jquery-1.11.3/jquery.min.js","darkmode_files/popper-2.6.0/popper.min.js","darkmode_files/tippy-6.2.7/tippy-bundle.umd.min.js","darkmode_files/tippy-6.2.7/tippy-light-border.css","darkmode_files/tippy-6.2.7/tippy.css","darkmode_files/tippy-6.2.7/tippy.umd.min.js","darkmode_files/webcomponents-2.0.0/webcomponents.js","images/cookies.png"]}
+  {"type":"character","attributes":{},"value":["images/cookies.png","making-a-darkmode-for-your-distill-site_files/anchor-4.2.2/anchor.min.js","making-a-darkmode-for-your-distill-site_files/bowser-1.9.3/bowser.min.js","making-a-darkmode-for-your-distill-site_files/distill-2.2.21/template.v2.js","making-a-darkmode-for-your-distill-site_files/header-attrs-2.7.2/header-attrs.js","making-a-darkmode-for-your-distill-site_files/jquery-1.11.3/jquery.min.js","making-a-darkmode-for-your-distill-site_files/popper-2.6.0/popper.min.js","making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy-bundle.umd.min.js","making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy-light-border.css","making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy.css","making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy.umd.min.js","making-a-darkmode-for-your-distill-site_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2108,15 +2112,16 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/header-attrs-2.7.2/header-attrs.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/popper-2.6.0/popper.min.js"></script>
+  <link href="making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="making-a-darkmode-for-your-distill-site_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="making-a-darkmode-for-your-distill-site_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
 <!--/radix_placeholder_site_in_header-->
 
@@ -2128,7 +2133,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Making a Darkmode for your distill site","description":"We build a darkmode for our distill site using css and a bit of java script.","authors":[{"author":"Jannik Buhr","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-14T00:00:00.000+00:00","citationText":"Buhr, 2021"}
+{"title":"Making a Darkmode for your distill site","description":"We build a darkmode for our distill site using css and a bit of java script.","authors":[{"author":"Jannik Buhr","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-13T00:00:00.000+00:00","citationText":"Buhr, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2170,13 +2175,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<blockquote>
-<p>Note: This post was originally written by <a href="https://jmbuhr.de/">Jannik Buhr</a> - see the original post <a href="https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/">here</a></p>
-</blockquote>
 <h1 id="join-the-dark-side">Join the Dark Side!</h1>
 <p>… we have cookies.</p>
 <figure>
-<img src="images/cookies.png" class="external" alt="" /><figcaption>From: <a href="https://knowyourmeme.com/photos/954929-come-to-the-dark-side">knowyourmeme</a></figcaption>
+<img src="images/cookies.png" class="external" alt="From: knowyourmeme" /><figcaption aria-hidden="true">From: <a href="https://knowyourmeme.com/photos/954929-come-to-the-dark-side">knowyourmeme</a></figcaption>
 </figure>
 <p>There are many motivations to adding a dark mode to your site. I just like it, when things look consistent. So I also want my site to reflect that. But because at the same time I am also not very good at making things look consistent, which is why I mostly outsource design choices as much as I can. Here, for example, this means that I took the color values for the dark theme from the amazing <a href="https://www.nordtheme.com/">nord</a> color palette.</p>
 <p>But let’s get into the practical side! How do we add a dark theme to complement our light theme to our distill site?</p>
@@ -2253,15 +2255,15 @@ darkmodeToggle.addEventListener(&#39;click&#39;, switchTheme)
   <h3 id="updates-and-corrections">Corrections</h3>
   <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/jhelvy/distillery/issues/new">create an issue</a> on the source repository.</p>
   <h3 id="reuse">Reuse</h3>
-  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/jhelvy/distillery">https://github.com/jhelvy/distillery</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/jhelvy/distillery">https://github.com/jhelvy/distillery</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Buhr (2021, March 14). the distillery: Making a Darkmode for your distill site. Retrieved from https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/</pre>
+  <pre class="citation-appendix short">Buhr (2021, March 13). the distillery: Making a Darkmode for your distill site. Retrieved from https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/</pre>
   <p>BibTeX citation</p>
   <pre class="citation-appendix long">@misc{buhr2021making,
   author = {Buhr, Jannik},
   title = {the distillery: Making a Darkmode for your distill site},
-  url = {https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/},
+  url = {https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/},
   year = {2021}
 }</pre>
 </div>
@@ -2279,6 +2281,8 @@ darkmodeToggle.addEventListener(&#39;click&#39;, switchTheme)
 <!--/radix_placeholder_navigation_after_body-->
 
 
+
 </body>
 
 </html>
+
