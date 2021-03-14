@@ -7,10 +7,6 @@
 Site](https://github.com/jhelvy/distillery/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/main.yml)
 <!-- badges: end -->
 
-# Load functions
-
-source(file.path(“R”, “functions.R”)) \`\`\`
-
 Welcome to the distillery: a
 [distill](https://rstudio.github.io/distill/) website showcasing other
 distill websites and blogs\!
