@@ -1,7 +1,7 @@
 ---
 title: "Showcase"
 description: |
-  A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)
+  A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!
 output:
   distill::distill_article:
     toc: true
