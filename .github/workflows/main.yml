@@ -50,4 +50,4 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.GH_PAT }}
           BRANCH: main # The branch the action should deploy to.
-          FOLDER: ./README.md # The folder the action should deploy.
+          FOLDER: README # The folder the action should deploy.
