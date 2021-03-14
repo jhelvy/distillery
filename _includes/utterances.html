@@ -1,0 +1,37 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!/posts/.test(location.pathname)) {
+      return;
+    }
+
+    var script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "sciencificity/Blog_Vebash");
+    script.setAttribute("issue-term", "title");
+    script.setAttribute("crossorigin", "anonymous");
+    script.setAttribute("label", "comments 💬");
+    script.setAttribute("theme", "github-light");
+
+    /* wait for article to load, append script to article element */
+    var observer = new MutationObserver(function (mutations, observer) {
+      var article = document.querySelector("d-article");
+      if (article) {
+        observer.disconnect();
+        /* HACK: article scroll */
+        article.setAttribute("style", "overflow-y: hidden");
+        article.appendChild(script);
+      }
+    });
+
+    observer.observe(document.body, { childList: true });
+  });
+</script>
+
+<!-- <script src="https://utteranc.es/client.js" -->
+<!--         repo="sciencificity/Blog_Vebash" -->
+<!--         issue-term="title" -->
+<!--         label="comments 💬" -->
+<!--         theme="github-light" -->
+<!--         crossorigin="anonymous" -->
+<!--         async> -->
+<!-- </script> -->

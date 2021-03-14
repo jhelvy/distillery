@@ -20,4 +20,8 @@ navbar:
     - icon: fab fa-github
       href: https://github.com/jhelvy/distillery
 
-output: distill::distill_article
+output:
+  distill::distill_article:
+    includes:
+      in_header:
+      - _includes/utterances.html
