@@ -7,16 +7,7 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
-    <item>
-      <title>Making a Darkmode for your distill site</title>
-      <dc:creator>Jannik Buhr</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/making-a-darkmode-for-your-distill-site</link>
-      <description>We build a darkmode for our distill site using css and a bit of java script.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/making-a-darkmode-for-your-distill-site</guid>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/making-a-darkmode-for-your-distill-site/images/cookies.png" medium="image" type="image/png" width="350" height="263"/>
-    </item>
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Enable utterances with distill</title>
       <dc:creator>Vebash Naidoo</dc:creator>
