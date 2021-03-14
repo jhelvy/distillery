@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -2108,7 +2108,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.7.3/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2177,7 +2176,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1 id="join-the-dark-side">Join the Dark Side!</h1>
 <p>… we have cookies.</p>
 <figure>
-<img src="images/cookies.png" class="external" alt="From: knowyourmeme" /><figcaption aria-hidden="true">From: <a href="https://knowyourmeme.com/photos/954929-come-to-the-dark-side">knowyourmeme</a></figcaption>
+<img src="images/cookies.png" class="external" alt="" /><figcaption>From: <a href="https://knowyourmeme.com/photos/954929-come-to-the-dark-side">knowyourmeme</a></figcaption>
 </figure>
 <p>There are many motivations to adding a dark mode to your site. I just like it, when things look consistent. So I also want my site to reflect that. But because at the same time I am also not very good at making things look consistent, which is why I mostly outsource design choices as much as I can. Here, for example, this means that I took the color values for the dark theme from the amazing <a href="https://www.nordtheme.com/">nord</a> color palette.</p>
 <p>But let’s get into the practical side! How do we add a dark theme to complement our light theme to our distill site?</p>
