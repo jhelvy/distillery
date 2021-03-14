@@ -1,6 +1,6 @@
 Type: Website
-Package: distillery.rbind.io
-Title: distillery.rbind.io
+Package: distillery
+Title: distillery
 Authors@R: c(
     person(given   = "John",
            family  = "Helveston",
@@ -26,14 +26,10 @@ Imports:
     tidyverse,
     viridis,
     webshot2,
-    xaringanBuilder,
-    xaringanExtra,
     yaml
 Remotes:
     hadley/emo,
     rstudio/fontawesome,
     haozhu233/kableExtra,
     rstudio/rmarkdown,
-    rstudio/webshot2,
-    jhelvy/xaringanBuilder,
-    gadenbuie/xaringanExtra
+    rstudio/webshot2
