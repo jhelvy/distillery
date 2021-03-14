@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
   fig.path   = "images/",
   fig.retina = 3
 )
+```
 
 <!-- badges: start -->
 [![Render & Deploy Site](https://github.com/jhelvy/distillery/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/main.yml)
