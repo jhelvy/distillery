@@ -40,22 +40,22 @@ with a screen shot and the links to the site and source\!
 
 | name                            | site                                                           | source                                                            |
 | :------------------------------ | :------------------------------------------------------------- | :---------------------------------------------------------------- |
-| John Paul Helveston             | [site](https://jhelvy.github.io/)                              | [source](https://github.com/jhelvy/jhelvy.github.io/)             |
-| The Mockup Blog                 | [site](https://themockup.netlify.app/)                         | [source](https://github.com/jthomasmock/radix_themockup)          |
-| Lisa Lendway                    | [site](https://lisalendway.netlify.app/)                       | [source](https://github.com/llendway/lisalendway_distill)         |
-| Emi Tanaka                      | [site](https://emitanaka.org/)                                 | [source](https://github.com/emitanaka/emitanaka.github.io)        |
-| Ijeamaka Anyene                 | [site](https://ijeamaka-anyene.netlify.app/)                   | [source](https://github.com/Ijeamakaanyene/ijeamaka-anyene)       |
-| Before I Sleep                  | [site](https://milesmcbain.xyz/)                               | [source](https://github.com/MilesMcBain/milesmcbain.com/)         |
-| Piping Hot Data                 | [site](https://www.pipinghotdata.com/)                         | [source](https://github.com/shannonpileggi/pipinghotdata_distill) |
-| The Scrapbook                   | [site](https://eliocamp.github.io/scrapbook/)                  | [source](https://github.com/eliocamp/scrapbook)                   |
-| June Choe                       | [site](https://yjunechoe.github.io/)                           | [source](https://github.com/yjunechoe/yjunechoe.github.io)        |
 | Alex K. Gold                    | [site](https://alexkgold.space/)                               | [source](https://github.com/akgold/akg_site)                      |
-| Sciencificity Blog              | [site](https://sciencificity-blog.netlify.app/)                | [source](https://github.com/sciencificity/Blog_Vebash)            |
-| R-Vogg-Blog                     | [site](https://r-vogg-blog.netlify.app/)                       | [source](https://github.com/richardvogg/r-vogg-blog)              |
-| Sharing Your Work with xaringan | [site](https://spcanelon.github.io/xaringan-basics-and-beyond) | [source](https://github.com/spcanelon/xaringan-basics-and-beyond) |
-| jeremydata                      | [site](https://jeremydata.com/)                                | [source](https://github.com/jeremy-allen/jeremydata_blog)         |
-| Jannik Buhr                     | [site](https://jmbuhr.de)                                      | [source](https://github.com/jmbuhr/jmbuhr.github.io)              |
+| Before I Sleep                  | [site](https://milesmcbain.xyz/)                               | [source](https://github.com/MilesMcBain/milesmcbain.com/)         |
+| Emi Tanaka                      | [site](https://emitanaka.org/)                                 | [source](https://github.com/emitanaka/emitanaka.github.io)        |
 | Harry Fisher                    | [site](https://hfshr.xyz)                                      | [source](https://github.com/hfshr/distill_blog)                   |
-| Serdar Balcı                    | [site](https://www.serdarbalci.com/)                           | [source](https://github.com/sbalci/sbalci.github.io/)             |
-| Umair Durrani                   | [site](https://udurrani.netlify.app/)                          | [source](https://github.com/durraniu/udurrani_distill)            |
+| Ijeamaka Anyene                 | [site](https://ijeamaka-anyene.netlify.app/)                   | [source](https://github.com/Ijeamakaanyene/ijeamaka-anyene)       |
+| Jannik Buhr                     | [site](https://jmbuhr.de)                                      | [source](https://github.com/jmbuhr/jmbuhr.github.io)              |
+| jeremydata                      | [site](https://jeremydata.com/)                                | [source](https://github.com/jeremy-allen/jeremydata_blog)         |
+| John Paul Helveston             | [site](https://jhelvy.github.io/)                              | [source](https://github.com/jhelvy/jhelvy.github.io/)             |
+| June Choe                       | [site](https://yjunechoe.github.io/)                           | [source](https://github.com/yjunechoe/yjunechoe.github.io)        |
 | Kaija Gahm                      | [site](https://kaijagahm.netlify.app/)                         | [source](https://github.com/kaijagahm/kaija_bean)                 |
+| Lisa Lendway                    | [site](https://lisalendway.netlify.app/)                       | [source](https://github.com/llendway/lisalendway_distill)         |
+| Piping Hot Data                 | [site](https://www.pipinghotdata.com/)                         | [source](https://github.com/shannonpileggi/pipinghotdata_distill) |
+| R-Vogg-Blog                     | [site](https://r-vogg-blog.netlify.app/)                       | [source](https://github.com/richardvogg/r-vogg-blog)              |
+| Sciencificity Blog              | [site](https://sciencificity-blog.netlify.app/)                | [source](https://github.com/sciencificity/Blog_Vebash)            |
+| Serdar Balcı                    | [site](https://www.serdarbalci.com/)                           | [source](https://github.com/sbalci/sbalci.github.io/)             |
+| Sharing Your Work with xaringan | [site](https://spcanelon.github.io/xaringan-basics-and-beyond) | [source](https://github.com/spcanelon/xaringan-basics-and-beyond) |
+| The Mockup Blog                 | [site](https://themockup.netlify.app/)                         | [source](https://github.com/jthomasmock/radix_themockup)          |
+| The Scrapbook                   | [site](https://eliocamp.github.io/scrapbook/)                  | [source](https://github.com/eliocamp/scrapbook)                   |
+| Umair Durrani                   | [site](https://udurrani.netlify.app/)                          | [source](https://github.com/durraniu/udurrani_distill)            |

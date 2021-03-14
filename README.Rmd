@@ -56,5 +56,6 @@ sites %>%
     source = paste0("[source](", source, ")"),
   ) %>% 
   select(name, site, source) %>% 
+  arrange(name) %>% 
   knitr::kable()
 ```
