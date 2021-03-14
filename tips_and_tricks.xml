@@ -28,5 +28,13 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://jhelvy.github.io/distillery/posts/enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
     </item>
+    <item>
+      <title>Distill it down</title>
+      <dc:creator>Lisa Lendway</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down</link>
+      <description>My experiences with building webpages and websites using some of the simpler R Studio tools.</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down</guid>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>
