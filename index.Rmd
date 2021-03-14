@@ -4,6 +4,8 @@ image: images/distillery.png
 links:
   - label: GitHub
     url: "https://github.com/jhelvy/distillery"
+  - label: Tips & Tricks
+    url: "tips_and_tricks.html"
   - label: Showcase
     url: "showcase.html"
 base_url: https://jhelvy.github.io/distillery
