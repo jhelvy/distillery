@@ -12,24 +12,17 @@ License: CC-BY-SA
 Encoding: UTF-8
 Imports:
     distill,
-    emo,
-    fontawesome,
     here,
     htmltools,
     janitor,
-    kableExtra,
     knitr,
     postcards,
     remotes,
     rmarkdown,
     roxygen2,
     tidyverse,
-    viridis,
     webshot2,
     yaml
 Remotes:
-    hadley/emo,
-    rstudio/fontawesome,
-    haozhu233/kableExtra,
     rstudio/rmarkdown,
     rstudio/webshot2
