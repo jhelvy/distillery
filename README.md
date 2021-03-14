@@ -5,6 +5,10 @@ Welcome to the distillery: a
 [distill](https://rstudio.github.io/distill/) website showcasing other
 distill websites and blogs!
 
+If you have a distill blog, we would love you have you included in this list!
+This is an inclusive community of blogs for everyone to learn from. Please,
+add yourself!
+
 ## How to add your distill blog / website to the showcase:
 
 **Method 1**: [Open an
