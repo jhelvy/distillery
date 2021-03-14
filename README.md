@@ -55,6 +55,9 @@ with a screen shot and the links to the site and source.
   - Piping Hot Data: [site](https://www.pipinghotdata.com/) |
     [source](https://github.com/shannonpileggi/pipinghotdata_distill)
 
+  - R-Vogg-Blog: [site](https://r-vogg-blog.netlify.app/) |
+    [source](https://github.com/richardvogg/r-vogg-blog)
+
   - Sciencificity Blog: [site](https://sciencificity-blog.netlify.app/)
     | [source](https://github.com/sciencificity/Blog_Vebash)
 
