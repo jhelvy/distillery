@@ -8,5 +8,14 @@
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Making a Darkmode for your distill site</title>
+      <dc:creator>Jannik Buhr</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode</link>
+      <description>We build a darkmode for our distill site using css and a bit of java script.</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode</guid>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-14-darkmode/images/cookies.png" medium="image" type="image/png" width="350" height="263"/>
+    </item>
   </channel>
 </rss>
