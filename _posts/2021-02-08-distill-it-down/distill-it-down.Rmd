@@ -8,6 +8,7 @@ description: |
 output:
   distill::distill_article:
     self_contained: false
+preview: images/strawberry-wd.png
 photo:
   author: Raw Pixel
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
