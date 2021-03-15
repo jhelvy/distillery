@@ -51,6 +51,8 @@ with a screen shot and the links to the site and source\!
 | June Choe                       | [site](https://yjunechoe.github.io/)                           | [source](https://github.com/yjunechoe/yjunechoe.github.io)        |
 | Kaija Gahm                      | [site](https://kaijagahm.netlify.app/)                         | [source](https://github.com/kaijagahm/kaija_bean)                 |
 | Lisa Lendway                    | [site](https://lisalendway.netlify.app/)                       | [source](https://github.com/llendway/lisalendway_distill)         |
+| LiteralFightNerd                | [site](https://literalfightnerd.com/)                          | [source](https://github.com/NateLatshaw/LiteralFightNerd)         |
+| Max Rohde                       | [site](https://maximilianrohde.com)                            | [source](https://github.com/maxdrohde/blog)                       |
 | Piping Hot Data                 | [site](https://www.pipinghotdata.com/)                         | [source](https://github.com/shannonpileggi/pipinghotdata_distill) |
 | R-Vogg-Blog                     | [site](https://r-vogg-blog.netlify.app/)                       | [source](https://github.com/richardvogg/r-vogg-blog)              |
 | Sciencificity Blog              | [site](https://sciencificity-blog.netlify.app/)                | [source](https://github.com/sciencificity/Blog_Vebash)            |
