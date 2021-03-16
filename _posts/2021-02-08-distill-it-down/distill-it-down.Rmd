@@ -8,13 +8,18 @@ description: |
 output:
   distill::distill_article:
     self_contained: false
-preview: images/strawberry-wd.png
+preview: images/strawberry-thumbnail.png
 photo:
   author: Raw Pixel
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
 ---
 
-> Note: This post was originally written by [Lisa Lendway](https://lisalendway.netlify.app/) on the RStudio Education blog - see the original post [here](https://education.rstudio.com/blog/2021/02/distill-it-down/)
+> Note: This post was originally written by [Lisa Lendway](https://lisalendway.netlify.app/) on the [RStudio Education blog](https://education.rstudio.com/blog/) - see the original post [here](https://education.rstudio.com/blog/2021/02/distill-it-down/)
+
+<center>
+<img src="images/strawberry-wd.png" width=100%>
+</center>
+<span style="font-size:0.8rem;">Photo by [Raw Pixel](https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird)</span>
 
 ## Introduction
 

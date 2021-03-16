@@ -89,10 +89,11 @@ create_footer <- function() {
   height <- 14
 
   footer <- htmltools::HTML(paste0(
+  htmltools::br(),
   fontawesome::fa('wrench', fill = fill, height = height), ' Made with ',
   fontawesome::fa('heart', fill = fill, height = height), ', [',
   fontawesome::fa('code-branch', fill = fill, height = height),
-  '](https://github.com/jhelvy/distillery), and the [',
+  '](https://github.com/jhelvy), and the [',
   fontawesome::fa('r-project', fill = fill, height = height),
   '](https://cran.r-project.org/) ',
   '[distill](https://github.com/rstudio/distill) package\n',
