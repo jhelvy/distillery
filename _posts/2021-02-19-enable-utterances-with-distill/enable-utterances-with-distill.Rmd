@@ -1,0 +1,138 @@
+---
+title: "Enable utterances with distill"
+description: |
+  Interested in giving your readers the ability to comment on your {distill} blog? Look no further than utteranc.es.
+author:
+  - name: Vebash Naidoo
+    url: https://twitter.com/Sciencificity
+date: 2021-02-20
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+    code_folding: false
+preview: preview2_small_.jpg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE,
+                      warning = FALSE)
+```
+
+> Note: This post was originally written by [Vebash Naidoo](https://twitter.com/Sciencificity) on the [Sciencificity's Blog](https://sciencificity-blog.netlify.app/) - see the original post [here](https://sciencificity-blog.netlify.app/posts/2021-02-20-enable-utterances-with-distill/)
+
+<!-- <span>Photo by <a href="https://unsplash.com/@dangnambinh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">binh dang nam</a> on <a href="https://unsplash.com/s/photos/comments?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
+
+<!-- <span>Photo by <a href="https://unsplash.com/@john_cameron?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John Cameron</a> on <a href="https://unsplash.com/s/photos/comments?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+-->
+
+<!-- <span>Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/s/photos/comments?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
+
+<img src = 1.png  width = 600px>
+
+# Allow readers to comment on your blog posts
+
+You may be interested, like I was, in allowing reader comments for your {distill} blog posts.
+
+Upon researching the best way, I found that there was some negativity towards some comment platforms, and heard that [utterances](https://utteranc.es/) was a good alternative for now. Thanks go to [Maëlle Salmon](https://twitter.com/ma_salmon) - during her session on [blogging, for R-Ladies Johannesburg](https://www.youtube.com/watch?v=Xyc4-bJjdys), she used `utterances` on her [teaching site](https://rmd-blogging-jozi.netlify.app/promotion/further-resources/), and also taught us about it.
+
+## Acknowledgements
+
+I'd like to make my acknowledgements up front, because this post is just a synthesis of two excellent posts from [Maëlle Salmon](https://twitter.com/ma_salmon) and [Miles McBain](https://twitter.com/milesmcbain).
+
+- [Goodbye Disqus! Hello, Utterances](https://masalmon.eu/2019/10/02/disqus/)
+- [How I got utteranc.es working on my rmarkdown distill blog](https://milesmcbain.micro.blog/2020/09/04/how-i-got.html)
+- This [distill issue](https://github.com/rstudio/distill/issues/155), was also a big help. Thanks to [Taras Kaduk](https://twitter.com/taraskaduk).
+
+Reading their posts will give you the tools you need to have comments on your blog posts using `utterances`. The below is a summary from these resources.
+
+## utterances
+
+"`utterances` is a comments widget built on GitHub issues".
+
+1. To set it up you need to first [install the `utterances` GitHub app](https://github.com/apps/utterances), if you have not already done so.
+1. You then need to allow the app access to your __blog repository (repo)__ in GitHub. My blog repo is named `Blog_Vebash` (inspired, eh `r emo::ji("hush")`).
+
+      <img src = utterances1.JPG  width = 800px alt="Give utterances app access to your blog">
+
+1. In GitHub, navigate to the `Issues` tab in your Blog's repo, and open the <span style="color: black;background-color:#FDFD96">`Labels`</span> section as highlighted below.
+
+      <img src = utterances2.JPG  width = 800px alt="Add a label in Issues part I">
+
+1. Choose <span style="color: #fbfffe;background-color:#2ea44f">__New label__</span> to add a label for the *issue* that will serve as your blog's comments. I added mine as:
+
+    <pre>
+      <span style="color: black;background-color:#E7CEF2"><b>comments 💬</b></span>
+    </pre>
+
+    <img src = utterances3.JPG  width = 800px alt="Add a label in Issues part II">
+
+## HTML File in RStudio Project
+
+We need to add an `.html` file that contains the information for the `utterances` app. Like [Miles](https://milesmcbain.micro.blog/2020/09/04/how-i-got.html) did, I named mine __utterances.html__.
+
+1. Create an `utterances.html` file as shown below, with your blog repo details in the place of the one noted there. Here is [mine](https://github.com/sciencificity/Blog_Vebash/blob/main/utterances.html), copied nearly directly from [Mile's](https://github.com/MilesMcBain/milesmcbain.com/blob/master/utterances.html).
+
+        ```
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            if (!/posts/.test(location.pathname)) {
+              return;
+            }
+
+            var script = document.createElement("script");
+            script.src = "https://utteranc.es/client.js";
+            script.setAttribute("repo", "sciencificity/Blog_Vebash");
+            script.setAttribute("issue-term", "title");
+            script.setAttribute("crossorigin", "anonymous");
+            script.setAttribute("label", "comments 💬");
+            script.setAttribute("theme", "github-light");
+
+            /* wait for article to load, append script to article element */
+            var observer = new MutationObserver(function (mutations, observer) {
+              var article = document.querySelector("d-article");
+              if (article) {
+                observer.disconnect();
+                /* HACK: article scroll */
+                article.setAttribute("style", "overflow-y: hidden");
+                article.appendChild(script);
+              }
+            });
+
+            observer.observe(document.body, { childList: true });
+          });
+        </script>
+        ```
+
+  <aside>
+  You may also follow [Taras Kaduk's advice](https://github.com/rstudio/distill/issues/155) and amend the `d-article`, in the `querySelector`, to `d-appendix`, if you want your comments to appear after the appendix, instead of between the article and the appendix.
+  </aside>
+
+2. Place __utterances.html__ in your main blog folder.
+
+    <img src = utterances4.JPG  width = 800px alt="Place your utterances.html file in your main blog folder">
+
+
+3. In your <span style="color: black;background-color:#FDFD96"><b>_site.yml</b></span> file add the `includes` part under your output format YAML. Now comments using `utterances` is available for all your blog posts.
+
+    ```
+    output:
+      distill::distill_article:
+        includes:
+          in_header: utterances.html
+    ```
+
+
+## Someone commented `r emo::ji("tada")`
+
+- To comment a reader has to log into their GitHub account, and give the `utterances` app permission.
+- When a reader comments it opens a `comment` issue in your Blog's GitHub repo via the `utterances-bot`.
+- You may respond on your blog post directly, or in the GitHub repo's `Issues` page.
+- If you do it on the `Issues` page, you may also close the issue there.
+- As [Maëlle remarks](https://masalmon.eu/2019/10/02/disqus/) the downside is perhaps that your reader needs a GitHub account. I am hopeful this will not be too big of a deterrent for readers. If it is, don't hesitate to reach out on [Twitter](https://twitter.com/Sciencificity) - I am interested to hear your opinion.
+
+#### Happy {distill} Blogging
+
+`r emo::ji("dance")`
