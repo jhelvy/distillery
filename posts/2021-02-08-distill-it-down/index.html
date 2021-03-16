@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -103,9 +102,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="My experiences with building webpages and websites using some of the simpler R Studio tools."/>
 <meta property="og:url" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"/>
-<meta property="og:image" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-wd.png"/>
-<meta property="og:image:width" content="700"/>
-<meta property="og:image:height" content="200"/>
+<meta property="og:image" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png"/>
+<meta property="og:image:width" content="400"/>
+<meta property="og:image:height" content="400"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="the distillery"/>
 
@@ -114,9 +113,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="the distillery: Distill it down"/>
 <meta property="twitter:description" content="My experiences with building webpages and websites using some of the simpler R Studio tools."/>
 <meta property="twitter:url" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"/>
-<meta property="twitter:image" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-wd.png"/>
-<meta property="twitter:image:width" content="700"/>
-<meta property="twitter:image:height" content="200"/>
+<meta property="twitter:image" content="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png"/>
+<meta property="twitter:image:width" content="400"/>
+<meta property="twitter:image:height" content="400"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="the distillery: Distill it down"/>
@@ -129,12 +128,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","author","date","categories","description","output","preview","photo","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Distill it down"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Lisa Lendway"]}]}]},{"type":"character","attributes":{},"value":["2021-02-08"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["My experiences with building webpages and websites using some of the simpler R Studio tools."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/strawberry-wd.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["author","url"]}},"value":[{"type":"character","attributes":{},"value":["Raw Pixel"]},{"type":"character","attributes":{},"value":["https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird"]}]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","author","date","categories","description","output","preview","photo","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Distill it down"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Lisa Lendway"]}]}]},{"type":"character","attributes":{},"value":["2021-02-08"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["My experiences with building webpages and websites using some of the simpler R Studio tools."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/strawberry-thumbnail.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["author","url"]}},"value":[{"type":"character","attributes":{},"value":["Raw Pixel"]},{"type":"character","attributes":{},"value":["https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird"]}]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"]},{"type":"character","attributes":{},"value":["https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["distill-it-down_files/anchor-4.2.2/anchor.min.js","distill-it-down_files/bowser-1.9.3/bowser.min.js","distill-it-down_files/distill-2.2.21/template.v2.js","distill-it-down_files/jquery-1.11.3/jquery.min.js","distill-it-down_files/popper-2.6.0/popper.min.js","distill-it-down_files/tippy-6.2.7/tippy-bundle.umd.min.js","distill-it-down_files/tippy-6.2.7/tippy-light-border.css","distill-it-down_files/tippy-6.2.7/tippy.css","distill-it-down_files/tippy-6.2.7/tippy.umd.min.js","distill-it-down_files/webcomponents-2.0.0/webcomponents.js","images/blogdown_start.png","images/rmarkdown_mountain.png","images/strawberry-wd.png"]}
+  {"type":"character","attributes":{},"value":["distill-it-down_files/anchor-4.2.2/anchor.min.js","distill-it-down_files/bowser-1.9.3/bowser.min.js","distill-it-down_files/distill-2.2.21/template.v2.js","distill-it-down_files/header-attrs-2.7/header-attrs.js","distill-it-down_files/jquery-1.11.3/jquery.min.js","distill-it-down_files/popper-2.6.0/popper.min.js","distill-it-down_files/tippy-6.2.7/tippy-bundle.umd.min.js","distill-it-down_files/tippy-6.2.7/tippy-light-border.css","distill-it-down_files/tippy-6.2.7/tippy.css","distill-it-down_files/tippy-6.2.7/tippy.umd.min.js","distill-it-down_files/webcomponents-2.0.0/webcomponents.js","images/blogdown_start.png","images/rmarkdown_mountain.png","images/strawberry-thumbnail.png","images/strawberry-wd.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1938,7 +1937,7 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       18px;
-  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-color:       #ededeb;
   --text-size:        15px;
   --hover-color:      white;
   --bkgd-color:       #0F2E3D;
@@ -2108,6 +2107,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2208,8 +2208,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-article">
 <blockquote>
-<p>Note: This post was originally written by <a href="https://lisalendway.netlify.app/">Lisa Lendway</a> on the RStudio Education blog - see the original post <a href="https://education.rstudio.com/blog/2021/02/distill-it-down/">here</a></p>
+<p>Note: This post was originally written by <a href="https://lisalendway.netlify.app/">Lisa Lendway</a> on the <a href="https://education.rstudio.com/blog/">RStudio Education blog</a> - see the original post <a href="https://education.rstudio.com/blog/2021/02/distill-it-down/">here</a></p>
 </blockquote>
+<center>
+<img src="images/strawberry-wd.png" width=100%>
+</center>
+<p><span style="font-size:0.8rem;">Photo by <a href="https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird">Raw Pixel</a></span></p>
 <h2 id="introduction">Introduction</h2>
 <p>This post describes my journey to creating a personal website using the distill package. Along the way, I took some detours using R Markdown to create webpages and a website for a course I teach. This is not a how-to tutorial (although I will provide links to resources I used to help me along the way) but rather a reflection on why I made the choices I made. I hope this might help some of you decide which tools you might use in creating your own website.</p>
 <h2 id="my-blogdown-fail">My blogdown fail</h2>
@@ -2217,7 +2221,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>Then, like many in the US and other parts of the world experienced, the news came that I would be teaching online for the rest of the semester, my husband would be working from home, and we’d have our elementary school kids home learning, too. So, creating my website took a backseat. I gave myself about 2 hours one afternoon to try to get a blogdown site up and running, but I kept getting bogged down in the details and quickly gave up.</p>
 <center>
 <figure>
-<img src="images/blogdown_start.png" alt="" /><figcaption>My blogdown attempt</figcaption>
+<img src="images/blogdown_start.png" alt="My blogdown attempt" /><figcaption aria-hidden="true">My blogdown attempt</figcaption>
 </figure>
 </center>
 <p>I just looked back at my attempt and it’s not as terrible as I initially thought. But, for me, the blogdown site was more than I needed. Ideally, I wanted something simpler, but what else was there?</p>
@@ -2235,7 +2239,7 @@ I want to use this now but just can't find the time. But thanks for sharing. I'v
 <p>Fast forward to mid-May 2020. My summer break had started, and one of the first things I did was finally watch the <em>Sharing on Short Notice</em> webinar. I loved their analogy of “Climbing R Markdown Mountain” and was surprised to learn that the two tools I had heard of, bookdown and blogdown, were two of the more complex tools. This webinar was also where I heard of <a href="https://www.netlify.com/">Netlify</a> (a platform for easily deploying a website) for the first time.</p>
 <center>
 <figure>
-<img src="images/rmarkdown_mountain.png" alt="" /><figcaption>Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon</figcaption>
+<img src="images/rmarkdown_mountain.png" alt="Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon" /><figcaption aria-hidden="true">Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon</figcaption>
 </figure>
 </center>
 <p>It wasn’t until August when I finally put the tools to action. I was in the thick of prepping course materials for my Introductory Data Science course. I knew I wanted to put them online both to make them easier for my students to access and to make them accessible to people other than my students. In the past, I had just uploaded either R Markdown files or knitted html files (with the Download Rmd option) to the course moodle site (moodle is a course management system).</p>
@@ -2329,10 +2333,7 @@ I love the distill package! 🙌 🎊Distill empowered me to start sharing <a hr
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-  <p><i class="fas fa-wrench"/> Made with <i class="far fa-heart"/>, <a href="https://github.com/jhelvy/distillery"><i class="fas fa-code-branch"/></a>, and the <a href="https://cran.r-project.org/"><i class="fab fa-r-project"/></a><a href="https://github.com/rstudio/distill"> distill</a> package.</p>
-  <p>
-    <span style="font-size:0.8rem;">Last updated on March 15, 2021</span>
-  </p>
+  <p><br/><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M507.73 109.1c-2.24-9.03-13.54-12.09-20.12-5.51l-74.36 74.36-67.88-11.31-11.31-67.88 74.36-74.36c6.62-6.62 3.43-17.9-5.66-20.16-47.38-11.74-99.55.91-136.58 37.93-39.64 39.64-50.55 97.1-34.05 147.2L18.74 402.76c-24.99 24.99-24.99 65.51 0 90.5 24.99 24.99 65.51 24.99 90.5 0l213.21-213.21c50.12 16.71 107.47 5.68 147.37-34.22 37.07-37.07 49.7-89.32 37.91-136.73zM64 472c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"/></svg> Made with <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>, <a href="https://github.com/jhelvy"><svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:14;width:0.75em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"/></svg></a>, and the <a href="https://cran.r-project.org/"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:14;width:1.13em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a> <a href="https://github.com/rstudio/distill">distill</a> package <br/><span style="font-size:0.8rem;">Last updated on March 16, 2021</span></p>
   <!-- Add function to open links to external links in new tab, from: -->
   <!-- https://yihui.name/en/2018/09/target-blank/ -->
   <script src="js/external-link.js"/>

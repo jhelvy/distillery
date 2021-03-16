@@ -84,20 +84,27 @@ icon_link <- function(
 }
 
 create_footer <- function() {
+
+  fill <- '#ededeb'
+  height <- 14
+
   footer <- htmltools::HTML(paste0(
-    '<i class="fas fa-wrench"></i> Made with <i class="far fa-heart"></i>, ',
-    '<a href="https://github.com/jhelvy/distillery">',
-    '<i class="fas fa-code-branch"></i></a>',
-    ', and the <a href="https://cran.r-project.org/">',
-    '<i class="fab fa-r-project"></i></a>',
-    '<a href="https://github.com/rstudio/distill"> distill</a> package.',
-    '\n\n',
-    '<span style="font-size:0.8rem;">Last updated ',
-    'on ', format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
-    '<!-- Add function to open links to external links in new tab, from: -->',
-    '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
-    '<script src="js/external-link.js"></script>'
+  htmltools::br(),
+  fontawesome::fa('wrench', fill = fill, height = height), ' Made with ',
+  fontawesome::fa('heart', fill = fill, height = height), ', [',
+  fontawesome::fa('code-branch', fill = fill, height = height),
+  '](https://github.com/jhelvy), and the [',
+  fontawesome::fa('r-project', fill = fill, height = height),
+  '](https://cran.r-project.org/) ',
+  '[distill](https://github.com/rstudio/distill) package\n',
+  htmltools::br(),
+  '<span style="font-size:0.8rem;">Last updated ',
+  'on ', format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
+  '<!-- Add function to open links to external links in new tab, from: -->',
+  '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
+  '<script src="js/external-link.js"></script>'
   ))
+
   save_raw(footer, "_footer.html")
 }
 

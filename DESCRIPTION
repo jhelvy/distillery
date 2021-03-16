@@ -12,6 +12,7 @@ License: CC-BY-SA
 Encoding: UTF-8
 Imports:
     distill,
+    fontawesome,
     here,
     htmltools,
     janitor,
@@ -24,5 +25,6 @@ Imports:
     webshot2,
     yaml
 Remotes:
+    rstudio/fontawesome,
     rstudio/rmarkdown,
     rstudio/webshot2
