@@ -1,5 +1,5 @@
 ---
-title: "welcome to the distillery:"
+title: "Welcome to the distillery!"
 image: images/distillery.png
 links:
   - label: GitHub
@@ -12,7 +12,7 @@ base_url: https://jhelvy.github.io/distillery
 preview: images/distillery.png
 site: distill::distill_website
 output:
-  postcards::jolla
+  postcards::trestles
 ---
 
-a [distill](https://rstudio.github.io/distill/) website showcasing other distill websites and blogs!
+Welcome! The distillery was built for the community of [distill](https://rstudio.github.io/distill/) users to find ways to build and customize their sites and to inspire one another. If you have a distill website or blog, we would love to have it included in the [showcase](https://jhelvy.github.io/distillery/showcase.html)! Have a post about ways to customize or add new features to your blog? We would love to have it included on the [tips & tricks page](https://jhelvy.github.io/distillery/tips_and_tricks.html)! Check out the [site repo](https://github.com/jhelvy/distillery) for details on how to contribute. This is an inclusive community of blogs for everyone to learn from, so please add yourself!

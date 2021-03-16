@@ -11,7 +11,7 @@ creative_commons: CC BY-SA
 navbar:
   search: false
   right:
-    - icon: fa-home
+    - text: "About"
       href: index.html
     - text: "Tips & Tricks"
       href: tips_and_tricks.html
