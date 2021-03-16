@@ -6,15 +6,25 @@
 Site](https://github.com/jhelvy/distillery/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/main.yml)
 <!-- badges: end -->
 
-Welcome to the distillery: a
-[distill](https://rstudio.github.io/distill/) website showcasing other
+Welcome to the [distillery](https://jhelvy.github.io/distillery/): a
+[distill](https://rstudio.github.io/distill/) blog about building
 distill websites and blogs!
 
-If you have a distill blog, we would love to have it included in this
-list! This is an inclusive community of blogs for everyone to learn
-from. Please, add yourself!
+This site was built for the community of distill users to find ways to
+build and customize their sites and to inspire one another. If you have
+a distill website or blog, we would love to have it included in the
+distillery
+[showcase](https://jhelvy.github.io/distillery/showcase.html)! Have a
+post about ways to customize or add new features to your blog? We would
+love to have it included on the distillery [tips & tricks
+page](https://jhelvy.github.io/distillery/tips_and_tricks.html)!
 
-## How to add your distill blog / website to the showcase:
+This is an inclusive community of blogs for everyone to learn from.
+Please, add yourself!
+
+# How to contribute
+
+## Add your distill site to the [showcase](https://jhelvy.github.io/distillery/showcase.html):
 
 ### Method 1
 
@@ -35,7 +45,15 @@ That’s it! Your site will be automatically added to the
 [showcase](https://jhelvy.github.io/distillery/showcase.html), complete
 with a screen shot and the links to the site and source!
 
-### List of sites in showcase:
+## Add a post site to the [tips & tricks page](https://jhelvy.github.io/distillery/tips_and_tricks.html):
+
+[Open an issue](https://github.com/jhelvy/distillery/issues) and add a
+link to your post as well as a link to the post source code. We’ll copy
+over the source files, insert an attribution statement at the top
+linking back to the original post, and then add it to the tips & tricks
+page.
+
+# List of sites in showcase:
 
 | name                            | site                                                           | source                                                            |
 |:--------------------------------|:---------------------------------------------------------------|:------------------------------------------------------------------|
