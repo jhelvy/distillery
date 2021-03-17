@@ -7,7 +7,16 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>M-F-E-O: postcards + distill</title>
+      <dc:creator>Alison Hill</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill</link>
+      <description>The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill</guid>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill/featured.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Making a Darkmode for your distill site</title>
       <dc:creator>Jannik Buhr</dc:creator>
