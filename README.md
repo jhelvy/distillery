@@ -1,5 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
 
 [![Render & Deploy
@@ -8,19 +9,19 @@ Site](https://github.com/jhelvy/distillery/actions/workflows/main.yml/badge.svg?
 
 Welcome to the [distillery](https://jhelvy.github.io/distillery/): a
 [distill](https://rstudio.github.io/distill/) blog about building
-distill websites and blogs!
+distill websites and blogs\!
 
 This site was built for the community of distill users to find ways to
 build and customize their sites and to inspire one another. If you have
 a distill website or blog, we would love to have it included in the
 distillery
-[showcase](https://jhelvy.github.io/distillery/showcase.html)! Have a
+[showcase](https://jhelvy.github.io/distillery/showcase.html)\! Have a
 post about ways to customize or add new features to your blog? We would
 love to have it included on the distillery [tips & tricks
-page](https://jhelvy.github.io/distillery/tips_and_tricks.html)!
+page](https://jhelvy.github.io/distillery/tips_and_tricks.html)\!
 
 This is an inclusive community of blogs for everyone to learn from.
-Please, add yourself!
+Please, add yourself\!
 
 # How to contribute
 
@@ -30,7 +31,7 @@ Please, add yourself!
 
 [Open an issue](https://github.com/jhelvy/distillery/issues) and note
 your site `name`, the `url` to your site, and url to the `source` code
-and we’ll add it to the showcase!
+and we’ll add it to the showcase\!
 
 ### Method 2
 
@@ -39,11 +40,11 @@ If you’re comfortable working with pull requests, follow these steps:
 1.  Fork this repo.
 2.  Add your site to the `sites.csv` in the root directory (include a
     `name`, `url` to the site, and url to the `source`).
-3.  Open a pull request to include your changes!
+3.  Open a pull request to include your changes\!
 
-That’s it! Your site will be automatically added to the
+That’s it\! Your site will be automatically added to the
 [showcase](https://jhelvy.github.io/distillery/showcase.html), complete
-with a screen shot and the links to the site and source!
+with a screen shot and the links to the site and source\!
 
 ## Add a post site to the [tips & tricks page](https://jhelvy.github.io/distillery/tips_and_tricks.html):
 
@@ -56,7 +57,7 @@ page.
 # List of sites in showcase:
 
 | name                            | site                                                           | source                                                            |
-|:--------------------------------|:---------------------------------------------------------------|:------------------------------------------------------------------|
+| :------------------------------ | :------------------------------------------------------------- | :---------------------------------------------------------------- |
 | Alex K. Gold                    | [site](https://alexkgold.space/)                               | [source](https://github.com/akgold/akg_site)                      |
 | Before I Sleep                  | [site](https://milesmcbain.xyz/)                               | [source](https://github.com/MilesMcBain/milesmcbain.com/)         |
 | Data Sci Dani                   | [site](https://datascidani.com/)                               | [source](https://github.com/danielle-b/datascidani2)              |
@@ -72,6 +73,7 @@ page.
 | Lisa Lendway                    | [site](https://lisalendway.netlify.app/)                       | [source](https://github.com/llendway/lisalendway_distill)         |
 | LiteralFightNerd                | [site](https://literalfightnerd.com/)                          | [source](https://github.com/NateLatshaw/LiteralFightNerd)         |
 | Max Rohde                       | [site](https://maximilianrohde.com)                            | [source](https://github.com/maxdrohde/blog)                       |
+| Miha Gazvoda                    | [site](https://mihagazvoda.com/)                               | [source](https://github.com/mihagazvoda/mihagazvoda.com)          |
 | Open Source Football            | [site](https://www.opensourcefootball.com/)                    | [source](https://github.com/mrcaseb/open-source-football)         |
 | Piping Hot Data                 | [site](https://www.pipinghotdata.com/)                         | [source](https://github.com/shannonpileggi/pipinghotdata_distill) |
 | R-Vogg-Blog                     | [site](https://r-vogg-blog.netlify.app/)                       | [source](https://github.com/richardvogg/r-vogg-blog)              |
