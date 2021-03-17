@@ -45,6 +45,15 @@
       <media:content url="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
     </item>
     <item>
+      <title>Misc tricks when migrating from blogdown to distill</title>
+      <dc:creator>Frie Preu</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill</link>
+      <description>Some small things I learned as I migrated my blog from blogdown to distill.</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill</guid>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png" medium="image" type="image/png" width="517" height="238"/>
+    </item>
+    <item>
       <title>Building a blog with distill</title>
       <dc:creator>Thomas Mock</dc:creator>
       <link>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill</link>
