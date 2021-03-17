@@ -44,5 +44,14 @@
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
     </item>
+    <item>
+      <title>Building a blog with distill</title>
+      <dc:creator>Thomas Mock</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill</link>
+      <description>I love simplicity.</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill</guid>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill/modern.jpeg" medium="image" type="image/jpeg"/>
+    </item>
   </channel>
 </rss>
