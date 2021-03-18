@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://jhelvy.github.io/distillery/</loc>
-    <lastmod>2021-03-17T15:30:57+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:45+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/showcase.html</loc>
-    <lastmod>2021-03-17T15:30:57+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:45+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/tips_and_tricks.html</loc>
-    <lastmod>2021-03-17T15:30:57+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:45+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill/</loc>
-    <lastmod>2021-03-17T15:30:56+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2021-03-12-making-a-darkmode-for-your-distill-site/</loc>
-    <lastmod>2021-03-17T15:30:56+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2021-02-19-enable-utterances-with-distill/</loc>
-    <lastmod>2021-03-17T15:30:56+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/</loc>
-    <lastmod>2021-03-17T15:30:56+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill/</loc>
-    <lastmod>2021-03-17T15:30:55+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill/</loc>
-    <lastmod>2021-03-17T15:30:55+00:00</lastmod>
+    <lastmod>2021-03-18T12:34:44+00:00</lastmod>
   </url>
 </urlset>
