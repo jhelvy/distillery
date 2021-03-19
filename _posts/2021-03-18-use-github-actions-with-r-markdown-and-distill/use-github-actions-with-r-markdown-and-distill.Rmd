@@ -13,7 +13,7 @@ output:
     highlight_downlit: true
 ---
 
-> Note: This post was originally written by [Etienne Bacher](https://www.etiennebacher.com/) - see the original post on her blog [here](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/)
+> Note: This post was originally written by [Etienne Bacher](https://www.etiennebacher.com/) - see the original post [here](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/)
 
 *<small> The preview image comes from: https://github.com/marketplace/actions/cancel-workflow-action </small>*
 
@@ -27,7 +27,7 @@ Without GitHub Actions, in addition to modify the CSV file, I would have to clon
 
 But this task is repetitive: apart from the details I add to the CSV file, it can be automated. This is where GitHub Actions comes into play. The idea is that you create a `.yml` file that contains the R code you want to run to render the README. This is what mine looks like:
 
-```{yaml}
+```{yaml, eval=FALSE}
 on:
   push:
     branches: master
@@ -65,7 +65,7 @@ Last but not least, GitHub Actions rendered the README, but the changes are not 
 
 I said this was the `.yaml` file I use on my repo, but I lied a bit. Actually, for my list of JavaScript libraries to be up-to-date, I also need to scrape the [htmlwidgets gallery](https://gallery.htmlwidgets.org/) once in a while. Hence, I use `cron` to run GitHub Actions every Sunday night at 23:59. See [the documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule) to know how to format your schedule. Finally, here's the `.yaml` file I use:
 
-```{yaml}
+```{yaml, eval=FALSE}
 on:
   push:
     branches: master
@@ -107,7 +107,7 @@ One drawback though: since these files are changed on GitHub only, the first thi
 
 To finish this post, here's the `.yml` file for my `distill` website:
 
-```{yaml}
+```{yaml, eval=FALSE}
 on:
   push:
     branches: master
