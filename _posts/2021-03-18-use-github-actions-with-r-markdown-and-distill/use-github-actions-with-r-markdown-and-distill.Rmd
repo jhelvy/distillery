@@ -1,0 +1,148 @@
+---
+title: "Use GitHub actions with R Markdown and Distill"
+description: |
+  How can you automatically render README, Distill website...
+author: Etienne Bacher
+date: 2021-03-19
+preview: gha_image.jpg
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    highlight: pygments
+    highlight_downlit: true
+---
+
+> Note: This post was originally written by [Etienne Bacher](https://www.etiennebacher.com/) - see the original post on her blog [here](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/)
+
+*<small> The preview image comes from: https://github.com/marketplace/actions/cancel-workflow-action </small>*
+
+Sometimes, it is useful to automatically render an R Markdown document or a website, made with [`distill`](https://rstudio.github.io/distill/) for example. In this post, I will present you two cases in which I use GitHub Actions to automatically do that.
+
+# Render a README
+
+One of my GitHub repos is a list of JavaScript libraries that have been adapted in R. You can find the repo [here](https://github.com/etiennebacher/r-js-adaptation). I wanted this list to be easy to update, so that it can be done on GitHub directly. The idea is that when I (or someone else) find a JavaScript library that has been adapted into an R package, I add it to a CSV file on GitHub. The problem is that this CSV file is then used into an R Markdown file, that creates a clean README with all the information.
+
+Without GitHub Actions, in addition to modify the CSV file, I would have to clone the repo, open it in RStudio, render the README, and push it back on GitHub.
+
+But this task is repetitive: apart from the details I add to the CSV file, it can be automated. This is where GitHub Actions comes into play. The idea is that you create a `.yml` file that contains the R code you want to run to render the README. This is what mine looks like:
+
+```{yaml}
+on:
+  push:
+    branches: master
+
+name: Render README
+
+jobs:
+  render:
+    name: Render README
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages("rmarkdown")'
+      - name: Render README
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+      - name: Commit results
+        run: |
+          git commit README.md -m 'Re-build README.Rmd' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
+```
+
+
+The first two parts are quite self-explanatory:
+
+  * the jobs run every time there's a push on the master branch;
+
+  * the name of this process is "Render README".
+
+The third part needs a bit more details. There are some parts that I just copied and pasted from the [R actions repository](https://github.com/r-lib/actions), but basically you can see that first it initiates R and pandoc (`setup-r@v1`, `setup-pandoc@v1`). Then, I run an R script to install the `rmarkdown` package and I use it to render the Rmd file to create `README.md`.
+
+Last but not least, GitHub Actions rendered the README, but the changes are not on the repo yet. Hence, the last step is to commit the changes with a message and to push them on the master branch. Now, every time I change the CSV file on the master branch, the README will be automatically rendered (after a few minutes, since all the actions have to run first).
+
+I said this was the `.yaml` file I use on my repo, but I lied a bit. Actually, for my list of JavaScript libraries to be up-to-date, I also need to scrape the [htmlwidgets gallery](https://gallery.htmlwidgets.org/) once in a while. Hence, I use `cron` to run GitHub Actions every Sunday night at 23:59. See [the documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule) to know how to format your schedule. Finally, here's the `.yaml` file I use:
+
+```{yaml}
+on:
+  push:
+    branches: master
+  schedule:
+    - cron: '59 23 * * 0'
+
+name: Render README
+
+jobs:
+  render:
+    name: Render README
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install rmarkdown
+        run: Rscript -e 'install.packages("rmarkdown")'
+      - name: Render README
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+      - name: Commit results
+        run: |
+          git commit README.md -m 'Re-build README.Rmd' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
+```
+
+
+# Render a Distill website
+
+To automatically render your `distill` website on every push on master branch, the logic is very similar. In my `.yml` file, there are two main differences.
+
+The first one is that I need to install more packages to render my `distill` website. Some will be essential for everyone (e.g `distill`) but other packages won't be (e.g `postcards`).
+
+The second one is more tricky, but could be useful for several people. Before using `distill`, I used `blogdown`. For some reasons (and mostly because `distill` is much easier in my opinion), I switched to `distill`. However, this switch changed a few URLs addresses, for my posts for instance. Therefore, I needed a [`_redirects`](https://yihui.org/en/2017/11/301-redirect/) file to, well, redirect the old URLs to the new ones and prevent 404 errors. The `_redirects` file needs to be in the `_site` folder, because it is the folder that is used by Netlify to build the site. The problem here is that this folder is deleted and re-generated every time `rmarkdown::render_site()` is called, i.e every time the website is locally built. Therefore, the `_redirects` file couldn't just stay there. I had to add it manually after every build.
+
+The solution to that is to automate this in GitHub Actions. After having rendered the website, I just copy `_redirects` from its location on the repo to the `_site` folder. Now, every time I change something on the master branch, the `distill` website is rebuilt, and then the `_redirects` file is added.
+
+One drawback though: since these files are changed on GitHub only, the first thing you have to do when opening your site project in RStudio is to pull the changes (or, like me, you will struggle with merge conflicts).
+
+To finish this post, here's the `.yml` file for my `distill` website:
+
+```{yaml}
+on:
+  push:
+    branches: master
+
+name: Render & Deploy Site
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@master
+
+      - uses: r-lib/actions/setup-pandoc@master
+
+      - name: Install dependencies
+        run: |
+          install.packages("rmarkdown")
+          install.packages("distill")
+          install.packages("postcards")
+          install.packages("devtools")
+          install.packages("fs")
+          devtools::install_github("etiennebacher/ebmisc")
+        shell: Rscript {0}
+
+      - name: Render Site
+        run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
+      - name: Copy redirects
+        run: Rscript -e 'fs::file_copy("_redirects", "_site/_redirects")'
+      - name: Commit results
+        run: |
+          git add -A
+          git commit -m 'Rebuild site' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
+
+```
+
