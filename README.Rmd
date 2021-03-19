@@ -11,16 +11,6 @@ output:
 <!-- badges: end -->
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse   = TRUE,
-  warning    = FALSE,
-  message    = FALSE,
-  comment    = "#>",
-  fig.path   = "images/",
-  fig.retina = 3
-)
-
-# Load functions
 source(file.path("R", "functions.R"))
 ```
 
@@ -54,14 +44,14 @@ That's it! Your site will be automatically added to the [showcase](https://jhelv
 
 # List of sites in showcase:
 
-```{r insert-sitelist, echo=FALSE}
+```{r insert-sitelist, echo=FALSE, message=FALSE, warning=FALSE}
 sites <- read_csv("sites.csv")
-sites %>% 
+sites %>%
   mutate(
     site = paste0("[site](", url, ")"),
     source = paste0("[source](", source, ")"),
-  ) %>% 
-  select(name, site, source) %>% 
-  arrange(name) %>% 
+  ) %>%
+  select(name, site, source) %>%
+  arrange(name) %>%
   knitr::kable()
 ```
