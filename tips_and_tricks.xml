@@ -7,7 +7,16 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Use GitHub actions with R Markdown and Distill</title>
+      <dc:creator>Etienne Bacher</dc:creator>
+      <link>https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</link>
+      <description>How can you automatically render README, Distill website...</description>
+      <guid>https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</guid>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>M-F-E-O: postcards + distill</title>
       <dc:creator>Alison Hill</dc:creator>
