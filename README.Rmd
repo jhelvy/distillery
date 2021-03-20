@@ -7,7 +7,7 @@ output:
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- badges: start -->
-[![Render & Deploy Site](https://github.com/jhelvy/distillery/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/main.yml)
+[![Render & Deploy Site](https://github.com/jhelvy/distillery/actions/workflows/build_site.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/build_site.yml)
 <!-- badges: end -->
 
 ```{r, include = FALSE}
