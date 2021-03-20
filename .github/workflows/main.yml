@@ -35,7 +35,7 @@ jobs:
 
       - name: Render Site
         run: |
-          rmarkdown::render_site(encoding = 'UTF-8')
+          source("build_site.R")
         shell: Rscript {0}
 
       - name: Deploy to GitHub Pages
