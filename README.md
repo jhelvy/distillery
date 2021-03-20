@@ -158,76 +158,81 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/NateLatshaw/LiteralFightNerd">source</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Lore Abad</td>
+<td style="text-align: left;"><a href="https://loreabad6.github.io/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/loreabad6/loreabad6.github.io">source</a></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Max Rohde</td>
 <td style="text-align: left;"><a href="https://maximilianrohde.com">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/maxdrohde/blog">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Miha Gazvoda</td>
 <td style="text-align: left;"><a href="https://mihagazvoda.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mihagazvoda/mihagazvoda.com">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Open Source Football</td>
 <td style="text-align: left;"><a href="https://www.opensourcefootball.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mrcaseb/open-source-football">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Piping Hot Data</td>
 <td style="text-align: left;"><a href="https://www.pipinghotdata.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/shannonpileggi/pipinghotdata_distill">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">R-Vogg-Blog</td>
 <td style="text-align: left;"><a href="https://r-vogg-blog.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/richardvogg/r-vogg-blog">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Sciencificity Blog</td>
 <td style="text-align: left;"><a href="https://sciencificity-blog.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/sciencificity/Blog_Vebash">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Sean Angiolillo</td>
 <td style="text-align: left;"><a href="https://sean.rbind.io">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/seanangio/distill_blog">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Serdar Balcı</td>
 <td style="text-align: left;"><a href="https://www.serdarbalci.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/sbalci/sbalci.github.io/">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Sharing Your Work with xaringan</td>
 <td style="text-align: left;"><a href="https://spcanelon.github.io/xaringan-basics-and-beyond">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/spcanelon/xaringan-basics-and-beyond">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Southern California R Users Groups</td>
 <td style="text-align: left;"><a href="https://socalr.org/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/laRusers/socalr.org">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">The Mockup Blog</td>
 <td style="text-align: left;"><a href="https://themockup.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jthomasmock/radix_themockup">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">The Scrapbook</td>
 <td style="text-align: left;"><a href="https://eliocamp.github.io/scrapbook/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/eliocamp/scrapbook">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Umair Durrani</td>
 <td style="text-align: left;"><a href="https://udurrani.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/durraniu/udurrani_distill">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">werk.statt.codes</td>
 <td style="text-align: left;"><a href="https://werk.statt.codes/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/werkstattcodes/distill_clean">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Westchester Covid-19 Tracking</td>
 <td style="text-align: left;"><a href="https://westchester-covid.mattherman.info/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mfherman/westchester-covid">source</a></td>
