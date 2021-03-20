@@ -86,7 +86,7 @@ icon_link <- function(
 create_footer <- function() {
 
   fill <- '#ededeb'
-  height <- 14
+  height <- '14px'
 
   footer <- htmltools::HTML(paste0(
   'Made with ',
