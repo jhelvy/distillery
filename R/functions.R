@@ -89,8 +89,7 @@ create_footer <- function() {
   height <- 14
 
   footer <- htmltools::HTML(paste0(
-  htmltools::br(),
-  fontawesome::fa('wrench', fill = fill, height = height), ' Made with ',
+  'Made with ',
   fontawesome::fa('heart', fill = fill, height = height), ', [',
   fontawesome::fa('code-branch', fill = fill, height = height),
   '](https://github.com/jhelvy), and the [',
@@ -98,8 +97,8 @@ create_footer <- function() {
   '](https://cran.r-project.org/) ',
   '[distill](https://github.com/rstudio/distill) package\n',
   htmltools::br(),
-  '<span style="font-size:0.8rem;">Last updated ',
-  'on ', format(Sys.Date(), format="%B %d, %Y"), '</span>\n\n',
+  last_updated(), "\n\n",
+
   '<!-- Add function to open links to external links in new tab, from: -->',
   '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
   '<script src="js/external-link.js"></script>'
@@ -108,8 +107,18 @@ create_footer <- function() {
   save_raw(footer, "_footer.html")
 }
 
+last_updated <- function() {
+  return(htmltools::span(
+    paste0(
+      'Last updated on ',
+      format(Sys.Date(), format="%B %d, %Y")
+    ),
+    style = "font-size:0.8rem;")
+  )
+}
+
 save_raw <- function(text, path) {
-  fileConn <- file(path)
-  writeLines(text, fileConn)
-  close(fileConn)
+    fileConn <- file(path)
+    writeLines(text, fileConn)
+    close(fileConn)
 }
