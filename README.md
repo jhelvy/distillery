@@ -98,84 +98,94 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/emitanaka/emitanaka.github.io">source</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Eric Ekholm</td>
+<td style="text-align: left;"><a href="https://www.ericekholm.com/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/ekholme/ee-website">source</a></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Etienne Bacher</td>
 <td style="text-align: left;"><a href="https://www.etiennebacher.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/etiennebacher/personal_website_distill">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Harry Fisher</td>
 <td style="text-align: left;"><a href="https://hfshr.xyz">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/hfshr/distill_blog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Ijeamaka Anyene</td>
 <td style="text-align: left;"><a href="https://ijeamaka-anyene.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/Ijeamakaanyene/ijeamaka-anyene">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Jannik Buhr</td>
 <td style="text-align: left;"><a href="https://jmbuhr.de">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jmbuhr/jmbuhr.github.io">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">jeremydata</td>
 <td style="text-align: left;"><a href="https://jeremydata.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jeremy-allen/jeremydata_blog">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">John Paul Helveston</td>
 <td style="text-align: left;"><a href="https://jhelvy.github.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jhelvy/jhelvy.github.io/">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Joseph Casillas</td>
 <td style="text-align: left;"><a href="https://www.jvcasillas.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jvcasillas/jvcasillas.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">June Choe</td>
 <td style="text-align: left;"><a href="https://yjunechoe.github.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/yjunechoe/yjunechoe.github.io">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Kaija Gahm</td>
 <td style="text-align: left;"><a href="https://kaijagahm.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/kaijagahm/kaija_bean">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Kyle Cuilla</td>
 <td style="text-align: left;"><a href="https://kcanalytics.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/kcuilla/kc_analytics">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Lisa Lendway</td>
 <td style="text-align: left;"><a href="https://lisalendway.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/llendway/lisalendway_distill">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">LiteralFightNerd</td>
 <td style="text-align: left;"><a href="https://literalfightnerd.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/NateLatshaw/LiteralFightNerd">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Lore Abad</td>
 <td style="text-align: left;"><a href="https://loreabad6.github.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/loreabad6/loreabad6.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Max Rohde</td>
 <td style="text-align: left;"><a href="https://maximilianrohde.com">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/maxdrohde/blog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Miha Gazvoda</td>
 <td style="text-align: left;"><a href="https://mihagazvoda.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mihagazvoda/mihagazvoda.com">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Open Source Football</td>
 <td style="text-align: left;"><a href="https://www.opensourcefootball.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mrcaseb/open-source-football">source</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pedro J. Pérez</td>
+<td style="text-align: left;"><a href="https://perezp44.github.io/pjperez.web/01_blog.html">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/perezp44/pjperez.web">source</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Piping Hot Data</td>
