@@ -223,26 +223,31 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/laRusers/socalr.org">source</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Ted Laderas</td>
+<td style="text-align: left;"><a href="https://laderast.github.io">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/laderast/laderast.github.io">source</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">The Mockup Blog</td>
 <td style="text-align: left;"><a href="https://themockup.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jthomasmock/radix_themockup">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">The Scrapbook</td>
 <td style="text-align: left;"><a href="https://eliocamp.github.io/scrapbook/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/eliocamp/scrapbook">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Umair Durrani</td>
 <td style="text-align: left;"><a href="https://udurrani.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/durraniu/udurrani_distill">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">werk.statt.codes</td>
 <td style="text-align: left;"><a href="https://werk.statt.codes/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/werkstattcodes/distill_clean">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Westchester Covid-19 Tracking</td>
 <td style="text-align: left;"><a href="https://westchester-covid.mattherman.info/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mfherman/westchester-covid">source</a></td>
