@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>the distillery</title>
+    <title>The Distillery</title>
     <link>https://distillery.rbind.io</link>
     <atom:link href="https://distillery.rbind.io/tips_and_tricks.xml" rel="self" type="application/rss+xml"/>
     <description>A distill site dedicated to showcasing other distill websites and blogs
