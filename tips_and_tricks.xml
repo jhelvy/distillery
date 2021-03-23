@@ -2,8 +2,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>the distillery</title>
-    <link>https://jhelvy.github.io/distillery</link>
-    <atom:link href="https://jhelvy.github.io/distillery/tips_and_tricks.xml" rel="self" type="application/rss+xml"/>
+    <link>https://distillery.rbind.io</link>
+    <atom:link href="https://distillery.rbind.io/tips_and_tricks.xml" rel="self" type="application/rss+xml"/>
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
@@ -11,65 +11,65 @@
     <item>
       <title>Use GitHub actions with R Markdown and Distill</title>
       <dc:creator>Etienne Bacher</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</link>
+      <link>https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</link>
       <description>How can you automatically render README, Distill website...</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</guid>
+      <guid>https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</guid>
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>M-F-E-O: postcards + distill</title>
       <dc:creator>Alison Hill</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill</link>
+      <link>https://distillery.rbind.io/posts/2021-03-16-postcards-distill</link>
       <description>The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill</guid>
+      <guid>https://distillery.rbind.io/posts/2021-03-16-postcards-distill</guid>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-16-postcards-distill/featured.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://distillery.rbind.io/posts/2021-03-16-postcards-distill/featured.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Making a Darkmode for your distill site</title>
       <dc:creator>Jannik Buhr</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2021-03-12-making-a-darkmode-for-your-distill-site</link>
+      <link>https://distillery.rbind.io/posts/2021-03-12-making-a-darkmode-for-your-distill-site</link>
       <description>We build a darkmode for our distill site using css and a bit of java script.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2021-03-12-making-a-darkmode-for-your-distill-site</guid>
+      <guid>https://distillery.rbind.io/posts/2021-03-12-making-a-darkmode-for-your-distill-site</guid>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2021-03-12-making-a-darkmode-for-your-distill-site/images/cookies.png" medium="image" type="image/png" width="350" height="263"/>
+      <media:content url="https://distillery.rbind.io/posts/2021-03-12-making-a-darkmode-for-your-distill-site/images/cookies.png" medium="image" type="image/png" width="350" height="263"/>
     </item>
     <item>
       <title>Enable utterances with distill</title>
       <dc:creator>Vebash Naidoo</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2021-02-19-enable-utterances-with-distill</link>
+      <link>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</link>
       <description>Interested in giving your readers the ability to comment on your {distill} blog? Look no further than utteranc.es.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2021-02-19-enable-utterances-with-distill</guid>
+      <guid>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</guid>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Distill it down</title>
       <dc:creator>Lisa Lendway</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down</link>
+      <link>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</link>
       <description>My experiences with building webpages and websites using some of the simpler R Studio tools.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down</guid>
+      <guid>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</guid>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
+      <media:content url="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
     </item>
     <item>
       <title>Misc tricks when migrating from blogdown to distill</title>
       <dc:creator>Frie Preu</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill</link>
+      <link>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</link>
       <description>Some small things I learned as I migrated my blog from blogdown to distill.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill</guid>
+      <guid>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</guid>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png" medium="image" type="image/png" width="517" height="238"/>
+      <media:content url="https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png" medium="image" type="image/png" width="517" height="238"/>
     </item>
     <item>
       <title>Building a blog with distill</title>
       <dc:creator>Thomas Mock</dc:creator>
-      <link>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill</link>
+      <link>https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill</link>
       <description>I love simplicity.</description>
-      <guid>https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill</guid>
+      <guid>https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill</guid>
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://jhelvy.github.io/distillery/posts/2020-07-31-building-a-blog-with-distill/modern.jpeg" medium="image" type="image/jpeg"/>
+      <media:content url="https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill/modern.jpeg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
