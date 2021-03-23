@@ -17,6 +17,7 @@ Imports:
     htmltools,
     janitor,
     knitr,
+    metathis,
     postcards,
     remotes,
     rmarkdown,
