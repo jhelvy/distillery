@@ -5,18 +5,17 @@
 Site](https://github.com/jhelvy/distillery/actions/workflows/build_site.yml/badge.svg?branch=main)](https://github.com/jhelvy/distillery/actions/workflows/build_site.yml)
 <!-- badges: end -->
 
-Welcome to the [distillery](https://jhelvy.github.io/distillery/): a
+Welcome to the [distillery](https://distillery.rbind.io/): a
 [distill](https://rstudio.github.io/distill/) blog about building
 distill websites and blogs!
 
 This site was built for the community of distill users to find ways to
 build and customize their sites and to inspire one another. If you have
 a distill website or blog, we would love to have it included in the
-distillery
-[showcase](https://jhelvy.github.io/distillery/showcase.html)! Have a
+distillery [showcase](https://distillery.rbind.io/showcase.html)! Have a
 post about ways to customize or add new features to your blog? We would
 love to have it included on the distillery [tips & tricks
-page](https://jhelvy.github.io/distillery/tips_and_tricks.html)!
+page](https://distillery.rbind.io/tips_and_tricks.html)!
 
 This is an inclusive community of blogs for everyone to learn from.
 Please, add yourself!
@@ -24,8 +23,8 @@ Please, add yourself!
 How to contribute
 =================
 
-Add your distill site to the [showcase](https://jhelvy.github.io/distillery/showcase.html):
--------------------------------------------------------------------------------------------
+Add your distill site to the [showcase](https://distillery.rbind.io/showcase.html):
+-----------------------------------------------------------------------------------
 
 ### Method 1
 
@@ -43,11 +42,11 @@ If you’re comfortable working with pull requests, follow these steps:
 3.  Open a pull request to include your changes!
 
 That’s it! Your site will be automatically added to the
-[showcase](https://jhelvy.github.io/distillery/showcase.html), complete
-with a screen shot and the links to the site and source!
+[showcase](https://distillery.rbind.io/showcase.html), complete with a
+screen shot and the links to the site and source!
 
-Add a post site to the [tips & tricks page](https://jhelvy.github.io/distillery/tips_and_tricks.html):
-------------------------------------------------------------------------------------------------------
+Add a post site to the [tips & tricks page](https://distillery.rbind.io/tips_and_tricks.html):
+----------------------------------------------------------------------------------------------
 
 [Open an issue](https://github.com/jhelvy/distillery/issues) and add a
 link to your post as well as a link to the post source code. We’ll copy
