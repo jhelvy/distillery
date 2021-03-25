@@ -1,12 +1,23 @@
 library(tidyverse)
 
-clean_sites <- function(sites) {
+clean_sites <- function(sites, check_url = FALSE) {
+  
+    if (isTRUE(check_url)) {
+      sites <- sites %>% 
+        mutate(
+          url_exists = RCurl::url.exists(url)
+        ) %>% 
+        filter(url_exists == TRUE) %>% 
+        select(-url_exists)
+    }
+  
     sites <- sites %>%
         mutate(
             name_clean = clean_name(name),
             path_png = file.path("images", "sites", paste0(name_clean, ".png"))
         ) %>%
         arrange(name)
+    
     return(sites)
 }
 
@@ -21,18 +32,27 @@ clean_name <- function(x) {
     return(x)
 }
 
-update_screenshots <- function(sites) {
-    for (i in seq_len(nrow(sites))) {
-        site <- sites[i,]
-        if (!file.exists(site$path_png)) {
-            screenshot <- webshot2::webshot(
-                site$url,
-                vwidth = 1200,
-                vheight = floor(1200*0.65),
-                cliprect = "viewport",
-                file = site$path_png)
-        }
+update_screenshots <- function(sites, update_all = FALSE) {
+  for (i in seq_len(nrow(sites))) {
+    site <- sites[i,]
+    if (update_all == TRUE) {
+      webshot2::webshot(
+        site$url,
+        vwidth = 1200,
+        vheight = floor(1200*0.65),
+        cliprect = "viewport",
+        file = site$path_png)
+    } else {
+      if (!file.exists(site$path_png)) {
+        webshot2::webshot(
+          site$url,
+          vwidth = 1200,
+          vheight = floor(1200*0.65),
+          cliprect = "viewport",
+          file = site$path_png)
+      }
     }
+  }
 }
 
 make_rmd_chunks <- function(sites, image_width = 600) {

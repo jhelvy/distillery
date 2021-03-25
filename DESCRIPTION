@@ -24,7 +24,8 @@ Imports:
     roxygen2,
     tidyverse,
     webshot2,
-    yaml
+    yaml,
+    RCurl
 Remotes:
     rstudio/fontawesome,
     rstudio/rmarkdown,
