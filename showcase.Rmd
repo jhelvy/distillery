@@ -7,6 +7,9 @@ output:
     toc: true
 base_url: https://distillery.rbind.io
 preview: images/distillery.png
+params:
+  update_all: FALSE
+  check_url: FALSE
 ---
 
 ```{r setup, include=FALSE}
@@ -21,8 +24,8 @@ source(file.path("R", "functions.R"))
 ```
 
 ```{r build-content, include=FALSE}
-sites <- clean_sites(read_csv("sites.csv"))
-update_screenshots(sites)
+sites <- clean_sites(read_csv("sites.csv"), params$check_url)
+update_screenshots(sites, params$update_all)
 rmd_chunks <- make_rmd_chunks(sites, image_width = 600)
 ```
 
