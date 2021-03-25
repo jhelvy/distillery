@@ -5,7 +5,7 @@ description: |
 output:
   distill::distill_article:
     toc: true
-base_url: https://jhelvy.github.io/distillery
+base_url: https://distillery.rbind.io
 preview: images/distillery.png
 ---
 

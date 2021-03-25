@@ -1,11 +1,10 @@
-name: "the distillery"
-title: "the distillery"
+name: "The Distillery"
+title: "The Distillery"
 theme: css/theme.css
 description: |
   A distill site dedicated to showcasing other distill websites and blogs
 output_dir: _site
-base_url: https://jhelvy.github.io/distillery
-preview: images/distillery.png
+base_url: https://distillery.rbind.io
 repository_url: https://github.com/jhelvy/distillery
 creative_commons: CC BY-SA
 navbar:

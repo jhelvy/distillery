@@ -8,11 +8,32 @@ links:
     url: "tips_and_tricks.html"
   - label: Showcase
     url: "showcase.html"
-base_url: https://jhelvy.github.io/distillery
+base_url: https://distillery.rbind.io/
 preview: images/distillery.png
 site: distill::distill_website
 output:
   postcards::trestles
 ---
 
-Welcome! The distillery was built for the community of [distill](https://rstudio.github.io/distill/) users to find ways to build and customize their sites and to inspire one another. If you have a distill website or blog, we would love to have it included in the [showcase](https://jhelvy.github.io/distillery/showcase.html)! Have a post about ways to customize or add new features to your blog? We would love to have it included on the [tips & tricks page](https://jhelvy.github.io/distillery/tips_and_tricks.html)! Check out the [site repo](https://github.com/jhelvy/distillery) for details on how to contribute. This is an inclusive community of blogs for everyone to learn from, so please add yourself!
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "A distill blog and showcase about building distill websites and blogs!"
+  ) %>% 
+  meta_name("github-repo" = "jhelvy/distillery") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "The Distillery",
+    url = "https://distillery.rbind.io/",
+    image = "https://distillery.rbind.io/images/distillery.png",
+    image_alt = "The distillery hex sticker",
+    og_type = "blog",
+    og_author = c("John Helveston"),
+    twitter_card_type = "summary",
+    twitter_creator = "@JohnHelveston"
+  )
+```
+
+Welcome! The distillery was built for the community of [distill](https://rstudio.github.io/distill/) users to find ways to build and customize their sites and to inspire one another. If you have a distill website or blog, we would love to have it included in the [showcase](https://distillery.rbind.io/showcase.html)! Have a post about ways to customize or add new features to your blog? We would love to have it included on the [tips & tricks page](https://distillery.rbind.io/tips_and_tricks.html)! Check out the [site repo](https://github.com/jhelvy/distillery) for details on how to contribute. This is an inclusive community of blogs for everyone to learn from, so please add yourself!

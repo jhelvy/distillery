@@ -1,0 +1,136 @@
+---
+title: "Misc tricks when migrating from blogdown to distill"
+description: |
+  Some small things I learned as I migrated my blog from blogdown to distill.
+author: Frie Preu
+date: 12-12-2020
+preview: blogdown_distill.png
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+> Note: This post was originally written by [Frie Preu](https://frie.codes/) - see the original post [here](https://frie.codes/posts/tricks-blogdown-to-distill/)
+
+![](blogdown_distill.png)
+
+So I jumped on the [distill](https://rstudio.github.io/distill/) train. Mainly because I was a bit annoyed by the complexities of Hugo's file system which always tripped me up when I tried to include images and datasets. Plus, I'm not super active on my blog anyway so I don't want to come back to it every couple of months only to find out that something has broken.
+
+Anyway, at the risk of becoming one of those blogs that only blogs about blogging frameworks^[recently saw a _very funny_ meme about this but can't find it anymore :(], here are some tips and tricks I learned over the last 1.5 weeks^[I won't go into detail how distill works, for that I recommend the [official documentation](https://rstudio.github.io/distill/).].
+
+**Edit 2020-12-14**: thanks to the magic of Twitter / with the help of [Maëlle Salmon](https://twitter.com/ma_salmon/status/1338382964275761154), I found the "meme" (more like comic, d'uh) I was talking about in footnote 1 - shoutout to you if you know what I'm talking about because you read the footnote! Enjoy!
+
+![Image from https://rakhim.org/images/honestly-undefined/blogging.jpg](https://rakhim.org/images/honestly-undefined/blogging.jpg){.external}
+
+## Internal links
+In Hugo I always specified internal links within my site like so:
+
+```markup
+[r projects](/rprojects/)
+```
+
+assuming i wanted to link to `https://frie.codes/rprojects`.
+
+In distill, you link to the `.html` file, like so:
+```markup
+[r projects](/rprojects.html)
+```
+
+you can also add custom anchors (certainly also possible in blogdown but I never did it somehow):
+
+```markup
+[r projects](/rprojects.html#newsanchor)
+```
+
+## Redirecting your old URLs
+I was not able to configure my distill site so that it would replicate the exact URLs of my old Hugo/blogdown page. Some of those were not so nice anyway, e.g. my about page was under `frie.codes/page/about/` and not at `frie.codes/about`. I didn't want to have breaking links, so I wanted to find a way to redirect users to the new URLs.
+
+Turns out if you use Netlify, you can set up either a `_redirects` file or include your redirects in `netlify.toml`. While the latter is a bit more verbose, it has the advantage that you don't have to take care of it ending up in `_site`. Here's a snippet from my `netlify.toml`:
+
+```toml
+# Redirects from what the browser requests to what we serve
+[[redirects]]
+  from = "/post/"
+  to = "/"
+[[redirects]]
+  from = "/git-commit-wordcloud-rstats/"
+  to = "/posts/git-commit-wordcloud-rstats"
+[[redirects]]
+  from = "/using-r-to-remove-audiobooks-from-spotify/"
+  to = "/posts/using-r-to-remove-audiobooks-from-spotify"
+[[redirects]]
+  from = "/automate-the-boring-stuff/"
+  to = "/posts/automate-the-boring-stuff/"
+[[redirects]]
+  from = "/oldrscripts-intro-to-r/"
+  to = "/posts/oldrscripts-intro-to-r/"
+```
+
+You can check out the relevant documentation [here](https://docs.netlify.com/routing/redirects/) and my `netlify.toml` [here](https://gitlab.com/friep/blog/-/blob/main/netlify.toml). I suspect similar things are possible with other hosting providers, so I'd google something like "hosting provider redirects".
+
+## Folder structure
+
+In blogdown/Hugo, I could set "nice" slugs (the part in the URL after the main domain, e.g. `curl-vs-rcurl` in `https://frie.codes/curl-vs-rcurl`) via the `slug` yaml frontend matter option...
+
+```markup
+---
+title: "curl vs RCurl or: how to choose a package"
+output: html_document
+draft: false
+date: 2019-05-21
+slug: curl-vs-rcurl
+tags: [ds-texts]
+---
+```
+
+...while at the same time keeping my folders nicely organized by date:
+
+
+```bash
+content/post
+├── 2019-01-05-dot-dot-dot-underscore-camel
+├── 2019-01-05-to-for-loop-or-not-to-for-loop
+├── 2019-05-19_introducing-this-blog
+├── 2019-05-20-curl-vs-rcurl
+├── 2019-06-19_oldrscripts-intro-to-r
+├── 2019-07-23_switching-to-gitlab
+├── 2019-10-19-automate-the-boring-stuff
+├── 2020-08-30-using-r-to-remove-audiobooks-from-spotify
+└── 2020-11-25-create-a-wordcloud-of-your-github-commits
+```
+
+Because distill's building logic is much simpler^[a good thing imo!], this is not possible in distill as far as I understand: You either have to commit to slugs like `2020-11-26-git-commit-wordcloud-rstats` or accept a folder structure like this:
+
+```bash
+_posts
+├── automate-the-boring-stuff
+├── curl-vs-rcurl
+├── git-commit-wordcloud-rstats
+├── introducing-this-blog
+├── misc-distill-things
+├── oldrscripts-intro-to-r
+├── switching-to-gitlab
+└── using-r-to-remove-audiobooks-from-spotify
+```
+
+This is not ideal and makes me a bit unhappy but alas.. you can't have simplicity and complex features at the same time. If I missed something obvious and this is possible after all, please shoot me a message on [Twitter](https://twitter.com/ameisen_strasse) or via Email (see footer). I'd love to be wrong on this one!
+
+## Theming and Customization
+The [docs on theming](https://rstudio.github.io/distill/#theming) are quite good and I think there will be more and more websites implemented in distill so more examples will be available. I only changed the fonts and the colors and added some small css for the profile picture on my [about page](/about.html). You can check out the `theme.css` [here](https://gitlab.com/friep/blog/-/blob/main/theme.css).
+
+I also added a [_footer.html](https://gitlab.com/friep/blog/-/blob/main/_footer.html) which adds a footer with my social links. distill picks it up automatically so you don't have to do anything besides dropping in some html into a file. `r emo::ji("tada")`
+
+## Emojis
+My [blogdown theme](https://github.com/halogenica/beautifulhugo) supported automatic parsing of markdown emojis, so that `:tada:` would be rendered as `r emo::ji("tada")` automatically. Sadly, this is not supported by distill, so I now have to use the [emo package](https://github.com/hadley/emo) and/or copy directly from emojipedia if I want to have more control over which emoji is picked (some "names" resolve to multiple emojis in `emo`).
+
+## End
+I'm quite happy with my new setup. Of course, there are still some things that could be improved: i'm still not sure about my font choices and there are still some old markdown-style emojis that I need to update. But all in all, I think distill is a great package that fills the void between GitHub pages and blogdown.
+I hope this collection of miscellaneous things helped some of you with your transition to distill. `r emo::ji("blush")`.
+I see you next time with some real content, not just meta content. `r emo::ji("wink")`
+
+Until then: keep coding.`r emo::ji("heart")`
+
