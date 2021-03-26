@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -2104,6 +2103,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2202,7 +2202,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-article">
 <blockquote>
-<p>Note: This post was originally written by <a href="https://alison.rbind.io/">Alison Hill</a> - see the original post on her blog <a href="https://alison.rbind.io/post/2020-12-22-postcards-distill/">here</a></p>
+<p>Note: This post was originally written by <a href="https://twitter.com/apreshill">Alison Hill</a> and copied here on March 16, 2021 - see the original post <a href="https://alison.rbind.io/post/2020-12-22-postcards-distill/">here</a> for a potentially updated version.</p>
 </blockquote>
 <center>
 <img src="featured.jpg" width=100%>
@@ -2241,11 +2241,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 <li>rmarkdown (v &gt;= 2.7)</li>
 <li>postcards (v &gt;= 0.2.0)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;distill&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;postcards&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;distill&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;postcards&quot;</span>))</span></code></pre></div>
 <p>You can check these package versions as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">packageVersion</span>(<span class="st">&quot;distill&quot;</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">packageVersion</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">packageVersion</span>(<span class="st">&quot;postcards&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">packageVersion</span>(<span class="st">&quot;distill&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">packageVersion</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">packageVersion</span>(<span class="st">&quot;postcards&quot;</span>)</span></code></pre></div>
 <h2 id="make-a-website">Make a website</h2>
 <p>In RStudio, create a new project using <em>File &gt; New Project &gt; New Directory &gt; New Project</em>. Then, inside your new empty project, use your R console to do the following:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2276,23 +2276,23 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 </div>
 <p>Let’s add a link to our new file in the top navbar. Open up your <code>_site.yml</code> file and add:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;.&quot;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;mfeo&quot;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  mfeo</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;docs&quot;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="at">  </span><span class="fu">right</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Tobi&quot;</span><span class="co">              # add</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> tobi.html</span><span class="co">           # add</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> distill::distill_article</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;.&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;mfeo&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  mfeo</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;docs&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Tobi&quot;</span><span class="co">              # add</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> tobi.html</span><span class="co">           # add</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> distill::distill_article</span></span></code></pre></div>
 <p>Since my file is named <code>tobi.Rmd</code>, that means the rendered file will be <code>tobi.html</code>, so that is my <code>href</code> key in the <code>_site.yml</code>. If you save that file, you should see your website refresh, and look something like this!</p>
 <figure>
-<img src="tobi.png" title="Jolla postcard page in distill website" alt="" /><figcaption>Jolla postcard page in distill website</figcaption>
+<img src="tobi.png" title="Jolla postcard page in distill website" alt="Jolla postcard page in distill website" /><figcaption aria-hidden="true">Jolla postcard page in distill website</figcaption>
 </figure>
 <h2 id="add-a-theme">Add a theme</h2>
 <p>For fun, let’s go ahead and add a custom distill theme while we’re at it.</p>
@@ -2311,17 +2311,17 @@ o TODO: Add &#39;theme: postcards.css&#39; to your site or article YAML
 See docs at &lt;https://rstudio.github.io/distill/website.html#theming&gt;</code></pre>
 <p>I want a full-site theme, so I added <code>theme: postcards.css</code> to my <code>_site.yml</code> file. I followed the distill docs on theming <a href="https://rstudio.github.io/distill/website.html#theming">here</a>. Re-build my website, and now I see:</p>
 <figure>
-<img src="tobi-theme.png" title="Jolla postcard page in themed distill website" alt="" /><figcaption>Jolla postcard page in themed distill website</figcaption>
+<img src="tobi-theme.png" title="Jolla postcard page in themed distill website" alt="Jolla postcard page in themed distill website" /><figcaption aria-hidden="true">Jolla postcard page in themed distill website</figcaption>
 </figure>
 <h2 id="switch-the-homepage">Switch the homepage</h2>
 <p>Now you may be wishing that your postcards page was your homepage- the place where visitors first land when they visit your website. The homepage in a distill website is named <code>index.Rmd</code>, so we need to remove the current <code>index.Rmd</code> file and replace it with <code>tobi.Rmd</code>. But we cannot just rename the files…</p>
 <p>If you open up <code>index.Rmd</code>, you should see this yaml:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;mfeo&quot;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  Welcome to the website. I hope you enjoy it!</span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> distill::distill_website</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;mfeo&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  Welcome to the website. I hope you enjoy it!</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> distill::distill_website</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>That <code>site</code> key is very important to keep in the <code>index.Rmd</code> file. Steps:</p>
 <ol type="1">
 <li>Let’s start by adding <code>site: distill::distill_website</code> to the yaml of your postcards page, mine is named <code>tobi.Rmd</code>.</li>
@@ -2332,25 +2332,25 @@ See docs at &lt;https://rstudio.github.io/distill/website.html#theming&gt;</code
 <p>Re-build your site and Tobi’s shining face should greet you from the homepage!</p>
 <h2 id="fill-in-your-postcard">Fill-in your postcard</h2>
 <p>Of course, you can add your own image file to the project root at this point, and then personalize your <code>index.Rmd</code> using the postcards template:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Alison Hill&quot;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;alison.jpg&quot;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">links</span><span class="kw">:</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> LinkedIn</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://www.linkedin.com/in/alisonpresmaneshill/&quot;</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> Twitter</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://twitter.com/apreshill&quot;</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> GitHub</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://github.com/apreshill&quot;</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> ORCID iD</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://orcid.org/0000-0002-8082-1890&quot;</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> distill::distill_website</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="at">  postcards::jolla</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Alison Hill&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;alison.jpg&quot;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">links</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> LinkedIn</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://www.linkedin.com/in/alisonpresmaneshill/&quot;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> Twitter</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://twitter.com/apreshill&quot;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> GitHub</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://github.com/apreshill&quot;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">label</span><span class="kw">:</span><span class="at"> ORCID iD</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://orcid.org/0000-0002-8082-1890&quot;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> distill::distill_website</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="at">  postcards::jolla</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>Here is my “after”:</p>
 <figure>
-<img src="alison-home.png" title="Jolla as themed homepage" alt="" /><figcaption>Jolla as themed homepage</figcaption>
+<img src="alison-home.png" title="Jolla as themed homepage" alt="Jolla as themed homepage" /><figcaption aria-hidden="true">Jolla as themed homepage</figcaption>
 </figure>
 <h2 id="add-a-blog">Add a blog</h2>
 <p>Back in your console, we can add a blog, using distill:</p>
@@ -2374,34 +2374,34 @@ See docs at &lt;https://rstudio.github.io/distill/website.html#theming&gt;</code
 </div>
 </div>
 <p>Then open up your new <code>blog.Rmd</code> and add a YAML (no content below the YAML):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="pp">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Blog&quot;</span><span class="co">  # any name you want here</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">listing</span><span class="kw">:</span><span class="at"> posts</span><span class="co"> # do this exactly</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Blog&quot;</span><span class="co">  # any name you want here</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span><span class="at"> posts</span><span class="co"> # do this exactly</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>Finally, add a link to your blog in your upper navbar so people can actually find it! Do this by editing <code>_site.yml</code> one last time (remember, since my listing <code>.Rmd</code> is named <code>blog.Rmd</code>, then the href I want to link to is <code>blog.html</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">right</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Blog&quot;</span><span class="co">      # add</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> blog.html</span><span class="co">   # add</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Blog&quot;</span><span class="co">      # add</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> blog.html</span><span class="co">   # add</span></span></code></pre></div>
 <p>Now, admire your final polished product!</p>
 <video width="320" height="240" controls>
 <source src="final-site.mov" type="video/mp4">
 </video>
 <h2 id="switch-your-postcard">Switch your postcard</h2>
 <p>Let’s say you decide you want to switch it up and use the <code>trestles</code> theme, instead of <code>jolla</code>. Easy. Open up your <code>index.Rmd</code> and find these lines in the YAML:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="at">  postcards::jolla</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">  postcards::jolla</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>And change to:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="pp">---</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="at">  postcards::trestles</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  postcards::trestles</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>Re-build your site!</p>
 <p><img src="final-trestles.png" /></p>
 <h2 id="publishing">Publishing</h2>
@@ -2416,7 +2416,7 @@ See docs at &lt;https://rstudio.github.io/distill/website.html#theming&gt;</code
 <p>{{% alert note %}} I also just learned about the new <a href="https://usethis.r-lib.org/reference/use_github_pages.html"><code>usethis::use_github_pages()</code></a> to turn on and/or (re)configure GitHub Pages! {{% /alert %}}</p>
 <p>Then in the GitHub project, navigate over to “Settings” and <em>scroooooooll down</em> to choose:</p>
 <figure>
-<img src="gh-pages.png" title="GitHub Pages settings for distill websites" alt="" /><figcaption>GitHub Pages settings for distill websites</figcaption>
+<img src="gh-pages.png" title="GitHub Pages settings for distill websites" alt="GitHub Pages settings for distill websites" /><figcaption aria-hidden="true">GitHub Pages settings for distill websites</figcaption>
 </figure>
 <p>For this to work, make sure your site is building to <code>docs/</code> locally, and that you are committing and pushing the <code>docs/</code> directory to GitHub.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
