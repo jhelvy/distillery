@@ -14,7 +14,7 @@ photo:
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
 ---
 
-> Note: This post was originally written by [Lisa Lendway](https://lisalendway.netlify.app/) on the [RStudio Education blog](https://education.rstudio.com/blog/) - see the original post [here](https://education.rstudio.com/blog/2021/02/distill-it-down/)
+> Note: This post was originally written by [Lisa Lendway](https://twitter.com/lisalendway) and copied here on March 16, 2021 - see the original post [here](https://education.rstudio.com/blog/2021/02/distill-it-down/) for a potentially updated version.
 
 <center>
 <img src="images/strawberry-wd.png" width=100%>

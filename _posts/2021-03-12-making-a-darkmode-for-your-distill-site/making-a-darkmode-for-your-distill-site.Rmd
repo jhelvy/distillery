@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-> Note: This post was originally written by [Jannik Buhr](https://jmbuhr.de/) - see the original post [here](https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/)
+> Note: This post was originally written by [Jannik Buhr](https://jmbuhr.de/) and copied here on March 16, 2021 - see the original post [here](https://jmbuhr.de/posts/2021-03-14-making-a-darkmode-for-your-distill-site/) for a potentially updated version.
 
 # Join the Dark Side!
 

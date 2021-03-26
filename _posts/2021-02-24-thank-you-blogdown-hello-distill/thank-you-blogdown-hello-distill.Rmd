@@ -22,7 +22,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-> Note: This post was originally written by [Roland Schmidt](https://twitter.com/zoowalk) on Feb. 25, 2021 and copied here on Mar. 26, 2021 - see the original post [here](https://werk.statt.codes/post/2021-02-24-hellodistill/) for a potentially updated version.
+> Note: This post was originally written by [Roland Schmidt](https://twitter.com/zoowalk) and copied here on March 26, 2021 - see the original post [here](https://werk.statt.codes/post/2021-02-24-hellodistill/) for a potentially updated version.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T)

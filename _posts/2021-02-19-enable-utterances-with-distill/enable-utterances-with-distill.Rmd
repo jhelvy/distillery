@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       warning = FALSE)
 ```
 
-> Note: This post was originally written by [Vebash Naidoo](https://twitter.com/Sciencificity) on the [Sciencificity's Blog](https://sciencificity-blog.netlify.app/) - see the original post [here](https://sciencificity-blog.netlify.app/posts/2021-02-20-enable-utterances-with-distill/)
+> Note: This post was originally written by [Vebash Naidoo](https://twitter.com/Sciencificity) and copied here on March 16, 2021 - see the original post [here](https://sciencificity-blog.netlify.app/posts/2021-02-20-enable-utterances-with-distill/) for a potentially updated version.
 
 <!-- <span>Photo by <a href="https://unsplash.com/@dangnambinh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">binh dang nam</a> on <a href="https://unsplash.com/s/photos/comments?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> -->
 

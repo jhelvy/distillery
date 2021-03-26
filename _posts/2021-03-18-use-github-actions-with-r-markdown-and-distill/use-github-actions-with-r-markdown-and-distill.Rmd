@@ -13,7 +13,7 @@ output:
     highlight_downlit: true
 ---
 
-> Note: This post was originally written by [Etienne Bacher](https://www.etiennebacher.com/) - see the original post [here](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/)
+> Note: This post was originally written by [Etienne Bacher](https://www.etiennebacher.com/) and copied here on March 19, 2021 - see the original post [here](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/) for a potentially updated version.
 
 *<small> The preview image comes from: https://github.com/marketplace/actions/cancel-workflow-action </small>*
 

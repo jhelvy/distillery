@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-> Note: This post was originally written by [Frie Preu](https://frie.codes/) - see the original post [here](https://frie.codes/posts/tricks-blogdown-to-distill/)
+> Note: This post was originally written by [Frie Preu](https://twitter.com/ameisen_strasse) and copied here on March 17, 2021 - see the original post [here](https://frie.codes/posts/tricks-blogdown-to-distill/) for a potentially updated version.
 
 ![](blogdown_distill.png)
 

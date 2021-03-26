@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(eval=FALSE)
 ```
 
-> Note: This post was originally written by [Alison Hill](https://alison.rbind.io/) - see the original post on her blog [here](https://alison.rbind.io/post/2020-12-22-postcards-distill/)
+> Note: This post was originally written by [Alison Hill](https://twitter.com/apreshill) and copied here on March 16, 2021 - see the original post [here](https://alison.rbind.io/post/2020-12-22-postcards-distill/) for a potentially updated version.
 
 <center>
 <img src="featured.jpg" width=100%>
