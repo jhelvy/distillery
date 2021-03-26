@@ -19,6 +19,15 @@
       <media:content url="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png" medium="image" type="image/png"/>
     </item>
     <item>
+      <title>Create a GitHub website with distill in less than 30 minutes</title>
+      <dc:creator>Andreas Handel</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes</link>
+      <description>The following are step-by-step instructions for creating a website using [R Markdown](https://rmarkdown.rstudio.com/) and the [distill R package](https://rstudio.github.io/distill/) (through [R Studio](https://rstudio.com/products/rstudio/)) and [GitHub](https://github.com/).</description>
+      <guid>https://distillery.rbind.io/posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes</guid>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/featured.png" medium="image" type="image/png" width="1280" height="834"/>
+    </item>
+    <item>
       <title>Use GitHub actions with R Markdown and Distill</title>
       <dc:creator>Etienne Bacher</dc:creator>
       <link>https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</link>
