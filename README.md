@@ -52,9 +52,10 @@ Add a post site to the [tips & tricks page](https://distillery.rbind.io/tips_and
 
 [Open an issue](https://github.com/jhelvy/distillery/issues) and add a
 link to your post as well as a link to the post source code. We’ll copy
-over the source files, insert an attribution statement at the top
-linking back to the original post, and then add it to the tips & tricks
-page.
+over the source files and rebuilt the post here, inserting the following
+attribution statement at the top:
+
+    > Note: This post was originally written by [name](link) and copied here on {date} - see the original post [here](link) for a potentially updated version.
 
 List of sites in showcase:
 ==========================
