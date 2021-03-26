@@ -19,6 +19,8 @@ output:
     toc_depth: 5
 ---
 
+> Note: This post was originally written by [Karina Bartolomé](https://twitter.com/karbartolome) and [Rafael Zambrano](https://rafael-zambrano-blog-ds.netlify.app/) and copied here on March 26, 2021 - see the original post [here](https://karbartolome-blog.netlify.app/posts/automagictabs/) for a potentially updated version.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       eval = TRUE,
