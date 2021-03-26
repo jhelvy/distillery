@@ -36,6 +36,15 @@
       <media:content url="https://distillery.rbind.io/posts/2021-03-12-making-a-darkmode-for-your-distill-site/images/cookies.png" medium="image" type="image/png" width="350" height="263"/>
     </item>
     <item>
+      <title>Thank you {blogdown}, hello {distill}.</title>
+      <dc:creator>Roland Schmidt</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill</link>
+      <description>A few notes on moving from blogdown to distill.</description>
+      <guid>https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill</guid>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png" medium="image" type="image/png" width="2190" height="1156"/>
+    </item>
+    <item>
       <title>Enable utterances with distill</title>
       <dc:creator>Vebash Naidoo</dc:creator>
       <link>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</link>
