@@ -1,4 +1,5 @@
 library(tidyverse)
+library(htmltools)
 
 clean_sites <- function(sites, check_url = FALSE) {
   
@@ -11,14 +12,52 @@ clean_sites <- function(sites, check_url = FALSE) {
         select(-url_exists)
     }
   
+    # Prepare for uniting categories
+    categories <- names(sites)[4:length(sites)]
+    for (i in categories) {
+      sites[, i] <- ifelse(sites[, i] == 0, NA_character_, i)
+    }
+    
     sites <- sites %>%
-        mutate(
-            name_clean = clean_name(name),
-            path_png = file.path("images", "sites", paste0(name_clean, ".png"))
-        ) %>%
-        arrange(name)
+      unite(4:last_col(), col = "categories", sep = " ", na.rm = T) %>% 
+      mutate(
+        name_clean = clean_name(name),
+        path_png = file.path("images", "sites", paste0(name_clean, ".png"))
+      ) %>%
+      arrange(name)
     
     return(sites)
+}
+
+buttons_filter <- function(sites) {
+  categories <- unique(unlist(strsplit(sites$categories, " ")))
+  cat_button <- tagList(lapply(categories, function(x) {
+      tags$button(
+        class="btn",
+        onclick = paste0("filterSelection('", x, "')"),
+        firstup(x)
+      )
+  }))
+  
+  final_html <- div(
+    id = "myBtnContainer",
+    tags$button(
+      class="btn active", 
+      onclick="filterSelection('all')",
+      "Show all"
+    ),
+    cat_button
+  )
+  
+  x <- tempfile(fileext = ".Rmd")
+  save_raw(as.character(final_html), x)
+  return(x)
+}
+
+# Upper case for first letter
+firstup <- function(x) {
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  x
 }
 
 clean_name <- function(x) {
@@ -55,52 +94,56 @@ update_screenshots <- function(sites, update_all = FALSE) {
   }
 }
 
-make_rmd_chunks <- function(sites, image_width = 600) {
-    chunks <- list()
-    for (i in seq_len(nrow(sites))) {
-        site <- sites[i,]
-        chunks[[i]] <- make_showcase_chunk(site, image_width)
-    }
-    return(save_temp_chunks(chunks))
-}
-
-make_showcase_chunk <- function(site, image_width = 600) {
-    chunk <- paste0(
-        '### ', site$name, '\n\n',
-        '<center>\n',
-        '<img src="', site$path_png, '" width=', image_width, '>\n',
-        '</center>\n\n',
-        '<aside>',
-        icon_link(
-          icon = "fas fa-external-link-alt", text = "Site", url = site$url),
-        '<br>',
-        icon_link(
-          icon = "fab fa-github", text = "Source", url = site$source),
-        '</aside>'
+make_showcase_chunks <- function(sites, image_width = 600) {
+  sites_div <- tagList(apply(sites, 1, function(x) {
+    tagList(
+      tags$div(
+        class = paste0("filterDiv ", x[["categories"]]),
+        tags$h3(x[["name"]]),
+        tags$a(
+          href = x[["url"]],
+          class = "icon-link",
+          tag(
+            "i", list(class = "fas fa-external-link-alt")
+          ),
+          "Site"
+        ),
+        tags$span(
+          class = "horizontalgap",
+          style = "display:inline-block; width: 1rem;"
+        ),
+        tags$a(
+          href = x[["source"]],
+          class = "icon-link",
+          tag(
+            "i", list(class = "fab fa-github")
+          ),
+          "Source"
+        ),
+        tag(
+          "center", 
+          list(
+            tags$img(
+              src = x[["path_png"]], width = image_width
+            )
+          )
+        ),
+        hr()
+      )
     )
-    return(chunk)
-}
-
-save_temp_chunks <- function(x) {
-    temp_folder <- tempdir()
-    paths <- list()
-    for (i in seq_len(length(x))) {
-        path <- file.path(temp_folder, paste0(i, ".Rmd"))
-        paths[[i]] <- path
-        save_raw(x[[i]], path)
-    }
-    return(unlist(paths))
-}
-
-icon_link <- function(
-  icon = NULL,
-  text = NULL,
-  url = NULL
-) {
-  if (!is.null(icon)) {
-    text <- htmltools::HTML(paste0('<i class="', icon, '"></i> ', text))
-  }
-  return(htmltools::a(href = url, text, class = "icon-link"))
+  }))
+  
+  final_html <- tagList(
+    tags$div(
+      class = "container",
+      sites_div
+    )
+  )
+  
+  x <- tempfile(fileext = ".Rmd")
+  save_raw(as.character(sites_div), x)
+  return(x)
+        
 }
 
 create_footer <- function() {
@@ -108,7 +151,7 @@ create_footer <- function() {
   fill <- '#ededeb'
   height <- '14px'
 
-  footer <- htmltools::HTML(paste0(
+  footer <- HTML(paste0(
   'Made with ',
   fontawesome::fa('heart', fill = fill, height = height), ', [',
   fontawesome::fa('code-branch', fill = fill, height = height),
@@ -116,19 +159,19 @@ create_footer <- function() {
   fontawesome::fa('r-project', fill = fill, height = height),
   '](https://cran.r-project.org/) ',
   '[distill](https://github.com/rstudio/distill) package\n',
-  htmltools::br(),
+  br(),
   last_updated(), "\n\n",
 
   '<!-- Add function to open links to external links in new tab, from: -->',
   '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
-  '<script src="js/external-link.js"></script>'
+  '<script src="js/external-link.js">'
   ))
 
   save_raw(footer, "_footer.html")
 }
 
 last_updated <- function() {
-  return(htmltools::span(
+  return(span(
     paste0(
       'Last updated on ',
       format(Sys.Date(), format="%B %d, %Y")
