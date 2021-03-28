@@ -1926,7 +1926,57 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   
   /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */</style>
+  /* Add any additional CSS rules below                      */
+  
+  
+  
+  /*-- SHOWCASE --*/
+  
+  .filterDiv {
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    color: white;
+    background-color: var(--bkgd-color, #0F2E3D);
+    cursor: pointer;
+  }
+  
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
+    background-color: #143d52;
+    color: white
+  }
+  
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: #1e5c7b;
+    color: white;
+  }
+  
+  .icon-link {
+    font-size: 0.7rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 3px 5px 3px 5px;
+    margin: 0 2px 0 2px;
+    border-radius: 5px; /* Rounded edges */
+  }
+  
+  .icon-link:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+  </style>
   <style type="text/css">
   /* base style */
   
@@ -2294,29 +2344,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Tips &amp; Tricks">Tips &amp; Tricks</h1>
-<a href="posts/2021-03-24-automagic-tabs-in-distillrmarkdown-files-and-time-series-analysis/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Karina Bartolomé</div>
-<div class="dt-author">Rafael Zambrano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png"/>
-</div>
-<div class="description">
-<h2>Automagic Tabs in Distill/Rmarkdown files and time series analysis</h2>
-<div class="dt-tags"></div>
-<p>This article shows the use of tabs in Rmarkdown documents, through an example of time series analysis of the monthly estimator of Argentine economic activity.</p>
-</div>
-</a>
 <a href="posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["github","starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 21, 2021</div>
 <div class="dt-authors">
@@ -2328,12 +2360,16 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Create a GitHub website with distill in less than 30 minutes</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>The following are step-by-step instructions for creating a website using [R Markdown](https://rmarkdown.rstudio.com/) and the [distill R package](https://rstudio.github.io/distill/) (through [R Studio](https://rstudio.com/products/rstudio/)) and [GitHub](https://github.com/).</p>
 </div>
 </a>
 <a href="posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["github","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 19, 2021</div>
 <div class="dt-authors">
@@ -2345,12 +2381,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Use GitHub actions with R Markdown and Distill</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>How can you automatically render README, Distill website...</p>
 </div>
 </a>
 <a href="posts/2021-03-16-postcards-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 16, 2021</div>
 <div class="dt-authors">
@@ -2362,12 +2401,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>M-F-E-O: postcards + distill</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">tutorial</div>
+<div class="dt-tag">features</div>
+</div>
 <p>The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.</p>
 </div>
 </a>
 <a href="posts/2021-03-12-making-a-darkmode-for-your-distill-site/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 12, 2021</div>
 <div class="dt-authors">
@@ -2379,12 +2421,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Making a Darkmode for your distill site</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">tutorial</div>
+<div class="dt-tag">features</div>
+</div>
 <p>We build a darkmode for our distill site using css and a bit of java script.</p>
 </div>
 </a>
 <a href="posts/2021-02-24-thank-you-blogdown-hello-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["blogdown","starting"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 26, 2021</div>
 <div class="dt-authors">
@@ -2392,16 +2437,19 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img data-src="posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png"/>
+<img src="posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png"/>
 </div>
 <div class="description">
 <h2>Thank you {blogdown}, hello {distill}.</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">blogdown</div>
+<div class="dt-tag">starting</div>
+</div>
 <p>A few notes on moving from blogdown to distill.</p>
 </div>
 </a>
 <a href="posts/2021-02-19-enable-utterances-with-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["github","features","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 20, 2021</div>
 <div class="dt-authors">
@@ -2413,12 +2461,16 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Enable utterances with distill</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">features</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>Interested in giving your readers the ability to comment on your {distill} blog? Look no further than utteranc.es.</p>
 </div>
 </a>
 <a href="posts/2021-02-08-distill-it-down/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 8, 2021</div>
 <div class="dt-authors">
@@ -2430,12 +2482,15 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Distill it down</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>My experiences with building webpages and websites using some of the simpler R Studio tools.</p>
 </div>
 </a>
 <a href="posts/2020-12-12-tricks-blogdown-to-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["starting","blogdown","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Dec. 12, 2020</div>
 <div class="dt-authors">
@@ -2447,12 +2502,16 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Misc tricks when migrating from blogdown to distill</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">blogdown</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>Some small things I learned as I migrated my blog from blogdown to distill.</p>
 </div>
 </a>
 <a href="posts/2020-07-31-building-a-blog-with-distill/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 1, 2020</div>
 <div class="dt-authors">
@@ -2464,10 +2523,44 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Building a blog with distill</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
 <p>I love simplicity.</p>
 </div>
 </a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(9)</span>
+</li>
+<li>
+<a href="#category:blogdown">blogdown</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:features">features</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#category:github">github</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#category:starting">starting</a>
+<span class="category-count">(5)</span>
+</li>
+<li>
+<a href="#category:tutorial">tutorial</a>
+<span class="category-count">(8)</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
@@ -2505,7 +2598,7 @@ function init_posts_list() {
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Made with <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14px;width:14px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>, <a href="https://github.com/jhelvy"><svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:14px;width:10.5px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"/></svg></a>, and the <a href="https://cran.r-project.org/"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:14px;width:15.89px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a> <a href="https://github.com/rstudio/distill">distill</a> package <br/><span style="font-size:0.8rem;">Last updated on March 26, 2021</span></p>
+<p>Made with <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14px;width:14px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>, <a href="https://github.com/jhelvy"><svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:14px;width:10.5px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"/></svg></a>, and the <a href="https://cran.r-project.org/"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:14px;width:15.89px;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a> <a href="https://github.com/rstudio/distill">distill</a> package <br/><span style="font-size:0.8rem;">Last updated on March 28, 2021</span></p>
 <!-- Add function to open links to external links in new tab, from: -->
 <!-- https://yihui.name/en/2018/09/target-blank/ -->
 <script src="js/external-link.js"></script>
