@@ -2,16 +2,18 @@
 title: "Distill it down"
 author: "Lisa Lendway"
 date: '2021-02-08'
-categories: null
 description: |
   My experiences with building webpages and websites using some of the simpler R Studio tools.
-output:
-  distill::distill_article:
-    self_contained: false
 preview: images/strawberry-thumbnail.png
+categories:
+  - starting
+  - tutorial
 photo:
   author: Raw Pixel
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
+output:
+  distill::distill_article:
+    self_contained: false
 ---
 
 > Note: This post was originally written by [Lisa Lendway](https://twitter.com/lisalendway) and copied here on March 16, 2021 - see the original post [here](https://education.rstudio.com/blog/2021/02/distill-it-down/) for a potentially updated version.

@@ -5,6 +5,9 @@ description: |
 author: Etienne Bacher
 date: 2021-03-19
 preview: gha_image.jpg
+categories:
+  - github
+  - tutorial
 output:
   distill::distill_article:
     toc: true

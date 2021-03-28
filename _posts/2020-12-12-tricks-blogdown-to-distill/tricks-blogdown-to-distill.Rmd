@@ -5,6 +5,10 @@ description: |
 author: Frie Preu
 date: 12-12-2020
 preview: blogdown_distill.png
+categories:
+  - starting
+  - blogdown
+  - tutorial
 output:
   distill::distill_article:
     self_contained: false

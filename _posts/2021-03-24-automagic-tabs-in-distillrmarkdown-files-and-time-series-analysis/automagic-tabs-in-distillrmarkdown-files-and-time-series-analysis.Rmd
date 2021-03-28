@@ -12,6 +12,9 @@ author:
 date: "03-25-2021"
 base_url: https://karbartolome-blog.netlify.app/posts/AutomagicTabs/
 preview: "https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png"
+categories:
+  - features
+  - tutorial
 output:
   distill::distill_article:
     self_contained: false

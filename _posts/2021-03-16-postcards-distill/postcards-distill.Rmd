@@ -4,6 +4,9 @@ description: The new postcards package and distill are M-F-E-O (made for each ot
 author: Alison Hill
 date: 03-16-2021
 preview: featured.jpg
+categories:
+  - tutorial
+  - features
 output:
   distill::distill_article:
     self_contained: false

@@ -20,18 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -51,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -86,22 +87,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--radix_placeholder_meta_tags-->
   <title>Building a blog with distill</title>
-
+  
   <meta property="description" itemprop="description" content="I love simplicity."/>
-
-
+  
+  
   <!--  https://schema.org/Article -->
   <meta property="article:published" itemprop="datePublished" content="2020-08-01"/>
   <meta property="article:created" itemprop="dateCreated" content="2020-08-01"/>
   <meta name="article:author" content="Thomas Mock"/>
-
+  
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Building a blog with distill"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="I love simplicity."/>
   <meta property="og:image" content="https://themockup.blog/modern.jpeg"/>
   <meta property="og:locale" content="en_US"/>
-
+  
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:title" content="Building a blog with distill"/>
@@ -109,56 +110,56 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="twitter:image" content="https://themockup.blog/modern.jpeg"/>
   <meta property="twitter:site" content="@thomas_mock"/>
   <meta property="twitter:creator" content="@thomas_mock"/>
-
+  
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
-
+  
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","base_url","output","preview","twitter"]}},"value":[{"type":"character","attributes":{},"value":["Building a blog with distill"]},{"type":"character","attributes":{},"value":["I love simplicity.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Thomas Mock"]},{"type":"character","attributes":{},"value":["https://twitter.com/thomas_mock"]}]}]},{"type":"character","attributes":{},"value":["08-01-2020"]},{"type":"character","attributes":{},"value":["https://themockup.blog"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["modern.jpeg"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["site","creator"]}},"value":[{"type":"character","attributes":{},"value":["@thomas_mock"]},{"type":"character","attributes":{},"value":["@thomas_mock"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","base_url","categories","output","preview","twitter"]}},"value":[{"type":"character","attributes":{},"value":["Building a blog with distill"]},{"type":"character","attributes":{},"value":["I love simplicity.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Thomas Mock"]},{"type":"character","attributes":{},"value":["https://twitter.com/thomas_mock"]}]}]},{"type":"character","attributes":{},"value":["08-01-2020"]},{"type":"character","attributes":{},"value":["https://themockup.blog"]},{"type":"character","attributes":{},"value":["starting","tutorial"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["modern.jpeg"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["site","creator"]}},"value":[{"type":"character","attributes":{},"value":["@thomas_mock"]},{"type":"character","attributes":{},"value":["@thomas_mock"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["add-demo-repo.png","building-a-blog-with-distill_files/anchor-4.2.2/anchor.min.js","building-a-blog-with-distill_files/bowser-1.9.3/bowser.min.js","building-a-blog-with-distill_files/distill-2.2.21/template.v2.js","building-a-blog-with-distill_files/jquery-1.11.3/jquery.min.js","building-a-blog-with-distill_files/popper-2.6.0/popper.min.js","building-a-blog-with-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","building-a-blog-with-distill_files/tippy-6.2.7/tippy-light-border.css","building-a-blog-with-distill_files/tippy-6.2.7/tippy.css","building-a-blog-with-distill_files/tippy-6.2.7/tippy.umd.min.js","building-a-blog-with-distill_files/webcomponents-2.0.0/webcomponents.js","create-new-site.png","git.png","inital-commit.png","modern.jpeg","netlify-new-site.png","netlify-publish-dir.png","preview-site.png","publish-directory.png","save-repos.png","Screen Shot 2020-07-28 at 8.11.03 AM.png","Screen Shot 2020-08-01 at 9.44.25 AM.png","site-deployed.png"]}
+  {"type":"character","attributes":{},"value":["add-demo-repo.png","building-a-blog-with-distill_files/anchor-4.2.2/anchor.min.js","building-a-blog-with-distill_files/bowser-1.9.3/bowser.min.js","building-a-blog-with-distill_files/distill-2.2.21/template.v2.js","building-a-blog-with-distill_files/header-attrs-2.7/header-attrs.js","building-a-blog-with-distill_files/jquery-1.11.3/jquery.min.js","building-a-blog-with-distill_files/popper-2.6.0/popper.min.js","building-a-blog-with-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","building-a-blog-with-distill_files/tippy-6.2.7/tippy-light-border.css","building-a-blog-with-distill_files/tippy-6.2.7/tippy.css","building-a-blog-with-distill_files/tippy-6.2.7/tippy.umd.min.js","building-a-blog-with-distill_files/webcomponents-2.0.0/webcomponents.js","create-new-site.png","git.png","inital-commit.png","modern.jpeg","netlify-new-site.png","netlify-publish-dir.png","preview-site.png","publish-directory.png","save-repos.png","Screen Shot 2020-07-28 at 8.11.03 AM.png","Screen Shot 2020-08-01 at 9.44.25 AM.png","site-deployed.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-
+  
   <style type="text/css">
-
+  
   body {
     background-color: white;
   }
-
+  
   .pandoc-table {
     width: 100%;
   }
-
+  
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-
+  
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-
+  
   .pagedtable-footer {
     font-size: 15px;
   }
-
+  
   d-byline .byline {
     grid-template-columns: 2fr 2fr;
   }
-
+  
   d-byline .byline h3 {
     margin-block-start: 1.5em;
   }
-
+  
   d-byline .byline .authors-affiliations h3 {
     margin-block-start: 0.5em;
   }
-
+  
   .authors-affiliations .orcid-id {
     width: 16px;
     height:16px;
@@ -167,12 +168,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     vertical-align: middle;
     padding-bottom: 2px;
   }
-
+  
   d-title .dt-tags {
     margin-top: 1em;
     grid-column: text;
   }
-
+  
   .dt-tags .dt-tag {
     text-decoration: none;
     display: inline-block;
@@ -186,24 +187,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-
+  
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
   }
-
+  
   .html-widget {
     margin-bottom: 2.0em;
   }
-
+  
   .l-screen-inset {
     padding-right: 16px;
   }
-
+  
   .l-screen .caption {
     margin-left: 10px;
   }
-
+  
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -211,75 +212,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .shaded .shaded-content {
     background: white;
   }
-
+  
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-
+  
   .hidden {
     display: none !important;
   }
-
+  
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-
+  
   d-appendix {
     padding-top: 30px;
   }
-
+  
   d-article>p>img {
     width: 100%;
   }
-
+  
   d-article h2 {
     margin: 1rem 0 1.5rem 0;
   }
-
+  
   d-article h3 {
     margin-top: 1.5rem;
   }
-
+  
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-
+  
   /* Tweak code blocks */
-
+  
   d-article div.sourceCode code,
   d-article pre code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
-
+  
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: auto;
   }
-
+  
   d-article div.sourceCode {
     background-color: white;
   }
-
+  
   d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
-
+  
   d-article pre {
     font-size: 12px;
     color: black;
@@ -291,50 +292,50 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-
+  
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-
+  
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-
+  
   d-article pre a {
     border-bottom: none;
   }
-
+  
   d-article pre a:hover {
     border-bottom: none;
     text-decoration: underline;
   }
-
+  
   d-article details {
     grid-column: text;
     margin-bottom: 0.8em;
   }
-
+  
   @media(min-width: 768px) {
-
+  
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: visible !important;
   }
-
+  
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
   }
-
+  
   d-article pre {
     font-size: 14px;
   }
-
+  
   }
-
+  
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -342,9 +343,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-
+  
   /* CSS for d-contents */
-
+  
   .d-contents {
     grid-column: text;
     color: rgba(0,0,0,0.8);
@@ -356,7 +357,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 0.25em;
     justify-self: start;
   }
-
+  
   @media(min-width: 1000px) {
     .d-contents.d-contents-float {
       height: 0;
@@ -367,82 +368,82 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 2em;
     }
   }
-
+  
   .d-contents nav h3 {
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 1em;
   }
-
+  
   .d-contents li {
     list-style-type: none
   }
-
+  
   .d-contents nav > ul {
     padding-left: 0;
   }
-
+  
   .d-contents ul {
     padding-left: 1em
   }
-
+  
   .d-contents nav ul li {
     margin-top: 0.6em;
     margin-bottom: 0.2em;
   }
-
+  
   .d-contents nav a {
     font-size: 13px;
     border-bottom: none;
     text-decoration: none
     color: rgba(0, 0, 0, 0.8);
   }
-
+  
   .d-contents nav a:hover {
     text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-
+  
   .d-contents nav > ul > li > a {
     font-weight: 600;
   }
-
+  
   .d-contents nav > ul > li > ul {
     font-weight: inherit;
   }
-
+  
   .d-contents nav > ul > li > ul > li {
     margin-top: 0.2em;
   }
-
-
+  
+  
   .d-contents nav ul {
     margin-top: 0;
     margin-bottom: 0.25em;
   }
-
+  
   .d-article-with-toc h2:nth-child(2) {
     margin-top: 0;
   }
-
-
+  
+  
   /* Figure */
-
+  
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-
+  
   .figure img {
     width: 100%;
   }
-
+  
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-
+  
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -450,42 +451,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-
+  
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-
+  
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-
+  
   /* Citations */
-
+  
   d-article .citation {
     color: inherit;
     cursor: inherit;
   }
-
+  
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
   }
-
+  
   /* Citation hover box */
-
+  
   .tippy-box[data-theme~=light-border] {
     background-color: rgba(250, 250, 250, 0.95);
   }
-
+  
   .tippy-content > p {
     margin-bottom: 0;
     padding: 2px;
   }
-
-
+  
+  
   /* Tweak 1000px media break to show more text */
-
+  
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -501,11 +502,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-
+  
     .grid {
       grid-column-gap: 16px;
     }
-
+  
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -514,7 +515,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       font-size: 13px;
     }
   }
-
+  
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -530,16 +531,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-
+  
     .grid {
       grid-column-gap: 32px;
     }
   }
-
-
+  
+  
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-
+  
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -556,9 +557,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-
+  
   /* Include appendix styles here so they can be overridden */
-
+  
   d-appendix {
     contain: layout style;
     font-size: 0.8em;
@@ -570,7 +571,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 60px;
     padding-bottom: 48px;
   }
-
+  
   d-appendix h3 {
     grid-column: page-start / text-start;
     font-size: 15px;
@@ -579,59 +580,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-bottom: 0;
     color: rgba(0,0,0,0.65);
   }
-
+  
   d-appendix h3 + * {
     margin-top: 1em;
   }
-
+  
   d-appendix ol {
     padding: 0 0 0 15px;
   }
-
+  
   @media (min-width: 768px) {
     d-appendix ol {
       padding: 0 0 0 30px;
       margin-left: -30px;
     }
   }
-
+  
   d-appendix li {
     margin-bottom: 1em;
   }
-
+  
   d-appendix a {
     color: rgba(0, 0, 0, 0.6);
   }
-
+  
   d-appendix > * {
     grid-column: text;
   }
-
+  
   d-appendix > d-footnote-list,
   d-appendix > d-citation-list,
   d-appendix > distill-appendix {
     grid-column: screen;
   }
-
+  
   /* Include footnote styles here so they can be overridden */
-
+  
   d-footnote-list {
     contain: layout style;
   }
-
+  
   d-footnote-list > * {
     grid-column: text;
   }
-
+  
   d-footnote-list a.footnote-backlink {
     color: rgba(0,0,0,0.3);
     padding-left: 0.5em;
   }
-
-
-
+  
+  
+  
   /* Anchor.js */
-
+  
   .anchorjs-link {
     /*transition: all .25s linear; */
     text-decoration: none;
@@ -642,86 +643,86 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: none;
     border-bottom: none;
   }
-
+  
   /* Social footer */
-
+  
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-
+  
   .disqus-comments {
     margin-right: 30px;
   }
-
+  
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-
+  
   #disqus_thread {
     margin-top: 30px;
   }
-
+  
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-
+  
   .article-sharing a:hover {
     border-bottom: none;
   }
-
+  
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-
+  
   .subscribe p {
     margin-bottom: 0.5em;
   }
-
-
+  
+  
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-
-
+  
+  
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-
+  
   .custom p {
     margin-bottom: 0.5em;
   }
-
+  
   /* Styles for listing layout (hide title) */
   .layout-listing d-title, .layout-listing .d-title {
     display: none;
   }
-
+  
   /* Styles for posts lists (not auto-injected) */
-
-
+  
+  
   .posts-with-sidebar {
     padding-left: 45px;
     padding-right: 45px;
   }
-
+  
   .posts-list .description h2,
   .posts-list .description p {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-
+  
   .posts-list .description h2 {
     font-weight: 700;
     border-bottom: none;
     padding-bottom: 0;
   }
-
+  
   .posts-list h2.post-tag {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 12px;
@@ -730,7 +731,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 60px;
     margin-bottom: 24px;
   }
-
+  
   .posts-list .post-preview {
     text-decoration: none;
     overflow: hidden;
@@ -738,29 +739,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 24px 0;
   }
-
+  
   .post-preview-last {
     border-bottom: none !important;
   }
-
+  
   .posts-list .posts-list-caption {
     grid-column: screen;
     font-weight: 400;
   }
-
+  
   .posts-list .post-preview h2 {
     margin: 0 0 6px 0;
     line-height: 1.2em;
     font-style: normal;
     font-size: 24px;
   }
-
+  
   .posts-list .post-preview p {
     margin: 0 0 12px 0;
     line-height: 1.4em;
     font-size: 16px;
   }
-
+  
   .posts-list .post-preview .thumbnail {
     box-sizing: border-box;
     margin-bottom: 24px;
@@ -771,32 +772,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 100%;
     display: block;
   }
-
+  
   .posts-list .metadata {
     font-size: 12px;
     line-height: 1.4em;
     margin-bottom: 18px;
   }
-
+  
   .posts-list .metadata > * {
     display: inline-block;
   }
-
+  
   .posts-list .metadata .publishedDate {
     margin-right: 2em;
   }
-
+  
   .posts-list .metadata .dt-authors {
     display: block;
     margin-top: 0.3em;
     margin-right: 2em;
   }
-
+  
   .posts-list .dt-tags {
     display: block;
     line-height: 1em;
   }
-
+  
   .posts-list .dt-tags .dt-tag {
     display: inline-block;
     color: rgba(0,0,0,0.6);
@@ -809,24 +810,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-
+  
   .posts-list img {
     opacity: 1;
   }
-
+  
   .posts-list img[data-src] {
     opacity: 0;
   }
-
+  
   .posts-more {
     clear: both;
   }
-
-
+  
+  
   .posts-sidebar {
     font-size: 16px;
   }
-
+  
   .posts-sidebar h3 {
     font-size: 16px;
     margin-top: 0;
@@ -834,39 +835,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 400;
     text-transform: uppercase;
   }
-
+  
   .sidebar-section {
     margin-bottom: 30px;
   }
-
+  
   .categories ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-
+  
   .categories li {
     color: rgba(0, 0, 0, 0.8);
     margin-bottom: 0;
   }
-
+  
   .categories li>a {
     border-bottom: none;
   }
-
+  
   .categories li>a:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
-
+  
   .categories .active {
     font-weight: 600;
   }
-
+  
   .categories .category-count {
     color: rgba(0, 0, 0, 0.4);
   }
-
-
+  
+  
   @media(min-width: 768px) {
     .posts-list .post-preview h2 {
       font-size: 26px;
@@ -902,55 +903,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-bottom: 24px;
     }
   }
-
-
+  
+  
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-
+  
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-
+  
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-
+  
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-
+  
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-
+  
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-
+  
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-
+  
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-
-
+  
+  
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -962,11 +963,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 40px;
     padding-bottom: 48px;
   }
-
+  
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-
+  
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -983,7 +984,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 40px;
     padding-right: 40px;
   }
-
+  
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -1003,14 +1004,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 900px;
   }
   }
-
+  
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-
+  
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -1021,27 +1022,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-
+  
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-
+  
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-
+  
   .downlevel .posts-list .post-preview {
     color: inherit;
   }
-
-
-
+  
+  
+  
   </style>
-
+  
   <script type="application/javascript">
-
+  
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -1050,20 +1051,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       return window.load_distill_framework === undefined;
     }
   }
-
+  
   // show body when load is complete
   function on_load_complete() {
-
+  
     // add anchors
     if (window.anchors) {
       window.anchors.options.placement = 'left';
       window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
     }
-
-
+  
+  
     // set body to visible
     document.body.style.visibility = 'visible';
-
+  
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -1076,39 +1077,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         });
       });
     }
-
+  
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-
+  
   function init_distill() {
-
+  
     init_common();
-
+  
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-
+  
     // create d-title
     $('.d-title').changeElementType('d-title');
-
+  
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-
+  
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-
+  
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-
+  
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-
+  
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-
+  
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -1124,10 +1125,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     });
     // remove footnotes
     $('.footnotes').remove();
-
+  
     // move refs into #references-listing
     $('#references-listing').replaceWith($('#refs'));
-
+  
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
@@ -1137,16 +1138,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-
+  
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-
+  
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-
+  
       // capture layout
       var layout = $(this).attr('data-layout');
-
+  
       // apply layout to markdown level block elements
       var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
@@ -1159,40 +1160,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).wrap(layout_div);
         }
       });
-
-
+  
+  
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-
+  
     // remove code block used to force  highlighting css
     $('.distill-force-highlighting-css').parent().remove();
-
+  
     // remove empty line numbers inserted by pandoc when using a
     // custom syntax highlighting theme
     $('code.sourceCode a:empty').remove();
-
+  
     // load distill framework
     load_distill_framework();
-
+  
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-
+  
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-
+  
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-
+  
       // article with toc class
       $('.d-contents').parent().addClass('d-article-with-toc');
-
+  
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-
+  
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
@@ -1207,12 +1208,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).append(a);
         }
       });
-
+  
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-
+  
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -1224,11 +1225,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-
+  
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-
+  
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -1248,22 +1249,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-
+  
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-
+  
       // remove d-appendix and d-footnote-list local styles
       $('d-appendix > style:first-child').remove();
       $('d-footnote-list > style:first-child').remove();
-
+  
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-
+  
       // hoverable references
       $('span.citation[data-cites]').each(function() {
         var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
@@ -1277,39 +1278,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
-
+  
       // clear polling timer
       clearInterval(tid);
-
+  
       // show body now that everything is ready
       on_load_complete();
     }
-
+  
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-
+  
   }
-
+  
   function init_downlevel() {
-
+  
     init_common();
-
+  
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-
+  
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-
+  
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-
+  
     // remove toc
     $('.d-contents').remove();
-
+  
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -1317,62 +1318,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-
-
+  
+  
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-
+  
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-
+  
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-
+  
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-
+  
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-
+  
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-
+  
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-
+  
     $('body').addClass('downlevel');
-
+  
     on_load_complete();
   }
-
-
+  
+  
   function init_common() {
-
+  
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-
+  
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-
+  
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-
+  
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-
+  
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
@@ -1384,35 +1385,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-
+  
       }
     });
-
+  
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-
+  
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
         $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
       });
     }
-
+  
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-
+  
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-
+  
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-
+  
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -1426,18 +1427,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
     });
   }
-
+  
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-
+  
   </script>
-
+  
   <!--/radix_placeholder_distill-->
-  <script src="building-a-blog-with-distill_files/header-attrs-2.7/header-attrs.js"></script>
   <script src="building-a-blog-with-distill_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="building-a-blog-with-distill_files/popper-2.6.0/popper.min.js"></script>
   <link href="building-a-blog-with-distill_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1470,6 +1470,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-title">
 <h1>Building a blog with distill</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">starting</div>
+<div class="dt=tag">tutorial</div>
+</div>
 <!--/radix_placeholder_categories-->
 <p><p>I love simplicity.</p></p>
 </div>
@@ -1485,16 +1489,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#distill"><code>distill</code></a>
-<ul>
-<li><a href="#why-consider-distill">Why consider <code>distill</code>?</a>
-<ul>
+<li><a href="#distill"><code>distill</code></a><ul>
+<li><a href="#why-consider-distill">Why consider <code>distill</code>?</a><ul>
 <li><a href="#pros">Pros</a></li>
 <li><a href="#cons">Cons</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#steps-to-create">Steps to create</a>
-<ul>
+<li><a href="#steps-to-create">Steps to create</a><ul>
 <li><a href="#step-1-install-distill">Step 1: Install <code>distill</code></a></li>
 <li><a href="#step-2-new-project-from-distill-blog">Step 2: New project from <code>distill blog</code></a></li>
 <li><a href="#step-3-preview">Step 3: Preview</a></li>
@@ -1502,16 +1503,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#step-5-example-blog-post">Step 5: Example blog post</a></li>
 <li><a href="#step-6-new-post">Step 6: New post</a></li>
 <li><a href="#step-7-add-to-git">Step 7: Add to Git</a></li>
-<li><a href="#step-8-netlify">Step 8: Netlify</a>
-<ul>
+<li><a href="#step-8-netlify">Step 8: Netlify</a><ul>
 <li><a href="#once-youre-logged-in">Once you’re logged in:</a></li>
 </ul></li>
 <li><a href="#step-9-blog-post-workflows">Step 9: Blog post workflows</a></li>
 </ul></li>
-<li><a href="#next-steps">Next Steps</a>
-<ul>
-<li><a href="#customize-appearance">Customize Appearance</a>
-<ul>
+<li><a href="#next-steps">Next Steps</a><ul>
+<li><a href="#customize-appearance">Customize Appearance</a><ul>
 <li><a href="#example-changes">Example changes</a></li>
 </ul></li>
 </ul></li>
@@ -1522,7 +1520,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Note: This post was originally written by <a href="https://twitter.com/thomas_mock">Thomas Mock</a> and copied here on March 16, 2021 - see the original post [here](](<a href="https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/" class="uri">https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/</a>) for a potentially updated version.</p>
 </blockquote>
 <figure>
-<img src="modern.jpeg" alt="Modern building" /><figcaption aria-hidden="true">Modern building</figcaption>
+<img src="modern.jpeg" alt="" /><figcaption>Modern building</figcaption>
 </figure>
 <h1 id="distill"><code>distill</code></h1>
 <p><code>distill</code> is “Scientific and technical writing, native to the web”. I’ve gotten lots of requests for creating a <code>distill</code> blog from scratch, so I’ve finally gotten around to building that!</p>
@@ -1551,12 +1549,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="step-2-new-project-from-distill-blog">Step 2: New project from <code>distill blog</code></h2>
 <p>What this is really doing is running the following command, and generates the output below.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> distill<span class="sc">::</span><span class="fu">create_blog</span>(<span class="at">dir =</span> <span class="st">&quot;demo-distill&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Demo Distill&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Creating website directory demo<span class="sc">-</span>distill</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Creating demo<span class="sc">-</span>distill<span class="sc">/</span>_site.yml</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Creating demo<span class="sc">-</span>distill<span class="sc">/</span>index.Rmd</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Creating demo<span class="sc">-</span>distill<span class="sc">/</span>about.Rmd</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Creating demo<span class="sc">-</span>distill<span class="sc">/</span>_posts<span class="sc">/</span>welcome<span class="sc">/</span>welcome.Rmd</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">&gt;</span><span class="st"> </span>distill<span class="op">::</span><span class="kw">create_blog</span>(<span class="dt">dir =</span> <span class="st">&quot;demo-distill&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Demo Distill&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>Creating website directory demo<span class="op">-</span>distill</span>
+<span id="cb1-3"><a href="#cb1-3"></a>Creating demo<span class="op">-</span>distill<span class="op">/</span>_site.yml</span>
+<span id="cb1-4"><a href="#cb1-4"></a>Creating demo<span class="op">-</span>distill<span class="op">/</span>index.Rmd</span>
+<span id="cb1-5"><a href="#cb1-5"></a>Creating demo<span class="op">-</span>distill<span class="op">/</span>about.Rmd</span>
+<span id="cb1-6"><a href="#cb1-6"></a>Creating demo<span class="op">-</span>distill<span class="op">/</span>_posts<span class="op">/</span>welcome<span class="op">/</span>welcome.Rmd</span></code></pre></div>
 </div>
 <p>This will create a home-directory titled whatever you passed for the <code>dir</code> argument above, so in our case “demo-distill”. This will contain the <code>_site.yml</code>, the <code>about.rmd</code> file, the <code>index.rmd</code> file, and two folders: <code>_posts</code> and <code>_site</code>. You should definitely change the <code>dir</code> and <code>title</code> arguments to whatever you want your site to be named, although you can edit this later with a bit of work.</p>
 <p>While you’re welcome to explore <code>_site</code> I consider it something you SHOULD NOT edit by hand and it will commonly get overridden by rebuilding posts or the whole site. <code>_site</code> is essentially where the built site lives as final HTML and other supporting files. The <code>_posts</code> folder on the other hand contains all the raw RMDs you will use to create posts.</p>
@@ -1565,44 +1563,44 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The <code>index.html</code> is essentially the home page for your blog. You can navigate from there in either the RStudio viewer or send it to a web browser just like a normal webpage.</p>
 <p>Note: you can also use the <code>Build Website</code> button in RStudio to pull up the whole website. This will re-knit and build the entire site from scratch.</p>
 <figure>
-<img src="preview-site.png" alt="Preview of the site" /><figcaption aria-hidden="true">Preview of the site</figcaption>
+<img src="preview-site.png" alt="" /><figcaption>Preview of the site</figcaption>
 </figure>
 <h2 id="step-4-_site.yml">Step 4: <code>_site.yml</code></h2>
 <p>The <code>_site.yml</code> is where you control the overall details about your blog such as the name, title, description, and the navbar. You can add new “tabs” by changing the <code>_site.yml</code> file, where the default has a navbar with the site name on the left and a “Home” and “About” Tab on the right.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>name<span class="sc">:</span> <span class="st">&quot;demo-distill&quot;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Demo Distill&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>description<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  Demo Distill</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>output_dir<span class="sc">:</span> <span class="st">&quot;_site&quot;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>navbar<span class="sc">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  right<span class="sc">:</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> <span class="st">&quot;Home&quot;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> index.html</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> text<span class="sc">:</span> <span class="st">&quot;About&quot;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> about.html</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> distill<span class="sc">::</span>distill_article</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>name<span class="op">:</span><span class="st"> &quot;demo-distill&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>title<span class="op">:</span><span class="st"> &quot;Demo Distill&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>description<span class="op">:</span><span class="st"> </span><span class="er">|</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="st">  </span>Demo Distill</span>
+<span id="cb2-5"><a href="#cb2-5"></a>output_dir<span class="op">:</span><span class="st"> &quot;_site&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>navbar<span class="op">:</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="st">  </span>right<span class="op">:</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>text<span class="op">:</span><span class="st"> &quot;Home&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>      href<span class="op">:</span><span class="st"> </span>index.html</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    <span class="op">-</span><span class="st"> </span>text<span class="op">:</span><span class="st"> &quot;About&quot;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>      href<span class="op">:</span><span class="st"> </span>about.html</span>
+<span id="cb2-12"><a href="#cb2-12"></a>output<span class="op">:</span><span class="st"> </span>distill<span class="op">::</span>distill_article</span></code></pre></div>
 </div>
 <h2 id="step-5-example-blog-post">Step 5: Example blog post</h2>
 <p>Navigate to <code>_posts</code> -&gt; <code>welcome</code> -&gt; <code>welcome.rmd</code>. This is the default “hello world” example that comes with you <code>distill</code>. Note you can delete that folder completely to drop it from the site, but let’s use it as a practice ground first.</p>
 <p>This is still just a RMarkdown file, but it has a specific YAML header, that contains a title, a description, author, date, and outputs to <code>distill::distill_article()</code>.</p>
 <p>Try adding some more text, code, or other content to this blog post and then knit it! It will generate and show the final output in the RStudio viewer.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Welcome to Demo Distill&quot;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>description<span class="sc">:</span> <span class="er">|</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  Welcome to our new blog, Demo Distill. We hope you enjoy</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  reading what we have to say<span class="sc">!</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> name<span class="sc">:</span> Nora Jones</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>example.com<span class="sc">/</span>norajones</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="sc">:</span> Spacely Sprockets</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    affiliation_url<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>example.com<span class="sc">/</span>spacelysprokets</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="dv">07-27-2020</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  distill<span class="sc">::</span>distill_article<span class="sc">:</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    self_contained<span class="sc">:</span> false</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">---</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>title<span class="op">:</span><span class="st"> &quot;Welcome to Demo Distill&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>description<span class="op">:</span><span class="st"> </span><span class="er">|</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span>Welcome to our new blog, Demo Distill. We hope you enjoy</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  reading what we have to say<span class="op">!</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>author<span class="op">:</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">  </span><span class="op">-</span><span class="st"> </span>name<span class="op">:</span><span class="st"> </span>Nora Jones</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    url<span class="op">:</span><span class="st"> </span>https<span class="op">:</span><span class="er">//</span>example.com<span class="op">/</span>norajones</span>
+<span id="cb3-9"><a href="#cb3-9"></a>    affiliation<span class="op">:</span><span class="st"> </span>Spacely Sprockets</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    affiliation_url<span class="op">:</span><span class="st"> </span>https<span class="op">:</span><span class="er">//</span>example.com<span class="op">/</span>spacelysprokets</span>
+<span id="cb3-11"><a href="#cb3-11"></a>date<span class="op">:</span><span class="st"> </span><span class="dv">07-27-2020</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>output<span class="op">:</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="st">  </span>distill<span class="op">::</span>distill_article<span class="op">:</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="st">    </span>self_contained<span class="op">:</span><span class="st"> </span>false</span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="op">---</span></span></code></pre></div>
 </div>
 <h2 id="step-6-new-post">Step 6: New post</h2>
 <p>To create a new post, you can run the following command: <code>distill::create_post("title of post")</code></p>
@@ -1636,13 +1634,13 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 </ul>
 <p>You will know it all worked when you have the git logo at the top of RStudio</p>
 <figure>
-<img src="git.png" alt="Git logo" /><figcaption aria-hidden="true">Git logo</figcaption>
+<img src="git.png" alt="" /><figcaption>Git logo</figcaption>
 </figure>
 <ul>
 <li>Click on the Git logo and commit everything, notice we can’t push since we haven’t configured GitHub yet</li>
 </ul>
 <figure>
-<img src="inital-commit.png" alt="Initial commit" /><figcaption aria-hidden="true">Initial commit</figcaption>
+<img src="inital-commit.png" alt="" /><figcaption>Initial commit</figcaption>
 </figure>
 <ul>
 <li><code>usethis::use_github()</code> — this works if you have already configured a GitHub Personal Access Token
@@ -1653,33 +1651,33 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 </ul>
 <p>Example of what your console commands are and their output seen below!</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> usethis<span class="sc">::</span><span class="fu">use_github</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>✓ Setting active project to <span class="st">&#39;/Users/thomasmock/demo-distill-blog&#39;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>✓ Checking that current branch is <span class="st">&#39;master&#39;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Which git protocol to use? (enter <span class="dv">0</span> to exit)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> ssh   <span class="ot">&lt;-</span><span class="sc">-</span> presumes that you have set up ssh keys</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span> https <span class="ot">&lt;-</span><span class="sc">-</span> choose this <span class="cf">if</span> you don<span class="st">&#39;t have ssh keys (or don&#39;</span>t know <span class="cf">if</span> you do<span class="er">)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Selection<span class="sc">:</span> <span class="dv">2</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>● Tip<span class="sc">:</span> To suppress this menu <span class="cf">in</span> future, put</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">options(usethis.protocol = &quot;https&quot;)</span><span class="st">`</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">in</span> your script or <span class="cf">in</span> a user<span class="sc">-</span> or project<span class="sc">-</span>level startup file, <span class="st">&#39;.Rprofile&#39;</span>.</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  Call <span class="st">`</span><span class="at">usethis::edit_r_profile()</span><span class="st">`</span> to open it <span class="cf">for</span> editing.</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>● Check title and description</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  Name<span class="sc">:</span>        demo<span class="sc">-</span>distill<span class="sc">-</span>blog</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  Description<span class="sc">:</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>Are title and description ok?</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> Yup</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span> No way</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">:</span> Negative</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>Selection<span class="sc">:</span> <span class="dv">1</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>✓ Creating GitHub repository</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>✓ Setting remote <span class="st">&#39;origin&#39;</span> to <span class="st">&#39;https://github.com/jthomasmock/demo-distill-blog.git&#39;</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>✓ Pushing <span class="st">&#39;master&#39;</span> branch to GitHub and setting remote tracking branch</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>✓ Opening URL <span class="st">&#39;https://github.com/jthomasmock/demo-distill-blog&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">&gt;</span><span class="st"> </span>usethis<span class="op">::</span><span class="kw">use_github</span>()</span>
+<span id="cb5-2"><a href="#cb5-2"></a>✓ Setting active project to <span class="st">&#39;/Users/thomasmock/demo-distill-blog&#39;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>✓ Checking that current branch is <span class="st">&#39;master&#39;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>Which git protocol to use? (enter <span class="dv">0</span> to exit)</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="dv">1</span><span class="op">:</span><span class="st"> </span>ssh   &lt;-<span class="op">-</span><span class="st"> </span>presumes that you have set up ssh keys</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="dv">2</span><span class="op">:</span><span class="st"> </span>https &lt;-<span class="op">-</span><span class="st"> </span>choose this <span class="cf">if</span> you don<span class="st">&#39;t have ssh keys (or don&#39;</span>t know <span class="cf">if</span> you do<span class="er">)</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a>Selection<span class="op">:</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>● Tip<span class="op">:</span><span class="st"> </span>To suppress this menu <span class="cf">in</span> future, put</span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="st">`</span><span class="dt">options(usethis.protocol = &quot;https&quot;)</span><span class="st">`</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="cf">in</span> your script or <span class="cf">in</span> a user<span class="op">-</span><span class="st"> </span>or project<span class="op">-</span>level startup file, <span class="st">&#39;.Rprofile&#39;</span>.</span>
+<span id="cb5-13"><a href="#cb5-13"></a>  Call <span class="st">`</span><span class="dt">usethis::edit_r_profile()</span><span class="st">`</span> to open it <span class="cf">for</span> editing.</span>
+<span id="cb5-14"><a href="#cb5-14"></a>● Check title and description</span>
+<span id="cb5-15"><a href="#cb5-15"></a>  Name<span class="op">:</span><span class="st">        </span>demo<span class="op">-</span>distill<span class="op">-</span>blog</span>
+<span id="cb5-16"><a href="#cb5-16"></a>  Description<span class="op">:</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>Are title and description ok?</span>
+<span id="cb5-18"><a href="#cb5-18"></a></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="dv">1</span><span class="op">:</span><span class="st"> </span>Yup</span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="dv">2</span><span class="op">:</span><span class="st"> </span>No way</span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="dv">3</span><span class="op">:</span><span class="st"> </span>Negative</span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a>Selection<span class="op">:</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>✓ Creating GitHub repository</span>
+<span id="cb5-25"><a href="#cb5-25"></a>✓ Setting remote <span class="st">&#39;origin&#39;</span> to <span class="st">&#39;https://github.com/jthomasmock/demo-distill-blog.git&#39;</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a>✓ Pushing <span class="st">&#39;master&#39;</span> branch to GitHub and setting remote tracking branch</span>
+<span id="cb5-27"><a href="#cb5-27"></a>✓ Opening URL <span class="st">&#39;https://github.com/jthomasmock/demo-distill-blog&#39;</span></span></code></pre></div>
 </div>
 <p>Once this is all run, it should open up a new webpage with your fancy new GitHub repo! Mine opened at: <a href="https://github.com/jthomasmock/demo-distill-blog">GitHub - jthomasmock/demo-distill-blog</a>.</p>
 <h2 id="step-8-netlify">Step 8: Netlify</h2>
@@ -1690,7 +1688,7 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 <li>First click on import from Git</li>
 </ul>
 <figure>
-<img src="netlify-new-site.png" alt="New site from Git" /><figcaption aria-hidden="true">New site from Git</figcaption>
+<img src="netlify-new-site.png" alt="" /><figcaption>New site from Git</figcaption>
 </figure>
 <ul>
 <li>Click on <code>Configure netlify on GitHub</code>, and follow their instructions to allow access, and then add the selected repository you want to send over (demo-distill-blog for me)
@@ -1699,7 +1697,7 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 </ul></li>
 </ul>
 <figure>
-<img src="add-demo-repo.png" alt="Add specific repo" /><figcaption aria-hidden="true">Add specific repo</figcaption>
+<img src="add-demo-repo.png" alt="" /><figcaption>Add specific repo</figcaption>
 </figure>
 <ul>
 <li>Click on <code>demo-distill-blog</code> or whatever your blog’s name is!</li>
@@ -1710,7 +1708,7 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 <li>And then click deploy!</li>
 </ul>
 <figure>
-<img src="publish-directory.png" alt="Make sure to set publish directory to _site" /><figcaption aria-hidden="true">Make sure to set publish directory to _site</figcaption>
+<img src="publish-directory.png" alt="" /><figcaption>Make sure to set publish directory to _site</figcaption>
 </figure>
 <ul>
 <li>You’ll get a fun temporary name (mine was <a href="https://confident-meitner-e6e7dc.netlify.app/">https://confident-meitner-e6e7dc.netlify.app/</a>). You can change this with the <code>Domain Settings</code> to <code>some-name.netlify.app</code> or even purchase a custom domain like I did for example <code>themockup.blog</code> or what Sharla Gelfand did with <code>sharla.party</code>.</li>
@@ -1724,11 +1722,11 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 <p>To get things into “production” once you have set up Netlify, you’ll just need to knit the new blog post, then commit and push to GitHub.</p>
 <p>You can use command line git or the git integration in RStudio.</p>
 <figure>
-<img src="git.png" alt="Example of git in RStudio" /><figcaption aria-hidden="true">Example of git in RStudio</figcaption>
+<img src="git.png" alt="" /><figcaption>Example of git in RStudio</figcaption>
 </figure>
 <p>Basic idea is click commit and then push.</p>
 <figure>
-<img src="inital-commit.png" alt="Example of a commit" /><figcaption aria-hidden="true">Example of a commit</figcaption>
+<img src="inital-commit.png" alt="" /><figcaption>Example of a commit</figcaption>
 </figure>
 <h1 id="next-steps">Next Steps</h1>
 <p>If this guide didn’t provide enough detail, make sure to check out the <a href="https://rstudio.github.io/distill/blog_workflow.html">Blog Post Workflow</a> that goes into specific examples, like importing posts from elsewhere, changing URLs, updating old posts, etc.</p>
@@ -1760,12 +1758,12 @@ You could also do the create GitHub and then connect it to RStudio route <a href
 <p>You’ll need to store all of these in your <code>styles.css</code> file, and note that some of them depend on other changes - specifically to use custom fonts you ALSO have to import the custom fonts!</p>
 <h4 id="bold-silver-title-pink-background">Bold silver title, pink background</h4>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>.distill<span class="sc">-</span>site<span class="sc">-</span>nav {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  color<span class="sc">:</span> <span class="co">#C0C0C0;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  background<span class="sc">-</span>color<span class="sc">:</span> <span class="co">#FF1493;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  font<span class="sc">-</span>size<span class="sc">:</span> 20px;</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  font<span class="sc">-</span>weight<span class="sc">:</span> <span class="dv">900</span>;</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>.distill<span class="op">-</span>site<span class="op">-</span>nav {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  color<span class="op">:</span><span class="st"> </span><span class="co">#C0C0C0;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="st">  </span>background<span class="op">-</span>color<span class="op">:</span><span class="st"> </span><span class="co">#FF1493;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="st">  </span>font<span class="op">-</span>size<span class="op">:</span><span class="st"> </span>20px;</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  font<span class="op">-</span>weight<span class="op">:</span><span class="st"> </span><span class="dv">900</span>;</span>
+<span id="cb6-6"><a href="#cb6-6"></a>}</span></code></pre></div>
 </div>
 <h4 id="want-entire-webpage-to-be-pink">Want entire webpage to be “pink”?</h4>
 <pre><code>body {

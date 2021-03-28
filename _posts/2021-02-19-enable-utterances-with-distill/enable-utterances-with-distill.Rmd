@@ -6,6 +6,10 @@ author:
   - name: Vebash Naidoo
     url: https://twitter.com/Sciencificity
 date: 2021-02-20
+categories:
+  - github
+  - features
+  - tutorial
 output:
   distill::distill_article:
     toc: true

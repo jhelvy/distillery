@@ -5,6 +5,9 @@ description: |
 author: ["Jannik Buhr"]
 date: 2021-03-12
 preview: images/cookies.png
+categories:
+  - tutorial
+  - features
 output:
   distill::distill_article:
     self_contained: false

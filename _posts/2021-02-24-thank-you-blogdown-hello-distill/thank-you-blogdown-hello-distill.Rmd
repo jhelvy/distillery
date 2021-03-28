@@ -10,6 +10,9 @@ author:
     url: https://werk.statt.codes
     orcid_id: 0000-0002-6897-1693
 preview: distill_logo_small.png
+categories:
+  - blogdown
+  - starting
 output:
   distill::distill_article:
     toc: true
