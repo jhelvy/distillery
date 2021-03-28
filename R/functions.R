@@ -164,7 +164,7 @@ create_footer <- function() {
 
   '<!-- Add function to open links to external links in new tab, from: -->',
   '<!-- https://yihui.name/en/2018/09/target-blank/ -->\n\n',
-  '<script src="js/external-link.js">'
+  '<script src="js/external-link.js"></script>'
   ))
 
   save_raw(footer, "_footer.html")
