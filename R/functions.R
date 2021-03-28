@@ -100,33 +100,33 @@ make_showcase_chunks <- function(sites, image_width = 600) {
       tags$div(
         class = paste0("filterDiv ", x[["categories"]]),
         tags$h3(x[["name"]]),
+          tag(
+            "center", 
+            list(
+              tags$img(
+                src = x[["path_png"]], width = image_width,
+                style = "float: left; width: 80%;",
+              )
+            )
+        ),
         tags$a(
           href = x[["url"]],
           class = "icon-link",
           tag(
-            "i", list(class = "fas fa-external-link-alt")
+            "i", list(class = "fas fa-external-link-alt", 
+                      style = "display: inline-block")
           ),
           "Site"
         ),
-        tags$span(
-          class = "horizontalgap",
-          style = "display:inline-block; width: 1rem;"
-        ),
+        br(),
         tags$a(
           href = x[["source"]],
           class = "icon-link",
           tag(
-            "i", list(class = "fab fa-github")
-          ),
+            "i", list(class = "fab fa-github", 
+                      style = "display: inline-block"),
+            ),
           "Source"
-        ),
-        tag(
-          "center", 
-          list(
-            tags$img(
-              src = x[["path_png"]], width = image_width
-            )
-          )
         ),
         hr()
       )

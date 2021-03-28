@@ -30,6 +30,8 @@ rmd_chunks <- make_showcase_chunks(sites, image_width = 600)
 button_filters <- buttons_filter(sites)
 ```
 
+Use the buttons to filter the list of websites:
+
 ```{r insert-showcase, child = c(button_filters, rmd_chunks)}
 ```
 
@@ -68,6 +70,16 @@ button_filters <- buttons_filter(sites)
 
 .icon-link {
   font-size: 0.7rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 3px 5px 3px 5px;
+  margin: 0 2px 0 2px;
+  border-radius: 5px; /* Rounded edges */
+}
+
+.icon-link:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 }
 ```
 
