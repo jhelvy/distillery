@@ -75,3 +75,53 @@ d-appendix {
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
+
+
+
+/*-- SHOWCASE --*/
+
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  color: white;
+  background-color: var(--bkgd-color, #0F2E3D);
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #143d52;
+  color: white
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #1e5c7b;
+  color: white;
+}
+
+.icon-link {
+  font-size: 0.7rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 3px 5px 3px 5px;
+  margin: 0 2px 0 2px;
+  border-radius: 5px; /* Rounded edges */
+}
+
+.icon-link:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+

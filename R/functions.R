@@ -2,30 +2,30 @@ library(tidyverse)
 library(htmltools)
 
 clean_sites <- function(sites, check_url = FALSE) {
-  
+
     if (isTRUE(check_url)) {
-      sites <- sites %>% 
+      sites <- sites %>%
         mutate(
           url_exists = RCurl::url.exists(url)
-        ) %>% 
-        filter(url_exists == TRUE) %>% 
+        ) %>%
+        filter(url_exists == TRUE) %>%
         select(-url_exists)
     }
-  
+
     # Prepare for uniting categories
     categories <- names(sites)[4:length(sites)]
     for (i in categories) {
       sites[, i] <- ifelse(sites[, i] == 0, NA_character_, i)
     }
-    
+
     sites <- sites %>%
-      unite(4:last_col(), col = "categories", sep = " ", na.rm = T) %>% 
+      unite(4:last_col(), col = "categories", sep = " ", na.rm = T) %>%
       mutate(
         name_clean = clean_name(name),
         path_png = file.path("images", "sites", paste0(name_clean, ".png"))
       ) %>%
       arrange(name)
-    
+
     return(sites)
 }
 
@@ -38,17 +38,17 @@ buttons_filter <- function(sites) {
         firstup(x)
       )
   }))
-  
+
   final_html <- div(
     id = "myBtnContainer",
     tags$button(
-      class="btn active", 
+      class="btn active",
       onclick="filterSelection('all')",
       "Show all"
     ),
     cat_button
   )
-  
+
   x <- tempfile(fileext = ".Rmd")
   save_raw(as.character(final_html), x)
   return(x)
@@ -101,7 +101,7 @@ make_showcase_chunks <- function(sites, image_width = 600) {
         class = paste0("filterDiv ", x[["categories"]]),
         tags$h3(x[["name"]]),
           tag(
-            "center", 
+            "center",
             list(
               tags$img(
                 src = x[["path_png"]], width = image_width,
@@ -113,7 +113,7 @@ make_showcase_chunks <- function(sites, image_width = 600) {
           href = x[["url"]],
           class = "icon-link",
           tag(
-            "i", list(class = "fas fa-external-link-alt", 
+            "i", list(class = "fas fa-external-link-alt",
                       style = "display: inline-block")
           ),
           "Site"
@@ -123,7 +123,7 @@ make_showcase_chunks <- function(sites, image_width = 600) {
           href = x[["source"]],
           class = "icon-link",
           tag(
-            "i", list(class = "fab fa-github", 
+            "i", list(class = "fab fa-github",
                       style = "display: inline-block"),
             ),
           "Source"
@@ -132,18 +132,18 @@ make_showcase_chunks <- function(sites, image_width = 600) {
       )
     )
   }))
-  
+
   final_html <- tagList(
     tags$div(
       class = "container",
       sites_div
     )
   )
-  
+
   x <- tempfile(fileext = ".Rmd")
   save_raw(as.character(sites_div), x)
   return(x)
-        
+
 }
 
 create_footer <- function() {
