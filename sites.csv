@@ -1,39 +1,39 @@
-name,url,source,postcard,academic,darkmode
-John Paul Helveston,https://jhelvy.github.io/,https://github.com/jhelvy/jhelvy.github.io/,1,1,0
-The Mockup Blog,https://themockup.netlify.app/,https://github.com/jthomasmock/radix_themockup,0,0,0
-Lisa Lendway,https://lisalendway.netlify.app/,https://github.com/llendway/lisalendway_distill,0,0,0
-Emi Tanaka,https://emitanaka.org/,https://github.com/emitanaka/emitanaka.github.io,0,0,0
-Ijeamaka Anyene,https://ijeamaka-anyene.netlify.app/,https://github.com/Ijeamakaanyene/ijeamaka-anyene,1,0,0
-Before I Sleep,https://milesmcbain.xyz/,https://github.com/MilesMcBain/milesmcbain.com/,0,0,0
-Piping Hot Data,https://www.pipinghotdata.com/,https://github.com/shannonpileggi/pipinghotdata_distill,0,0,0
-The Scrapbook,https://eliocamp.github.io/scrapbook/,https://github.com/eliocamp/scrapbook,0,0,0
-June Choe,https://yjunechoe.github.io/,https://github.com/yjunechoe/yjunechoe.github.io,0,0,0
-Alex K. Gold,https://alexkgold.space/,https://github.com/akgold/akg_site,0,0,0
-Sciencificity Blog,https://sciencificity-blog.netlify.app/,https://github.com/sciencificity/Blog_Vebash,0,0,0
-R-Vogg-Blog,https://r-vogg-blog.netlify.app/,https://github.com/richardvogg/r-vogg-blog,0,0,0
-Sharing Your Work with xaringan,https://spcanelon.github.io/xaringan-basics-and-beyond,https://github.com/spcanelon/xaringan-basics-and-beyond,0,0,0
-jeremydata,https://jeremydata.com/,https://github.com/jeremy-allen/jeremydata_blog,0,0,0
-Jannik Buhr,https://jmbuhr.de,https://github.com/jmbuhr/jmbuhr.github.io,0,0,1
-Harry Fisher,https://hfshr.xyz,https://github.com/hfshr/distill_blog,0,0,0
-Serdar Balcı,https://www.serdarbalci.com/,https://github.com/sbalci/sbalci.github.io/,0,0,0
-Umair Durrani,https://udurrani.netlify.app/,https://github.com/durraniu/udurrani_distill,0,0,0
-Kaija Gahm,https://kaijagahm.netlify.app/,https://github.com/kaijagahm/kaija_bean,0,0,0
-Max Rohde,https://maximilianrohde.com,https://github.com/maxdrohde/blog,0,0,0
-LiteralFightNerd,https://literalfightnerd.com/,https://github.com/NateLatshaw/LiteralFightNerd,0,0,0
-Joseph Casillas,https://www.jvcasillas.com/,https://github.com/jvcasillas/jvcasillas.github.io,0,0,0
-Sean Angiolillo,https://sean.rbind.io,https://github.com/seanangio/distill_blog,0,0,0
-Data Sci Dani,https://datascidani.com/,https://github.com/danielle-b/datascidani2,0,0,0
-Open Source Football,https://www.opensourcefootball.com/,https://github.com/mrcaseb/open-source-football,0,0,0
-Westchester Covid-19 Tracking,https://westchester-covid.mattherman.info/,https://github.com/mfherman/westchester-covid,0,0,0
-Miha Gazvoda,https://mihagazvoda.com/,https://github.com/mihagazvoda/mihagazvoda.com,0,0,0
-Etienne Bacher,https://www.etiennebacher.com/,https://github.com/etiennebacher/personal_website_distill,1,1,0
-Beatriz Milz,https://beatrizmilz.com/,https://github.com/beatrizmilz/blog,0,0,0
-Associação Brasileira de Jurimetria,https://lab.abj.org.br/,https://github.com/abjur/blog,0,0,0
-Kyle Cuilla,https://kcanalytics.netlify.app/,https://github.com/kcuilla/kc_analytics,0,0,0
-Southern California R Users Groups,https://socalr.org/,https://github.com/laRusers/socalr.org,0,0,0
-werk.statt.codes,https://werk.statt.codes/,https://github.com/werkstattcodes/distill_clean,0,0,0
-Lore Abad,https://loreabad6.github.io/,https://github.com/loreabad6/loreabad6.github.io,0,0,0
-Eric Ekholm,https://www.ericekholm.com/,https://github.com/ekholme/ee-website,0,0,0
-Pedro J. Pérez,https://perezp44.github.io/pjperez.web/01_blog.html,https://github.com/perezp44/pjperez.web,0,0,0
-Ted Laderas,https://laderast.github.io,https://github.com/laderast/laderast.github.io,0,0,0
-Bayesian statistics with R,https://oliviergimenez.github.io/bayesian-stats-with-R/,https://github.com/oliviergimenez/bayesian-stats-with-R,0,0,0
+name,url,source,postcard,academic,darkmode,course
+John Paul Helveston,https://jhelvy.github.io/,https://github.com/jhelvy/jhelvy.github.io/,1,0,0,0
+The Mockup Blog,https://themockup.netlify.app/,https://github.com/jthomasmock/radix_themockup,0,0,0,0
+Lisa Lendway,https://lisalendway.netlify.app/,https://github.com/llendway/lisalendway_distill,0,0,0,0
+Emi Tanaka,https://emitanaka.org/,https://github.com/emitanaka/emitanaka.github.io,0,0,0,0
+Ijeamaka Anyene,https://ijeamaka-anyene.netlify.app/,https://github.com/Ijeamakaanyene/ijeamaka-anyene,1,0,0,0
+Before I Sleep,https://milesmcbain.xyz/,https://github.com/MilesMcBain/milesmcbain.com/,0,0,0,0
+Piping Hot Data,https://www.pipinghotdata.com/,https://github.com/shannonpileggi/pipinghotdata_distill,0,0,0,0
+The Scrapbook,https://eliocamp.github.io/scrapbook/,https://github.com/eliocamp/scrapbook,1,0,0,0
+June Choe,https://yjunechoe.github.io/,https://github.com/yjunechoe/yjunechoe.github.io,0,0,0,0
+Alex K. Gold,https://alexkgold.space/,https://github.com/akgold/akg_site,0,0,0,0
+Sciencificity Blog,https://sciencificity-blog.netlify.app/,https://github.com/sciencificity/Blog_Vebash,0,0,0,0
+R-Vogg-Blog,https://r-vogg-blog.netlify.app/,https://github.com/richardvogg/r-vogg-blog,0,0,0,0
+Sharing Your Work with xaringan,https://spcanelon.github.io/xaringan-basics-and-beyond,https://github.com/spcanelon/xaringan-basics-and-beyond,0,0,0,1
+jeremydata,https://jeremydata.com/,https://github.com/jeremy-allen/jeremydata_blog,0,0,0,0
+Jannik Buhr,https://jmbuhr.de,https://github.com/jmbuhr/jmbuhr.github.io,0,0,1,0
+Harry Fisher,https://hfshr.xyz,https://github.com/hfshr/distill_blog,1,0,0,0
+Serdar Balcı,https://www.serdarbalci.com/,https://github.com/sbalci/sbalci.github.io/,1,0,0,0
+Umair Durrani,https://udurrani.netlify.app/,https://github.com/durraniu/udurrani_distill,1,0,0,0
+Kaija Gahm,https://kaijagahm.netlify.app/,https://github.com/kaijagahm/kaija_bean,1,0,0,0
+Max Rohde,https://maximilianrohde.com,https://github.com/maxdrohde/blog,0,0,0,0
+LiteralFightNerd,https://literalfightnerd.com/,https://github.com/NateLatshaw/LiteralFightNerd,0,0,0,0
+Joseph Casillas,https://www.jvcasillas.com/,https://github.com/jvcasillas/jvcasillas.github.io,1,0,0,0
+Sean Angiolillo,https://sean.rbind.io,https://github.com/seanangio/distill_blog,0,0,0,0
+Data Sci Dani,https://datascidani.com/,https://github.com/danielle-b/datascidani2,0,0,0,0
+Open Source Football,https://www.opensourcefootball.com/,https://github.com/mrcaseb/open-source-football,0,0,0,0
+Westchester Covid-19 Tracking,https://westchester-covid.mattherman.info/,https://github.com/mfherman/westchester-covid,0,0,0,1
+Miha Gazvoda,https://mihagazvoda.com/,https://github.com/mihagazvoda/mihagazvoda.com,0,0,0,0
+Etienne Bacher,https://www.etiennebacher.com/,https://github.com/etiennebacher/personal_website_distill,1,1,0,0
+Beatriz Milz,https://beatrizmilz.com/,https://github.com/beatrizmilz/blog,1,0,0,0
+Associação Brasileira de Jurimetria,https://lab.abj.org.br/,https://github.com/abjur/blog,0,0,0,0
+Kyle Cuilla,https://kcanalytics.netlify.app/,https://github.com/kcuilla/kc_analytics,1,0,0,0
+Southern California R Users Groups,https://socalr.org/,https://github.com/laRusers/socalr.org,0,0,0,1
+werk.statt.codes,https://werk.statt.codes/,https://github.com/werkstattcodes/distill_clean,0,0,1,0
+Lore Abad,https://loreabad6.github.io/,https://github.com/loreabad6/loreabad6.github.io,1,0,0,0
+Eric Ekholm,https://www.ericekholm.com/,https://github.com/ekholme/ee-website,1,0,0,0
+Pedro J. Pérez,https://perezp44.github.io/pjperez.web/01_blog.html,https://github.com/perezp44/pjperez.web,0,0,0,0
+Ted Laderas,https://laderast.github.io,https://github.com/laderast/laderast.github.io,1,0,0,0
+Bayesian statistics with R,https://oliviergimenez.github.io/bayesian-stats-with-R/,https://github.com/oliviergimenez/bayesian-stats-with-R,0,0,0,1
