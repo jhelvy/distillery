@@ -7,7 +7,19 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Automagic Tabs in Distill/Rmarkdown files and time series analysis</title>
+      <dc:creator>Karina Bartolomé</dc:creator>
+      <dc:creator>Rafael Zambrano</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-03-24-automagic-tabs-in-distillrmarkdown-files-and-time-series-analysis</link>
+      <description>This article shows the use of tabs in Rmarkdown documents, through an example of time series analysis of the monthly estimator of Argentine economic activity.</description>
+      <category>features</category>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-03-24-automagic-tabs-in-distillrmarkdown-files-and-time-series-analysis</guid>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>Create a GitHub website with distill in less than 30 minutes</title>
       <dc:creator>Andreas Handel</dc:creator>
