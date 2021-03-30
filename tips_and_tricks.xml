@@ -21,6 +21,17 @@
       <media:content url="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png" medium="image" type="image/png"/>
     </item>
     <item>
+      <title>Customizing distill with {htmltools} and CSS</title>
+      <dc:creator>John Paul Helveston</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css</link>
+      <description>How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.</description>
+      <category>features</category>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css</guid>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css/images/css_html.png" medium="image" type="image/png" width="4780" height="1575"/>
+    </item>
+    <item>
       <title>Create a GitHub website with distill in less than 30 minutes</title>
       <dc:creator>Andreas Handel</dc:creator>
       <link>https://distillery.rbind.io/posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes</link>
