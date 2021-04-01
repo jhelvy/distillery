@@ -1,5 +1,6 @@
 library(tidyverse)
 library(htmltools)
+library(R.utils)
 
 clean_sites <- function(sites, check_url = FALSE) {
 
@@ -75,12 +76,18 @@ update_screenshots <- function(sites, update_all = FALSE) {
   for (i in seq_len(nrow(sites))) {
     site <- sites[i,]
     if (update_all == TRUE) {
-      webshot2::webshot(
-        site$url,
-        vwidth = 1200,
-        vheight = floor(1200*0.65),
-        cliprect = "viewport",
-        file = site$path_png)
+      tryCatch({
+        withTimeout({
+          webshot2::webshot(
+            site$url,
+            vwidth = 1200,
+            vheight = floor(1200*0.65),
+            cliprect = "viewport",
+            file = site$path_png)
+        }, timeout = 60)
+      }, TimeoutException = function(ex) {
+        message(sprintf("Timeout, skipping: %s:", site$url))
+      })
     } else {
       if (!file.exists(site$path_png)) {
         webshot2::webshot(

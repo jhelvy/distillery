@@ -12,7 +12,7 @@ output:
 <!-- badges: end -->
 
 ```{r, include = FALSE}
-source(file.path("R", "functions.R"))
+library(tidyverse)
 ```
 
 Welcome to the [distillery](https://distillery.rbind.io/): a [distill](https://rstudio.github.io/distill/) blog about building distill websites and blogs!
