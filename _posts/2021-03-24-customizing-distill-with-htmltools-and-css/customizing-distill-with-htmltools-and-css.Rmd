@@ -1,0 +1,348 @@
+---
+title: "Customizing distill with {htmltools} and CSS"
+description: |
+  How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.
+author: John Paul Helveston
+date: 03-25-2021
+preview: "images/css_html.png"
+categories:
+  - features
+  - tutorial
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+> Note: This post was originally written by [John Paul Helveston](https://twitter.com/JohnHelveston) and was copied here on March 30, 2021 - see the original post [here](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/) for a potentially updated version.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "figs/",
+  fig.width = 7.252,
+  fig.height = 4,
+  comment = "#>",
+  fig.retina = 3,
+  R.options = list(width = 60)
+)
+```
+
+<center>
+<img src="images/css_html.png" width=100%>
+</center>
+
+One of the things I love about [{distill}](https://rstudio.github.io/distill/) as a site builder is that it is super light weight. It comes out of the box with very few bells and whistles, enabling you to create a site from scratch in minutes. I tried using [{blogdown}](https://bookdown.org/yihui/blogdown/) with the [Hugo Academic theme](https://themes.gohugo.io/academic/), but in the end I found the overall configuration a bit overwhelming, even with the guidance of Alison Hill's incredible [post](https://alison.rbind.io/post/new-year-new-blogdown/) on how to do it (btw, if you want to make a blogdown site, you totally should read her [posts on blogdown](https://alison.rbind.io/categories/blogdown/)). Distill was just simpler, so I dove in.
+
+That said, once I did get my distill site running, I found myself longing for some of the really cool features I've seen on peoples' blogdown sites, like [Alison Hill's site](https://alison.rbind.io/) (if you can't tell, Alison's work has been a major source of inspiration for me). But then I realized, "wait a minute...I'm working in R, and whenever I want some functionality that doesn't yet exist, I can just write my own functions!"
+
+So that's what I set out to do - write a bunch of functions and hack away at CSS to construct the features I wanted. This post walks through my general strategy and then shows how I implemented some of the features on my site.
+
+> Full disclosure: I am sure there are probably other (likely better) ways to do some of these things, but this is what I came up with and it worked for me!
+
+# Finding the html
+
+For every feature I wanted to add, my starting point was trying to find an example somewhere of the raw html for that feature. My knowledge of html is very limited and hacky, but I do know that if I see something I want, I can use the "inspect" tool in Chrome to grab the html by right-clicking on it and selecting "Copy element", like this:
+
+<center>
+<img src="images/inspect.gif" width=100% class="shadow">
+</center>
+
+With some html in hand, I had a template to work with. My starting point was always to just drop the html directly into a page and edit it until it looked the way I wanted. But most of the time I needed to replicate and reuse that html in multiple places, so I had to find a way to write R code to _generate_ html.
+
+# [{htmltools}](https://unleash-shiny.rinterface.com/htmltools-overview.html) to the rescue!
+
+Luckily, some [clever folks](https://unleash-shiny.rinterface.com/references.html#ref-R-htmltools) wrote a package that generates html code! Since html controls formatting by wrapping content inside tags, the {htmltools} package uses a bunch of handy functions to generate those tags for you. For example, if I wanted to make a level 1 header tag, I could use the `h1()` function:
+
+```{r htmltools_div}
+library(htmltools)
+
+content <- h1("Hello World")
+print(content)
+```
+
+For most situations, this works great, but there are also times where I need a tag that isn't yet supported. In those case, you can insert the tags yourself as a string and use the `tag()` function to create custom tags. For example, the `<aside>` tag is used in distill to put content in the sidebar, but {htmltools} does not have an `aside()` function. Instead, I can create those tages like this:
+
+```{r htmltools_raw}
+content <- tag("aside", "Hello World")
+print(content)
+```
+
+With this in mind, we now have just about everything we need to start writing functions to construct some html! I'll start with a simple example of writing a function to insert some text in the sidebar.
+
+# Getting organized
+
+Before I started writing functions, I needed to find a convenient place to put them so I could use them later in my distill articles and posts. Following the typical folder structure for R packages, I decided to make a folder called "R" in the root directory of my distill site and put a file called [`functions.R`](https://github.com/jhelvy/jhelvy.github.io/blob/master/R/functions.R) in it. Now I can access any functions I write inside this file by calling the following at the top of any .Rmd file:
+
+```{r, eval=FALSE}
+source(file.path("R", "functions.R"))
+```
+
+It's kind of like calling `library(package)` at the top of a file, except your functions don't live in a package. Eventually, I may choose to move some of my functions to an external package so others can use them, but for now they'll live happily in my `functions.R` file `r emo::ji("smile")`.
+
+# Haiku research summaries
+
+Inspired by [Andrew Heiss's research page](https://www.andrewheiss.com/research/), I wanted to insert a haiku summary next to each citation of each paper on my [publications page](https://jhelvy.github.io/publications.html). All you need to do is wrap some text in `<aside>` tags and it will show up in the side bar. But rather than write the html for each haiku (e.g. `<aside>haiku text</aside>`), I decided to write a simple function to generate the html tags for me.
+
+I started with three functions to generate the tags for some center-aligned text in the sidebar:
+
+```{r}
+# Generates <aside>text</aside>
+aside <- function(text) {
+  return(htmltools::tag("aside", list(text)))
+}
+
+# Generates <center>text</center>
+center <- function(text) {
+  return(htmltools::tag("center", list(text)))
+}
+
+# Generates <aside><center>text</center></aside>
+aside_center <- function(text) {
+  return(aside(center(list(text))))
+}
+```
+
+Now I can insert some center-aligned text in the sidebar with the function `aside_center(text)`. But since haikus have a particular 5-7-5 syllabic structure, I thought it would be better to put each line on a separate row. I also wanted the haikus to be in italic font. So I wrote a `haiku()` function that takes three text inputs and generates the html to put them in the side bar on separate lines:
+
+```{r}
+haiku <- function(one, two, three) {
+  return(aside_center(list(
+    htmltools::em(
+      one, htmltools::br(),
+      two, htmltools::br(),
+      three)
+  )))
+}
+```
+
+With this little function, I can insert haikus throughout my publications page without having to write any html! For example, the html for the haiku for our recent [paper](https://doi.org/10.1088/1748-9326/aba715) in _Environmental Research Letters_ is generated like this:
+
+```{r}
+html <- haiku(
+  "A five minute ride",
+  "In an EV can increase",
+  "The chance you'll buy one"
+)
+
+print(html)
+```
+
+> **Important caveat**: For this to work, I had to insert each haiku using in-line R code, like this: `` `r knitr::inline_expr('haiku("one", "two", "three")')` ``. If I used a code chunk, the output will get wrapped in a `<div>`, nullifying the `<aside>` tags.
+
+Hopefully this example gives you the gist of the general strategy of writing a function to produce the desired html. For the most part, the strategy is the same for all the other features on this post, with the exception that some require a little CSS sprinkled on top.
+
+# Link "buttons" with icons + text
+
+Everyone knows that cool points are directly proportional to usage of  [fontawesome](https://fontawesome.com/) icons on your website. So when it came time to add links to content on my [publications page](https://jhelvy.github.io/publications.html), I _had_ to find a way to make it easier to insert icons with the links. Since {htmltools} does not have a default tag for `<i></i>`, I made a function to build the tags using `htmltools::tag()`:
+
+```{r}
+# Generates <i class="icon"></i>
+make_icon <- function(icon) {
+  return(htmltools::tag("i", list(class = icon)))
+}
+```
+
+I can now get an icon for any fontawesome by using it's class. For example, I can get the GitHub icon like this:
+
+```{r, eval=FALSE}
+make_icon("fab fa-github")
+```
+
+Because this function just generates generic `<i></i>` tags, it works with other icon libraries too. For example, I can insert the Google Scholar icon from [academic icons](https://jpswalsh.github.io/academicons/) using `make_icon("ai ai-google-scholar")`. Cool!
+
+Of course I want links that have icons + text, so I made another function to paste on the text:
+
+```{r}
+make_icon_text <- function(icon, text) {
+  return(htmltools::HTML(paste0(make_icon(icon), " ", text)))
+}
+```
+
+And finally, to make a link, I need to make one more function using the `htmltools::a()` function. I also added a class I called `"icon-link"` so I could add some CSS styling later to these links:
+
+```{r}
+icon_link <- function(icon = NULL, text = NULL, url = NULL) {
+  if (!is.null(icon)) {
+    text <- make_icon_text(icon, text)
+  }
+  return(htmltools::a(href = url, text, class = "icon-link"))
+}
+```
+
+By itself, this function will produce a link with an icon and text. To make it looks more like a button (which is what I wanted), I added the following CSS in my [`jhelvy.css`](https://github.com/jhelvy/jhelvy.github.io/blob/master/css/jhelvy.css) theme, which is the theme I set to all pages in my [`_site.yml`](https://github.com/jhelvy/jhelvy.github.io/blob/master/_site.yml) file:
+
+```{css}
+.icon-link {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 3px 5px 3px 5px;
+    margin: 0 2px 0 2px;
+    border-radius: 5px; /* Rounded edges */
+}
+
+.icon-link:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+```
+
+> Note: I use parameters throughout my css file so I can use common values, like colors, so that's what `var(--color-primary);` and `var(--color-secondary);` are about. You can see what color values these refer to at the top of my [`jhelvy.css`](https://github.com/jhelvy/jhelvy.github.io/blob/master/css/jhelvy.css) file.
+
+You can see how these "buttons" look on my [publications page](https://jhelvy.github.io/publications.html). For example, the three buttons at the top are generated with this chunk in my [`publications.Rmd`](https://github.com/jhelvy/jhelvy.github.io/blob/master/publications.Rmd) file:
+
+```{r, eval=FALSE}
+icon_link(
+    icon = "ai ai-google-scholar",
+    text = "Google Scholar",
+    url  = "https://scholar.google.com/citations?user=DY2D56IAAAAJ"
+)
+icon_link(
+    icon = "ai ai-orcid",
+    text = "ORCID",
+    url  = "https://orcid.org/0000-0002-2657-9191"
+)
+icon_link(
+    icon = "ai ai-researchgate",
+    text = "Research Gate",
+    url  = "https://www.researchgate.net/profile/John_Helveston"
+)
+```
+
+<center>
+```{r, echo=FALSE}
+icon_link(
+    icon = "ai ai-google-scholar",
+    text = "Google Scholar",
+    url  = "https://scholar.google.com/citations?user=DY2D56IAAAAJ"
+)
+icon_link(
+    icon = "ai ai-orcid",
+    text = "ORCID",
+    url  = "https://orcid.org/0000-0002-2657-9191"
+)
+icon_link(
+    icon = "ai ai-researchgate",
+    text = "Research Gate",
+    url  = "https://www.researchgate.net/profile/John_Helveston"
+)
+```
+</center>
+
+## Side note on academic icons
+
+The distill package supports [fontawesome](https://fontawesome.com/) icons out of the box, but if you want to include [academic icons](https://jpswalsh.github.io/academicons/) you'll need to include a link to the style sheet in the page header. You can quickly add it to all pages by making a `header.html` file in your root directory that contains this line:
+
+```{html}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+```
+
+Then in your `_site.yml` you can add it to every page by changing the `output` parameter:
+
+```
+output:
+  distill::distill_article:
+    includes:
+      in_header:
+      - header.html
+```
+
+# Float an image left / right with wrapped text
+
+A very common layout I see on lots of sites is an image floated to the left or right with text wrapping around it. Here's an example from my [lab page](https://jhelvy.github.io/lab.html):
+
+<center>
+<img src="images/text_wrap.png" width="600px" class="shadow">
+</center>
+
+There are probably lots of ways to do this, but a simple enough solution is to use the `:::` notation to create custom divs. This isn't needed if your output is a `html_document`, but for distill articles you need to create a new div that includes the image _and_ text wrapping around it (see [this issue](https://community.rstudio.com/t/wrapping-text-around-a-right-floated-image-in-rmarkdown-document/94584/2) for details as to why you have to do this).
+
+## Float a single image
+
+If you have just a single image that you want to wrap text around, you can do it like this:
+
+````markdown
+:::float-image
+
+`r ''````{r out.width='150px', out.extra='style="float:left; padding:10px"', echo=FALSE}
+knitr::include_graphics("path/to/image")
+```
+
+Here is some text you want to wrap around the image.
+:::
+````
+
+You can name the div whatever you want - I just used `float-image` to be descriptive. I included all the CSS needed to float the image in the code chunk settings: `out.width='150px', out.extra='style="float:left; padding:10px"'`. You may want to adjust the padding to fit your site's look and feel, but this should be all you need to get the job done.
+
+## Float multiple images
+
+Since I use this layout frequently, I decided to define two classes, `float-left` and `float-right`, in my [`jhelvy.css`](https://github.com/jhelvy/jhelvy.github.io/blob/master/css/jhelvy.css) theme that style any images in a div with those classes to float left or right, with a little padding:
+
+```{css}
+.float-left img {
+    float:left;
+    padding: 5px 10px 5px 0px;
+}
+
+.float-right img {
+    float:right;
+    padding: 5px 0px 5px 10px;
+}
+```
+
+Now to float an image and wrap text around it, all I need to do is use one of those classes for the div name, and any images between the `:::` marks will be floated left or right:
+
+````markdown
+:::float-left
+
+`r ''````{r, out.width='150px'}
+knitr::include_graphics("path/to/image")
+```
+
+Here is some text you want to wrap around the image.
+:::
+````
+
+You can use whatever method you want to insert images, like `knitr::include_graphics()` or just insert direct html (which is what I actually end up doing most often).
+
+> **Caveat**: Anything in the div created by `:::` will be masked to the table of contents, so I don't recomment wrapping a whole article inside `:::` to float multiple images (though you could) and instead recommend wrapping just the elements you want to float.
+
+# "Last updated on..." statement in footer
+
+I wanted to put a date somewhere on my site so people can see when it was last updated, and I figured the footer was a good location since it's out of the way but still on every page (even blog posts). The thing is, {distill} generates the footer from a single, static `_footer.html` file in the root directory. So if I want the date to update in the footer, I have to update the `_footer.html` file on every build.
+
+Not a problem - just make a `create_footer()` function and call it before you build the site! My `create_footer()` function lives in my [`functions.R`](https://github.com/jhelvy/jhelvy.github.io/blob/master/R/functions.R) file, and it's a bit long as it also inserts some icons and other text. But the main part doing the date updating is the function `last_updated()`:
+
+```{r}
+last_updated <- function() {
+  return(htmltools::span(
+    paste0(
+      'Last updated on ',
+      format(Sys.Date(), format="%B %d, %Y")
+    ),
+    style = "font-size:0.8rem;")
+  )
+}
+```
+
+This just generates a span of the text "Last updated on {date}" with a smaller font size. I call this function inside my `create_footer()` function to grab the latest date, then the function write the `_footer.html` file to the root directory.
+
+To simplify the site build, I put a [build_site.R](https://github.com/jhelvy/jhelvy.github.io/blob/master/build_site.R) file in root directory with code to load all the functions in `functions.R`, create the footer, then build the site:
+
+```{r, eval=FALSE}
+source(file.path("R", "functions.R"))
+
+# Fist build the footer to capture today's date
+create_footer()
+
+# Then render the site
+rmarkdown::render_site(encoding = 'UTF-8')
+```
+
+Now I just source `build_site.R` and my site builds with an updated footer to today's date! What's even more fun is I use a [GitHub Action](https://github.com/jhelvy/jhelvy.github.io/blob/master/.github/workflows/build_site.yml) to automatically run `build_site.R` every time I commit something to the repo where my site lives and commit all the site files to my `gh-pages` branch. So I never have to worry about creating the footer - it's all done automatically!
+
+# Final thoughts
+
+Coming up with little solutions to each of these features was a highly iterative process, and for the most part I really wasn't sure how to do any of this when I first got started. Each feature I added usually started by being inspired from someone else's work, like the haiku research summaries and buttons with icons and text on [Andrew Heiss's research page](https://www.andrewheiss.com/research/). I found the process of coming up with a solution to implement each feature to be a fun way to learn new R tricks, especially in working with CSS. If you're an R / distill / blogdown user looking to customize your site, hopefully these little examples will inspire you too!
+
