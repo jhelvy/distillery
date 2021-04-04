@@ -7,7 +7,20 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Deploy previews with Netlifly</title>
+      <dc:creator>Shannon Pileggi</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-04-01-deploy-previews-with-netlifly</link>
+      <description>Collaborative {distill} website workflows</description>
+      <category>deploy</category>
+      <category>tutorial</category>
+      <category>netlify</category>
+      <category>github</category>
+      <guid>https://distillery.rbind.io/posts/2021-04-01-deploy-previews-with-netlifly</guid>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-04-01-deploy-previews-with-netlifly/img/netlifly-checks.png" medium="image" type="image/png" width="1358" height="704"/>
+    </item>
     <item>
       <title>Automagic Tabs in Distill/Rmarkdown files and time series analysis</title>
       <dc:creator>Karina Bartolomé</dc:creator>
