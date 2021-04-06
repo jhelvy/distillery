@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 
@@ -22,11 +23,9 @@ page](https://distillery.rbind.io/tips_and_tricks.html)!
 This is an inclusive community of blogs for everyone to learn from.
 Please, add yourself!
 
-How to contribute
-=================
+# How to contribute
 
-Add your distill site to the [showcase](https://distillery.rbind.io/showcase.html):
------------------------------------------------------------------------------------
+## Add your distill site to the [showcase](https://distillery.rbind.io/showcase.html):
 
 ### Method 1
 
@@ -47,8 +46,7 @@ That’s it! Your site will be automatically added to the
 [showcase](https://distillery.rbind.io/showcase.html), complete with a
 screen shot and the links to the site and source!
 
-Add a post site to the [tips & tricks page](https://distillery.rbind.io/tips_and_tricks.html):
-----------------------------------------------------------------------------------------------
+## Add a post site to the [tips & tricks page](https://distillery.rbind.io/tips_and_tricks.html):
 
 [Open an issue](https://github.com/jhelvy/distillery/issues) and add a
 link to your post as well as a link to the post source code. We’ll copy
@@ -57,148 +55,78 @@ attribution statement at the top:
 
     > Note: This post was originally written by [name](link) and copied here on {date} - see the original post [here](link) for a potentially updated version.
 
-List of sites in showcase:
-==========================
+# List of sites in showcase:
 
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">name</th>
-<th style="text-align: left;">site</th>
-<th style="text-align: left;">source</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Alex K. Gold</td>
-<td style="text-align: left;"><a href="https://alexkgold.space/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/akgold/akg_site">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Associação Brasileira de Jurimetria</td>
-<td style="text-align: left;"><a href="https://lab.abj.org.br/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/abjur/blog">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Bayesian statistics with R</td>
-<td style="text-align: left;"><a href="https://oliviergimenez.github.io/bayesian-stats-with-R/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/oliviergimenez/bayesian-stats-with-R">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Beatriz Milz</td>
-<td style="text-align: left;"><a href="https://beatrizmilz.com/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/beatrizmilz/blog">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Before I Sleep</td>
-<td style="text-align: left;"><a href="https://milesmcbain.xyz/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/MilesMcBain/milesmcbain.com/">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Data Sci Dani</td>
-<td style="text-align: left;"><a href="https://datascidani.com/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/danielle-b/datascidani2">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Emi Tanaka</td>
-<td style="text-align: left;"><a href="https://emitanaka.org/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/emitanaka/emitanaka.github.io">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Eric Ekholm</td>
-<td style="text-align: left;"><a href="https://www.ericekholm.com/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/ekholme/ee-website">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Etienne Bacher</td>
-<td style="text-align: left;"><a href="https://www.etiennebacher.com/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/etiennebacher/personal_website_distill">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Harry Fisher</td>
-<td style="text-align: left;"><a href="https://hfshr.xyz">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/hfshr/distill_blog">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ijeamaka Anyene</td>
-<td style="text-align: left;"><a href="https://ijeamaka-anyene.netlify.app/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/Ijeamakaanyene/ijeamaka-anyene">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Jannik Buhr</td>
-<td style="text-align: left;"><a href="https://jmbuhr.de">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/jmbuhr/jmbuhr.github.io">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Jeff’s Journal</td>
-<td style="text-align: left;"><a href="https://jeffreyasselin.netlify.app/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/jassassin68/my-distill-site">source</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">jeremydata</td>
-<td style="text-align: left;"><a href="https://jeremydata.com/">site</a></td>
-<td style="text-align: left;"><a href="https://github.com/jeremy-allen/jeremydata_blog">source</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">John Paul Helveston</td>
-<td style="text-align: left;"><a href="https://www.jhelvy.com/">site</a></td>
-<td style="text-align: left;">[source](<a href="https://github.com/jhelvy/jhelvy.com" class="uri">https://github.com/jhelvy/jhelvy.com</a></td>
-</tr>
-</tbody>
-</table>
+| name                                | site                                                            | source                                                              |
+|:------------------------------------|:----------------------------------------------------------------|:--------------------------------------------------------------------|
+| Alex K. Gold                        | [site](https://alexkgold.space/)                                | [source](https://github.com/akgold/akg_site)                        |
+| Associação Brasileira de Jurimetria | [site](https://lab.abj.org.br/)                                 | [source](https://github.com/abjur/blog)                             |
+| Bayesian statistics with R          | [site](https://oliviergimenez.github.io/bayesian-stats-with-R/) | [source](https://github.com/oliviergimenez/bayesian-stats-with-R)   |
+| Beatriz Milz                        | [site](https://beatrizmilz.com/)                                | [source](https://github.com/beatrizmilz/blog)                       |
+| Before I Sleep                      | [site](https://milesmcbain.xyz/)                                | [source](https://github.com/MilesMcBain/milesmcbain.com/)           |
+| Data Sci Dani                       | [site](https://datascidani.com/)                                | [source](https://github.com/danielle-b/datascidani2)                |
+| Emi Tanaka                          | [site](https://emitanaka.org/)                                  | [source](https://github.com/emitanaka/emitanaka.github.io)          |
+| Eric Ekholm                         | [site](https://www.ericekholm.com/)                             | [source](https://github.com/ekholme/ee-website)                     |
+| Etienne Bacher                      | [site](https://www.etiennebacher.com/)                          | [source](https://github.com/etiennebacher/personal_website_distill) |
+| Harry Fisher                        | [site](https://hfshr.xyz)                                       | [source](https://github.com/hfshr/distill_blog)                     |
+| Ijeamaka Anyene                     | [site](https://ijeamaka-anyene.netlify.app/)                    | [source](https://github.com/Ijeamakaanyene/ijeamaka-anyene)         |
+| Jannik Buhr                         | [site](https://jmbuhr.de)                                       | [source](https://github.com/jmbuhr/jmbuhr.github.io)                |
+| Jeff’s Journal                      | [site](https://jeffreyasselin.netlify.app/)                     | [source](https://github.com/jassassin68/my-distill-site)            |
+| jeremydata                          | [site](https://jeremydata.com/)                                 | [source](https://github.com/jeremy-allen/jeremydata_blog)           |
+| John Paul Helveston                 | [site](https://www.jhelvy.com/)                                 | \[source\](<https://github.com/jhelvy/jhelvy.com>                   |
 
-<a href="https://github.com/jhelvy/jhelvy.com" class="uri">https://github.com/jhelvy/jhelvy.com</a>
+<https://github.com/jhelvy/jhelvy.com>
 
-<a href="https://github.com/jhelvy/jhelvy.com" class="uri">https://github.com/jhelvy/jhelvy.com</a>
+<https://github.com/jhelvy/jhelvy.com>
 
-<a href="https://github.com/jhelvy/jhelvy.com" class="uri">https://github.com/jhelvy/jhelvy.com</a>)
-| |Joseph Casillas |[site](https://www.jvcasillas.com/)
-|[source](https://github.com/jvcasillas/jvcasillas.github.io) | |June
-Choe |[site](https://yjunechoe.github.io/)
-|[source](https://github.com/yjunechoe/yjunechoe.github.io) | |Kaija
-Gahm |[site](https://kaijagahm.netlify.app/)
-|[source](https://github.com/kaijagahm/kaija_bean) | |Kyle Cuilla
-|[site](https://kcanalytics.netlify.app/)
-|[source](https://github.com/kcuilla/kc_analytics) | |Lisa Lendway
-|[site](https://lisalendway.netlify.app/)
-|[source](https://github.com/llendway/lisalendway_distill) |
-|LiteralFightNerd |[site](https://literalfightnerd.com/)
-|[source](https://github.com/NateLatshaw/LiteralFightNerd) | |Lore Abad
-|[site](https://loreabad6.github.io/)
-|[source](https://github.com/loreabad6/loreabad6.github.io) | |Max Rohde
-|[site](https://maximilianrohde.com)
-|[source](https://github.com/maxdrohde/blog) | |Miha Gazvoda
-|[site](https://mihagazvoda.com/)
-|[source](https://github.com/mihagazvoda/mihagazvoda.com) | |Open Source
-Football |[site](https://www.opensourcefootball.com/)
-|[source](https://github.com/mrcaseb/open-source-football) | |Pedro J.
-Pérez |[site](https://perezp44.github.io/pjperez.web/01_blog.html)
-|[source](https://github.com/perezp44/pjperez.web) | |Piping Hot Data
-|[site](https://www.pipinghotdata.com/)
-|[source](https://github.com/shannonpileggi/pipinghotdata_distill) |
-|R-Vogg-Blog |[site](https://r-vogg-blog.netlify.app/)
-|[source](https://github.com/richardvogg/r-vogg-blog) | |Sciencificity
-Blog |[site](https://sciencificity-blog.netlify.app/)
-|[source](https://github.com/sciencificity/Blog_Vebash) | |Sean
-Angiolillo |[site](https://sean.rbind.io)
-|[source](https://github.com/seanangio/distill_blog) | |Serdar Balcı
-|[site](https://www.serdarbalci.com/)
-|[source](https://github.com/sbalci/sbalci.github.io/) | |Sharing Your
-Work with xaringan
-|[site](https://spcanelon.github.io/xaringan-basics-and-beyond)
-|[source](https://github.com/spcanelon/xaringan-basics-and-beyond) |
-|Southern California R Users Groups |[site](https://socalr.org/)
-|[source](https://github.com/laRusers/socalr.org) | |Ted Laderas
-|[site](https://laderast.github.io)
-|[source](https://github.com/laderast/laderast.github.io) | |The Mockup
-Blog |[site](https://themockup.netlify.app/)
-|[source](https://github.com/jthomasmock/radix_themockup) | |The
-Scrapbook |[site](https://eliocamp.github.io/scrapbook/)
-|[source](https://github.com/eliocamp/scrapbook) | |Umair Durrani
-|[site](https://udurrani.netlify.app/)
-|[source](https://github.com/durraniu/udurrani_distill) |
-|werk.statt.codes |[site](https://werk.statt.codes/)
-|[source](https://github.com/werkstattcodes/distill_clean) |
-|Westchester Covid-19 Tracking
-|[site](https://westchester-covid.mattherman.info/)
-|[source](https://github.com/mfherman/westchester-covid) |
+<https://github.com/jhelvy/jhelvy.com>) \| \|Joseph Casillas
+\|[site](https://www.jvcasillas.com/)
+\|[source](https://github.com/jvcasillas/jvcasillas.github.io) \| \|June
+Choe \|[site](https://yjunechoe.github.io/)
+\|[source](https://github.com/yjunechoe/yjunechoe.github.io) \| \|Kaija
+Gahm \|[site](https://kaijagahm.netlify.app/)
+\|[source](https://github.com/kaijagahm/kaija_bean) \| \|Kyle Cuilla
+\|[site](https://kcanalytics.netlify.app/)
+\|[source](https://github.com/kcuilla/kc_analytics) \| \|Lisa Lendway
+\|[site](https://lisalendway.netlify.app/)
+\|[source](https://github.com/llendway/lisalendway_distill) \|
+\|LiteralFightNerd \|[site](https://literalfightnerd.com/)
+\|[source](https://github.com/NateLatshaw/LiteralFightNerd) \| \|Lore
+Abad \|[site](https://loreabad6.github.io/)
+\|[source](https://github.com/loreabad6/loreabad6.github.io) \| \|Max
+Rohde \|[site](https://maximilianrohde.com)
+\|[source](https://github.com/maxdrohde/blog) \| \|Miha Gazvoda
+\|[site](https://mihagazvoda.com/)
+\|[source](https://github.com/mihagazvoda/mihagazvoda.com) \| \|Open
+Source Football \|[site](https://www.opensourcefootball.com/)
+\|[source](https://github.com/mrcaseb/open-source-football) \| \|Pedro
+J. Pérez \|[site](https://perezp44.github.io/pjperez.web/01_blog.html)
+\|[source](https://github.com/perezp44/pjperez.web) \| \|Piping Hot Data
+\|[site](https://www.pipinghotdata.com/)
+\|[source](https://github.com/shannonpileggi/pipinghotdata_distill) \|
+\|R-Vogg-Blog \|[site](https://r-vogg-blog.netlify.app/)
+\|[source](https://github.com/richardvogg/r-vogg-blog) \|
+\|Sciencificity Blog \|[site](https://sciencificity-blog.netlify.app/)
+\|[source](https://github.com/sciencificity/Blog_Vebash) \| \|Sean
+Angiolillo \|[site](https://sean.rbind.io)
+\|[source](https://github.com/seanangio/distill_blog) \| \|Serdar Balcı
+\|[site](https://www.serdarbalci.com/)
+\|[source](https://github.com/sbalci/sbalci.github.io/) \| \|Sharing
+Your Work with xaringan
+\|[site](https://spcanelon.github.io/xaringan-basics-and-beyond)
+\|[source](https://github.com/spcanelon/xaringan-basics-and-beyond) \|
+\|Southern California R Users Groups \|[site](https://socalr.org/)
+\|[source](https://github.com/laRusers/socalr.org) \| \|Ted Laderas
+\|[site](https://laderast.github.io)
+\|[source](https://github.com/laderast/laderast.github.io) \| \|The
+Mockup Blog \|[site](https://themockup.netlify.app/)
+\|[source](https://github.com/jthomasmock/radix_themockup) \| \|The
+Scrapbook \|[site](https://eliocamp.github.io/scrapbook/)
+\|[source](https://github.com/eliocamp/scrapbook) \| \|Umair Durrani
+\|[site](https://udurrani.netlify.app/)
+\|[source](https://github.com/durraniu/udurrani_distill) \|
+\|werk.statt.codes \|[site](https://werk.statt.codes/)
+\|[source](https://github.com/werkstattcodes/distill_clean) \|
+\|Westchester Covid-19 Tracking
+\|[site](https://westchester-covid.mattherman.info/)
+\|[source](https://github.com/mfherman/westchester-covid) \|
