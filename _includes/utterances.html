@@ -6,11 +6,11 @@
 
     var script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "sciencificity/Blog_Vebash");
+    script.setAttribute("repo", "jhelvy/distillery");
     script.setAttribute("issue-term", "title");
     script.setAttribute("crossorigin", "anonymous");
     script.setAttribute("label", "comments 💬");
-    script.setAttribute("theme", "github-light");
+    script.setAttribute("theme", "github-dark");
 
     /* wait for article to load, append script to article element */
     var observer = new MutationObserver(function (mutations, observer) {
@@ -26,12 +26,3 @@
     observer.observe(document.body, { childList: true });
   });
 </script>
-
-<!-- <script src="https://utteranc.es/client.js" -->
-<!--         repo="sciencificity/Blog_Vebash" -->
-<!--         issue-term="title" -->
-<!--         label="comments 💬" -->
-<!--         theme="github-light" -->
-<!--         crossorigin="anonymous" -->
-<!--         async> -->
-<!-- </script> -->
