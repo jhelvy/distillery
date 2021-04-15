@@ -1,5 +1,5 @@
 name,url,source,postcard,academic,darkmode,course
-John Paul Helveston,https://www.jhelvy.com/,"https://github.com/jhelvy/jhelvy.com",1,1,0,0
+John Paul Helveston,https://www.jhelvy.com/,https://github.com/jhelvy/jhelvy.com,1,1,0,0
 The Mockup Blog,https://themockup.netlify.app/,https://github.com/jthomasmock/radix_themockup,0,0,0,0
 Lisa Lendway,https://lisalendway.netlify.app/,https://github.com/llendway/lisalendway_distill,0,1,0,0
 Emi Tanaka,https://emitanaka.org/,https://github.com/emitanaka/emitanaka.github.io,0,1,0,0
@@ -38,3 +38,4 @@ Pedro J. Pérez,https://perezp44.github.io/pjperez.web/01_blog.html,https://gith
 Ted Laderas,https://laderast.github.io,https://github.com/laderast/laderast.github.io,1,0,0,0
 Bayesian statistics with R,https://oliviergimenez.github.io/bayesian-stats-with-R/,https://github.com/oliviergimenez/bayesian-stats-with-R,0,0,0,1
 Jeff's Journal,https://jeffreyasselin.netlify.app/,https://github.com/jassassin68/my-distill-site,0,0,0,0
+Jenna Eagleson,https://jeagleso.github.io/website/,https://github.com/jeagleso/website,1,0,0,0
