@@ -12,6 +12,7 @@ License: CC-BY-SA
 Encoding: UTF-8
 Imports:
     distill,
+    dplyr,
     fontawesome,
     haven,
     here,
@@ -20,6 +21,7 @@ Imports:
     knitr,
     metathis,
     postcards,
+    readr,
     remotes,
     rmarkdown,
     roxygen2,
