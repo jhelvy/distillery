@@ -13,6 +13,7 @@ Encoding: UTF-8
 Imports:
     distill,
     fontawesome,
+    haven,
     here,
     htmltools,
     janitor,
