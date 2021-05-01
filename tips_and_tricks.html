@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
+  <link rel="alternate" type="application/rss+xml" href="https://distillery.rbind.io/tips_and_tricks.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -86,36 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>The Distillery: Showcase</title>
+  <title>The Distillery: Tips &amp; Tricks</title>
   
-  <meta property="description" itemprop="description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!"/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="The Distillery: Showcase"/>
+  <meta property="og:title" content="The Distillery: Tips &amp; Tricks"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!"/>
-  <meta property="og:image" content="https://distillery.rbind.io/./images/distillery.png"/>
-  <meta property="og:image:width" content="282"/>
-  <meta property="og:image:height" content="282"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="The Distillery"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
-  <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:title" content="The Distillery: Showcase"/>
-  <meta property="twitter:description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!"/>
-  <meta property="twitter:image" content="https://distillery.rbind.io/./images/distillery.png"/>
-  <meta property="twitter:image:width" content="282"/>
-  <meta property="twitter:image:height" content="282"/>
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="The Distillery: Tips &amp; Tricks"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output","base_url","preview","params"]}},"value":[{"type":"character","attributes":{},"value":["Showcase"]},{"type":"character","attributes":{},"value":["A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://distillery.rbind.io"]},{"type":"character","attributes":{},"value":["images/distillery.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["update_all","check_url"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Tips & Tricks"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2183,12 +2175,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Showcase","description":"A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!","authors":[]}
+{"title":"Tips & Tricks","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2212,444 +2204,463 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash && window.location.hash.startsWith("#category:")) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace(/^#category:/, "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+      // update the list_caption
+      var list_caption = $('.posts-list-caption');
+      var caption = (page_category || '').toLowerCase() === "articles"
+        ? list_caption.attr('data-caption')
+        : ('Category: ' + page_category.replace(/_/g," "));
+      list_caption.text(caption);
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+      // reset list caption
+      var list_caption = $('.posts-list-caption');
+      list_caption.text(list_caption.attr('data-caption'));
+
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // click handling for tags
+  $('.dt-tag').click(function(ev) {
+    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
+    return false;
+  })
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
+<div class="posts-list">
+<h1 class="posts-list-caption" data-caption="Tips &amp; Tricks">Tips &amp; Tricks</h1>
+<a href="posts/2021-04-02-personalizing-the-distill-template/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">April 5, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Eric Ekholm</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-04-02-personalizing-the-distill-template/img/personalized_distill.PNG"/>
+</div>
+<div class="description">
+<h2>Personalizing the Distill Template</h2>
+<div class="dt-tags">
+<div class="dt-tag">features</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>How to modify the distill template to fit your preferences.</p>
+</div>
+</a>
+<a href="posts/2021-04-01-deploy-previews-with-netlifly/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["deploy","tutorial","netlify","github"]}</script>
+<div class="metadata">
+<div class="publishedDate">April 1, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Shannon Pileggi</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-04-01-deploy-previews-with-netlifly/img/netlifly-checks.png"/>
+</div>
+<div class="description">
+<h2>Deploy previews with Netlifly</h2>
+<div class="dt-tags">
+<div class="dt-tag">deploy</div>
+<div class="dt-tag">tutorial</div>
+<div class="dt-tag">netlify</div>
+<div class="dt-tag">github</div>
+</div>
+<p>Collaborative {distill} website workflows</p>
+</div>
+</a>
+<a href="posts/2021-03-24-automagic-tabs-in-distillrmarkdown-files-and-time-series-analysis/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 25, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Karina Bartolomé</div>
+<div class="dt-author">Rafael Zambrano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png"/>
+</div>
+<div class="description">
+<h2>Automagic Tabs in Distill/Rmarkdown files and time series analysis</h2>
+<div class="dt-tags">
+<div class="dt-tag">features</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>This article shows the use of tabs in Rmarkdown documents, through an example of time series analysis of the monthly estimator of Argentine economic activity.</p>
+</div>
+</a>
+<a href="posts/2021-03-24-customizing-distill-with-htmltools-and-css/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 25, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">John Paul Helveston</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-03-24-customizing-distill-with-htmltools-and-css/images/css_html.png"/>
+</div>
+<div class="description">
+<h2>Customizing distill with {htmltools} and CSS</h2>
+<div class="dt-tags">
+<div class="dt-tag">features</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.</p>
+</div>
+</a>
+<a href="posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["github","starting","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 21, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Andreas Handel</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/featured.png"/>
+</div>
+<div class="description">
+<h2>Create a GitHub website with distill in less than 30 minutes</h2>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>The following are step-by-step instructions for creating a website using [R Markdown](https://rmarkdown.rstudio.com/) and the [distill R package](https://rstudio.github.io/distill/) (through [R Studio](https://rstudio.com/products/rstudio/)) and [GitHub](https://github.com/).</p>
+</div>
+</a>
+<a href="posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["github","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 19, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Etienne Bacher</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg"/>
+</div>
+<div class="description">
+<h2>Use GitHub actions with R Markdown and Distill</h2>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>How can you automatically render README, Distill website...</p>
+</div>
+</a>
+<a href="posts/2021-03-16-postcards-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 16, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Alison Hill</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-03-16-postcards-distill/featured.jpg"/>
+</div>
+<div class="description">
+<h2>M-F-E-O: postcards + distill</h2>
+<div class="dt-tags">
+<div class="dt-tag">tutorial</div>
+<div class="dt-tag">features</div>
+</div>
+<p>The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.</p>
+</div>
+</a>
+<a href="posts/2021-03-12-making-a-darkmode-for-your-distill-site/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
+<div class="metadata">
+<div class="publishedDate">March 12, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Jannik Buhr</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-03-12-making-a-darkmode-for-your-distill-site/images/cookies.png"/>
+</div>
+<div class="description">
+<h2>Making a Darkmode for your distill site</h2>
+<div class="dt-tags">
+<div class="dt-tag">tutorial</div>
+<div class="dt-tag">features</div>
+</div>
+<p>We build a darkmode for our distill site using css and a bit of java script.</p>
+</div>
+</a>
+<a href="posts/2021-02-24-thank-you-blogdown-hello-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["blogdown","starting"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 26, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Roland Schmidt</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png"/>
+</div>
+<div class="description">
+<h2>Thank you {blogdown}, hello {distill}.</h2>
+<div class="dt-tags">
+<div class="dt-tag">blogdown</div>
+<div class="dt-tag">starting</div>
+</div>
+<p>A few notes on moving from blogdown to distill.</p>
+</div>
+</a>
+<a href="posts/2021-02-19-enable-utterances-with-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["github","features","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 20, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Vebash Naidoo</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg"/>
+</div>
+<div class="description">
+<h2>Enable utterances with distill</h2>
+<div class="dt-tags">
+<div class="dt-tag">github</div>
+<div class="dt-tag">features</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>Interested in giving your readers the ability to comment on your {distill} blog? Look no further than utteranc.es.</p>
+</div>
+</a>
+<a href="posts/2021-02-08-distill-it-down/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 8, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Lisa Lendway</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png"/>
+</div>
+<div class="description">
+<h2>Distill it down</h2>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>My experiences with building webpages and websites using some of the simpler R Studio tools.</p>
+</div>
+</a>
+<a href="posts/2020-12-12-tricks-blogdown-to-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["starting","blogdown","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">Dec. 12, 2020</div>
+<div class="dt-authors">
+<div class="dt-author">Frie Preu</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png"/>
+</div>
+<div class="description">
+<h2>Misc tricks when migrating from blogdown to distill</h2>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">blogdown</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>Some small things I learned as I migrated my blog from blogdown to distill.</p>
+</div>
+</a>
+<a href="posts/2020-07-31-building-a-blog-with-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 1, 2020</div>
+<div class="dt-authors">
+<div class="dt-author">Thomas Mock</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2020-07-31-building-a-blog-with-distill/modern.jpeg"/>
+</div>
+<div class="description">
+<h2>Building a blog with distill</h2>
+<div class="dt-tags">
+<div class="dt-tag">starting</div>
+<div class="dt-tag">tutorial</div>
+</div>
+<p>I love simplicity.</p>
+</div>
+</a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(13)</span>
+</li>
+<li>
+<a href="#category:blogdown">blogdown</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:deploy">deploy</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:features">features</a>
+<span class="category-count">(6)</span>
+</li>
+<li>
+<a href="#category:github">github</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#category:netlify">netlify</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:starting">starting</a>
+<span class="category-count">(5)</span>
+</li>
+<li>
+<a href="#category:tutorial">tutorial</a>
+<span class="category-count">(12)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Showcase</h1>
+<h1>Tips &amp; Tricks</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A showcase of distill websites and blogs. Add yours <a href="https://github.com/jhelvy/distillery">here</a>!</p></p>
+
 </div>
 
 
 <div class="d-article">
-<p>Use the buttons to filter the showcase by category:</p>
-<div id="myBtnContainer">
-<p><button class="btn active" onclick="filterSelection(&#39;all&#39;)">Show all</button> <button class="btn" onclick="filterSelection(&#39;postcard&#39;)">Postcard</button> <button class="btn" onclick="filterSelection(&#39;course&#39;)">Course</button> <button class="btn" onclick="filterSelection(&#39;academic&#39;)">Academic</button> <button class="btn" onclick="filterSelection(&#39;darkmode&#39;)">Darkmode</button></p>
-</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div class="filterDiv postcard">
-<h3>
-Adam Garber
-</h3>
-<center>
-<img src="images/sites/adam_garber.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="http://www.adam-garber.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/garberadamc/acg-distill" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Alex K. Gold
-</h3>
-<center>
-<img src="images/sites/alex_k__gold.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://alexkgold.space/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/akgold/akg_site" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Associação Brasileira de Jurimetria
-</h3>
-<center>
-<img src="images/sites/associa%C3%A7%C3%A3o_brasileira_de_jurimetria.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://lab.abj.org.br/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/abjur/blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv course">
-<h3>
-Bayesian statistics with R
-</h3>
-<center>
-<img src="images/sites/bayesian_statistics_with_r.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://oliviergimenez.github.io/bayesian-stats-with-R/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/oliviergimenez/bayesian-stats-with-R" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Beatriz Milz
-</h3>
-<center>
-<img src="images/sites/beatriz_milz.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://beatrizmilz.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/beatrizmilz/blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Before I Sleep
-</h3>
-<center>
-<img src="images/sites/before_i_sleep.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://milesmcbain.xyz/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/MilesMcBain/milesmcbain.com/" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Data Sci Dani
-</h3>
-<center>
-<img src="images/sites/data_sci_dani.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://datascidani.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/danielle-b/datascidani2" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv academic">
-<h3>
-Emi Tanaka
-</h3>
-<center>
-<img src="images/sites/emi_tanaka.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://emitanaka.org/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/emitanaka/emitanaka.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Eric Ekholm
-</h3>
-<center>
-<img src="images/sites/eric_ekholm.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.ericekholm.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/ekholme/ee-website" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard academic">
-<h3>
-Etienne Bacher
-</h3>
-<center>
-<img src="images/sites/etienne_bacher.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.etiennebacher.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/etiennebacher/personal_website_distill" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Harry Fisher
-</h3>
-<center>
-<img src="images/sites/harry_fisher.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://hfshr.xyz" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/hfshr/distill_blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Ijeamaka Anyene
-</h3>
-<center>
-<img src="images/sites/ijeamaka_anyene.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://ijeamaka-anyene.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/Ijeamakaanyene/ijeamaka-anyene" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv darkmode">
-<h3>
-Jannik Buhr
-</h3>
-<center>
-<img src="images/sites/jannik_buhr.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://jmbuhr.de" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jmbuhr/jmbuhr.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Jeff’s Journal
-</h3>
-<center>
-<img src="images/sites/jeff&#39;s_journal.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://jeffreyasselin.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jassassin68/my-distill-site" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Jenna Eagleson
-</h3>
-<center>
-<img src="images/sites/jenna_eagleson.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://jeagleso.github.io/website/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jeagleso/website" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-jeremydata
-</h3>
-<center>
-<img src="images/sites/jeremydata.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://jeremydata.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jeremy-allen/jeremydata_blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard academic">
-<h3>
-John Paul Helveston
-</h3>
-<center>
-<img src="images/sites/john_paul_helveston.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.jhelvy.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jhelvy/jhelvy.com" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Joseph Casillas
-</h3>
-<center>
-<img src="images/sites/joseph_casillas.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.jvcasillas.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jvcasillas/jvcasillas.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-June Choe
-</h3>
-<center>
-<img src="images/sites/june_choe.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://yjunechoe.github.io/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/yjunechoe/yjunechoe.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Kaija Gahm
-</h3>
-<center>
-<img src="images/sites/kaija_gahm.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://kaijagahm.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/kaijagahm/kaija_bean" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Kyle Cuilla
-</h3>
-<center>
-<img src="images/sites/kyle_cuilla.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://kcanalytics.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/kcuilla/kc_analytics" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv academic">
-<h3>
-Lisa Lendway
-</h3>
-<center>
-<img src="images/sites/lisa_lendway.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://lisalendway.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/llendway/lisalendway_distill" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-LiteralFightNerd
-</h3>
-<center>
-<img src="images/sites/literalfightnerd.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://literalfightnerd.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/NateLatshaw/LiteralFightNerd" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Lore Abad
-</h3>
-<center>
-<img src="images/sites/lore_abad.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://loreabad6.github.io/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/loreabad6/loreabad6.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Max Rohde
-</h3>
-<center>
-<img src="images/sites/max_rohde.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://maximilianrohde.com" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/maxdrohde/blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Miha Gazvoda
-</h3>
-<center>
-<img src="images/sites/miha_gazvoda.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://mihagazvoda.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/mihagazvoda/mihagazvoda.com" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Open Source Football
-</h3>
-<center>
-<img src="images/sites/open_source_football.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.opensourcefootball.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/mrcaseb/open-source-football" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Pedro J. Pérez
-</h3>
-<center>
-<img src="images/sites/pedro_j__p%C3%A9rez.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://perezp44.github.io/pjperez.web/01_blog.html" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/perezp44/pjperez.web" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Phoebe Thatcher
-</h3>
-<center>
-<img src="images/sites/phoebe_thatcher.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="http://phoebethatcher.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/lilphoebe/mywebsite_phoeb" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Piping Hot Data
-</h3>
-<center>
-<img src="images/sites/piping_hot_data.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.pipinghotdata.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/shannonpileggi/pipinghotdata_distill" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-R-Vogg-Blog
-</h3>
-<center>
-<img src="images/sites/r-vogg-blog.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://r-vogg-blog.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/richardvogg/r-vogg-blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Sciencificity Blog
-</h3>
-<center>
-<img src="images/sites/sciencificity_blog.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://sciencificity-blog.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/sciencificity/Blog_Vebash" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-Sean Angiolillo
-</h3>
-<center>
-<img src="images/sites/sean_angiolillo.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://sean.rbind.io" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/seanangio/distill_blog" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Serdar Balcı
-</h3>
-<center>
-<img src="images/sites/serdar_balc%C4%B1.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.serdarbalci.com/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/sbalci/sbalci.github.io/" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv course">
-<h3>
-Sharing Your Work with xaringan
-</h3>
-<center>
-<img src="images/sites/sharing_your_work_with_xaringan.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://spcanelon.github.io/xaringan-basics-and-beyond" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/spcanelon/xaringan-basics-and-beyond" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv course">
-<h3>
-Southern California R Users Groups
-</h3>
-<center>
-<img src="images/sites/southern_california_r_users_groups.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://socalr.org/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/laRusers/socalr.org" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Ted Laderas
-</h3>
-<center>
-<img src="images/sites/ted_laderas.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://laderast.github.io" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/laderast/laderast.github.io" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-The Mockup Blog
-</h3>
-<center>
-<img src="images/sites/the_mockup_blog.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://themockup.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/jthomasmock/radix_themockup" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-The Scrapbook
-</h3>
-<center>
-<img src="images/sites/the_scrapbook.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://eliocamp.github.io/scrapbook/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/eliocamp/scrapbook" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Umair Durrani
-</h3>
-<center>
-<img src="images/sites/umair_durrani.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://udurrani.netlify.app/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/durraniu/udurrani_distill" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv darkmode">
-<h3>
-werk.statt.codes
-</h3>
-<center>
-<img src="images/sites/werk_statt_codes.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://werk.statt.codes/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/werkstattcodes/distill_clean" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="filterDiv course">
-<h3>
-Westchester Covid-19 Tracking
-</h3>
-<center>
-<img src="images/sites/westchester_covid-19_tracking.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://westchester-covid.mattherman.info/" class="icon-link"> <i class="fas fa-external-link-alt" style="display: inline-block"></i> Site </a> <br/> <a href="https://github.com/mfherman/westchester-covid" class="icon-link"> <i class="fab fa-github" style="display: inline-block"></i> Source </a>
-<hr/>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<script src = "js/filter-buttons.js"></script>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
