@@ -1,0 +1,422 @@
+---
+title: "How to create a gallery in Distill"
+description: |
+  Use lightgallery.js to create a gallery for your plots or images.
+author: Etienne Bacher
+date: 2021-05-20
+preview: gallery_image.jpg
+categories:
+  - features
+  - tutorial
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    highlight: pygments
+    highlight_downlit: true
+---
+
+> Note: This post was originally written by [Etienne Bacher](https://twitter.com/EtienneBacher) and was copied here on May 21, 2021 - see the original post [here](https://www.etiennebacher.com/posts/2021-04-11-how-to-create-a-gallery-in-distill/) for a potentially updated version.
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+  eval = FALSE,
+  message = FALSE
+)
+```
+
+This post shows how to create a gallery on a Distill website. Keep in mind that Distill is (purposely) less flexible than other tools, such as `{blogdown}`, so the gallery might look quite different from what you expect.
+
+## Create a gallery with lightgallery.js
+
+[Lightgallery.js](https://github.com/sachinchoolur/lightgallery) is a Javascript library that allows you to build a gallery very simply. You will need images in full size and thumbnails, i.e a smaller version of the images (we will see how to automatically make them later in this post).
+
+First of all, let's construct the gallery with HTML, CSS, and Javascript. We will see how to adapt this in R then. We need to load the Javascript and CSS files for lightgallery.js in the head:
+
+```{html}
+<head>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
+
+</head>
+```
+
+Then, we construct the layout of the gallery. Here, I make the minimum layout, just to make sure this works:
+
+```{html}
+<div id="lightgallery">
+  <a href="img1.png">
+    <img src="thumb-img1.png" />
+  </a>
+  <a href="img2.png">
+    <img src="thumb-img2.png" />
+  </a>
+</div>
+```
+
+As you can see, the whole gallery is in a `<div>` element. To add an image to the gallery, we just have to add an `<a>` element as the two already there.
+
+Then, we add the Javascript code to run lightgallery.js:
+
+```{html}
+<script type="text/javascript">
+  lightGallery(document.getElementById('lightgallery'));
+</script>
+```
+
+This should work, but I just add a CSS animation to zoom a bit when hovering a thumbnail:
+
+```{html}
+<style>
+  #lightgallery > a > img:hover {
+    transform: scale(1.2, 1.2);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+</style>
+```
+
+That's it for the proof of concept. Now let's adapt it in R.
+
+<details>
+<summary>Click to see the full HTML.</summary>
+
+```{html}
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/css/lightgallery.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+
+   <!-- lightgallery plugins -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
+  </head>
+  <body>
+    <div id="lightgallery">
+      <a href="img1.png" data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>">
+          <img src="thumb-img1.png" />
+      </a>
+      <a href="img2.png">
+          <img src="thumb-img2.png" />
+      </a>
+    </div>
+
+    <script type="text/javascript">
+      lightGallery(document.getElementById('lightgallery'));
+    </script>
+
+    <style>
+      #lightgallery > a > img:hover {
+        transform: scale(1.2, 1.2);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+      }
+    </style>
+
+  </body>
+</html>
+```
+
+</details>
+
+## Make the gallery with R
+
+### Create thumbnails
+
+First, store your (full-size) images in a folder, let's say `_gallery/img`. As we saw above, `lightgallery.js` also requires thumbnails in addition to full-size images. To automatically create these thumbnails, we can use the function `image_resize()` in the package `magick`. First, I create a function to resize a single image, and I will apply it to all the images I have:
+
+```{r}
+library(magick)
+library(here)
+
+resize_image <- function(image) {
+
+  imFile <- image_read(here::here(paste0("_gallery/img/", image)))
+  imFile_resized <- magick::image_resize(imFile, "6%")
+  magick::image_write(imFile_resized, here::here(paste0("_gallery/img/thumb-", image)))
+
+}
+
+list_png <- list.files("_gallery/img")
+lapply(list_png, resize_image)
+```
+
+
+### Build the HTML structure
+
+We can now start building the HTML structure with the package `htmltools`. First, we can see that the HTML code for each image is very similar:
+
+```{html}
+<a href="img.png">
+    <img src="thumb-img.png" />
+</a>
+```
+
+This can be reproduced in R with:
+
+```{r}
+library(htmltools)
+
+tags$a(
+  href = "img.png",
+  tags$img(src = "thumb-img.png")
+)
+```
+
+We can now create a function to apply this structure to all the images we have:
+
+```{r}
+make_gallery_layout <- function() {
+
+  # Get the names of all images
+  images <- list.files("_gallery/img")
+
+  # Get the names of all full-size images
+  images_full_size <- grep("thumb", images, value = TRUE, invert = TRUE)
+
+  # Get the names of all thumbnails
+  images_thumb <- grep("thumb", images, value = TRUE)
+
+  # Create a dataframe where each row is one image (useful for
+  # the apply() function)
+  images <- data.frame(images_thumb = images_thumb,
+                       images_full_size = images_full_size)
+
+  # Create the HTML structure for each image
+  tagList(apply(images, 1, function(x) {
+      tags$a(
+        href = paste0("_gallery/img/", x[["images_full_size"]]),
+        tags$img(src = paste0("_gallery/img/", x[["images_thumb"]]))
+      )
+  }))
+
+}
+```
+
+Lastly, we need to embed this HTML code in `<div id="lightgallery">`, as shown in the first section. We can do that with the following code:
+
+```{r}
+withTags(
+  div(
+    class = "row",
+    id = "lightgallery",
+    tagList(
+      make_gallery_layout()
+    )
+  )
+)
+```
+
+We now have all the HTML code we need. We now have to add the CSS and the JavaScript code. We can just copy-paste it in an R Markdown file.
+
+<details>
+<summary>Click to see the full R Markdown file.</summary>
+
+````
+---
+title: "Gallery"
+output:
+  distill::distill_article
+---
+
+```{r echo = FALSE}`r ''`
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+```
+
+<head>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
+
+</head>
+
+```{css}`r ''`
+#lightgallery > a > img:hover {
+   transform: scale(1.15, 1.15);
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
+}
+```
+
+```{r include = FALSE}`r ''`
+# Load the functions we have created
+source(here::here("R/functions.R"))
+```
+
+```{r}`r ''`
+# Create layout
+withTags(
+  div(
+    class = "row",
+    id = "lightgallery",
+    tagList(
+      make_gallery_layout()
+    )
+  )
+)
+
+```
+
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'));
+</script>
+
+````
+
+</details>
+
+## Update GitHub Actions
+
+We need to add `fs::dir_copy("_gallery/img", "_site/_gallery/img")` in GitHub Actions so that the images are found when the gallery is built. We also have to add `magick` and `httr` in the list of packages to install.
+
+If you haven't set up GitHub Actions yet, you can check [my previous post](https://www.etiennebacher.com/posts/2021-03-19-use-github-actions-with-r-markdown-and-distill/), or check my [current GitHub Actions](https://github.com/etiennebacher/personal_website_distill/blob/master/.github/workflows/main.yml) for this site.
+
+## Bonus: make a gallery for #tidytuesday
+
+I have started participating to [#tidytuesday](https://github.com/rfordatascience/tidytuesday) this year, and the main reason I wanted to create a gallery was to display my favorite plots. Therefore, I created a function to make it as easy as possible for me to update the plots I want to display in the gallery.
+
+The purpose of the function below is to download a plot for a specific week in a specific year in the [repo containing my plots](https://github.com/etiennebacher/tidytuesday).
+
+```{r}
+library(httr)
+
+get_tt_image <- function(year, week) {
+
+  if (is.numeric(year)) year <- as.character(year)
+  if (is.numeric(week)) week <- as.character(week)
+  if (nchar(week) == 1) week <- paste0("0", week)
+
+  ### Get the link to download the image I want
+  req <- GET("https://api.github.com/repos/etiennebacher/tidytuesday/git/trees/master?recursive=1")
+  stop_for_status(req)
+  file_list <- unlist(lapply(content(req)$tree, "[", "path"), use.names = F)
+  png_list <- grep(".png", file_list, value = TRUE, fixed = TRUE)
+  png_wanted <- grep(year, png_list, value = TRUE)
+  png_wanted <- grep(paste0("W", week), png_wanted, value = TRUE)
+  # If a png file is called accidental_art, don't take it
+  if (any(grepl("accidental_art", png_wanted))) {
+    png_wanted <- png_wanted[-which(grepl("accidental_art", png_wanted))]
+  }
+
+  ### Link of the image I want to download
+  origin <- paste0(
+    "https://raw.githubusercontent.com/etiennebacher/tidytuesday/master/",
+    png_wanted
+  )
+
+  ### Destination of this image
+  destination <- paste0("_gallery/img/", year, "-", week, "-", trimws(basename(origin)))
+
+  ### Download only if not already there
+  if (!file.exists(destination)) {
+    if (!file.exists("_gallery/img")) {
+      dir.create("_gallery/img")
+    }
+    download.file(origin, destination)
+  }
+
+  ### Create the thumbnail if not already there
+  thumb_destination <- paste0("_gallery/img/thumb-", year, "-", week, "-",
+                        trimws(basename(origin)))
+  if (!file.exists(thumb_destination)) {
+    resize_image(paste0(year, "-", week, "-", trimws(basename(origin))))
+  }
+
+}
+```
+
+As you can see, this function downloads the plot I want, puts it in `_gallery/img` and creates the thumbnail. All I have to do now is to choose the plots I want to display and to apply the function to these year-week pairs in the R Markdown file.
+
+Note that for some reason, this function sometimes fails on GitHub Actions because of HTTP error 403. I think this is related to the number of requests to GitHub API but what is strange is that this function isn't supposed to make a lot of requests, so it is still a mystery.
+
+<details>
+<summary>Click to see the full R Markdown file.</summary>
+
+````
+---
+title: "Gallery"
+output:
+  distill::distill_article
+---
+
+```{r echo = FALSE}`r ''`
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+```
+
+<head>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
+
+</head>
+
+```{css}`r ''`
+#lightgallery > a > img:hover {
+   transform: scale(1.15, 1.15);
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
+}
+```
+
+```{r include = FALSE}`r ''`
+# Load the functions we have created
+source(here::here("R/functions.R"))
+
+# Make list of tidytuesday plots I want to show in the gallery
+tt_plots <- rbind(
+  c(2021, 8),
+  c(2021, 12),
+  c(2021, 13),
+  c(2021, 15),
+  c(2021, 16)
+)
+
+# Download the plots and create the thumbnails
+apply(tt_plots, 1, function(x) get_tt_image(x[1], x[2]))
+```
+
+```{r}`r ''`
+# Create layout
+withTags(
+  div(
+    class = "row",
+    id = "lightgallery",
+    tagList(
+      make_gallery_layout()
+    )
+  )
+)
+
+```
+
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'));
+</script>
+
+````
+
+</details>
+
+## Conclusion
+
+In this post, I tried to explain how to build a gallery with a simple example. However, you can also check the [repo of my website](https://github.com/etiennebacher/personal_website_distill) to have a clearer view of how to do so. I also added some CSS styling that is not described here, to limit the code to what is really necessary.
+
+Check the [gallery](https://www.etiennebacher.com/gallery.html) to see the result.
