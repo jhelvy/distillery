@@ -7,7 +7,18 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How to create a gallery in Distill</title>
+      <dc:creator>Etienne Bacher</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-04-11-how-to-create-a-gallery-in-distill</link>
+      <description>Use lightgallery.js to create a gallery for your plots or images.</description>
+      <category>features</category>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-04-11-how-to-create-a-gallery-in-distill</guid>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-04-11-how-to-create-a-gallery-in-distill/gallery_image.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Personalizing the Distill Template</title>
       <dc:creator>Eric Ekholm</dc:creator>
