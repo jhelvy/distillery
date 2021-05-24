@@ -27,6 +27,7 @@ Imports:
     roxygen2,
     tidyverse,
     webshot2,
+    withr,
     yaml,
     RCurl,
     R.utils
