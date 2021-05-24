@@ -7,7 +7,7 @@ Authors@R: c(
            role    = c("aut", "cre", "cph"),
            email   = "john.helveston@gmail.com",
            comment = c(ORCID = "0000-0002-2657-9191")))
-Depends: R (>= 4.0.2)
+Depends: R (>= 4.1.0)
 License: CC-BY-SA
 Encoding: UTF-8
 Imports:
@@ -23,7 +23,6 @@ Imports:
     postcards,
     readr,
     remotes,
-    rlang,
     rmarkdown,
     roxygen2,
     tidyverse,
