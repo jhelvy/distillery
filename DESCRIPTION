@@ -23,11 +23,11 @@ Imports:
     postcards,
     readr,
     remotes,
+    rlang,
     rmarkdown,
     roxygen2,
     tidyverse,
     webshot2,
-    withr,
     yaml,
     RCurl,
     R.utils
