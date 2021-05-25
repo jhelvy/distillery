@@ -35,5 +35,4 @@ Imports:
 Remotes:
     rstudio/fontawesome,
     rstudio/rmarkdown,
-    rstudio/webshot2,
-    r-lib/rlang
+    rstudio/webshot2
