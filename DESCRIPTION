@@ -24,6 +24,7 @@ Imports:
     readr,
     remotes,
     rmarkdown,
+    rlang,
     roxygen2,
     stringr,
     tidyr,
@@ -34,4 +35,5 @@ Imports:
 Remotes:
     rstudio/fontawesome,
     rstudio/rmarkdown,
-    rstudio/webshot2
+    rstudio/webshot2,
+    r-lib/rlang
