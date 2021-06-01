@@ -29,7 +29,6 @@ Imports:
     stringr,
     tidyr,
     webshot2,
-    xfun,
     yaml,
     RCurl,
     R.utils
