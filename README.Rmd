@@ -12,8 +12,7 @@ output:
 <!-- badges: end -->
 
 ```{r, include = FALSE}
-library(readr)
-library(dplyr)
+library(tidyverse)
 ```
 
 Welcome to the [distillery](https://distillery.rbind.io/): a [distill](https://rstudio.github.io/distill/) blog about building distill websites and blogs!

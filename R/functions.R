@@ -1,7 +1,4 @@
-library(dplyr)
-library(readr)
-library(stringr)
-library(tidyr)
+library(tidyverse)
 library(htmltools)
 library(R.utils)
 
