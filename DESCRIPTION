@@ -25,7 +25,6 @@ Imports:
     rmarkdown,
     roxygen2,
     tidyverse,
-    tinytex,
     webshot2,
     yaml,
     RCurl,
@@ -33,4 +32,5 @@ Imports:
 Remotes:
     EllaKaye/distilltools,
     rstudio/fontawesome,
-    rstudio/webshot2
+    rstudio/webshot2,
+    rstudio/rmarkdown
