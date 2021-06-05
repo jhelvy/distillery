@@ -32,5 +32,4 @@ Imports:
 Remotes:
     EllaKaye/distilltools,
     rstudio/fontawesome,
-    rstudio/rmarkdown,
     rstudio/webshot2
