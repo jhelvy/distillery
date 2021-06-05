@@ -25,6 +25,7 @@ Imports:
     rmarkdown,
     roxygen2,
     tidyverse,
+    tinytex,
     webshot2,
     yaml,
     RCurl,
