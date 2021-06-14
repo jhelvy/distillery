@@ -12,7 +12,7 @@ License: CC-BY-SA
 Encoding: UTF-8
 Imports:
     distill,
-    dplyr,
+    distilltools,
     fontawesome,
     haven,
     here,
@@ -21,18 +21,16 @@ Imports:
     knitr,
     metathis,
     postcards,
-    readr,
     remotes,
     rmarkdown,
-    rlang,
     roxygen2,
-    stringr,
-    tidyr,
+    tidyverse,
     webshot2,
     yaml,
     RCurl,
     R.utils
 Remotes:
+    EllaKaye/distilltools,
     rstudio/fontawesome,
-    rstudio/rmarkdown,
-    rstudio/webshot2
+    rstudio/webshot2,
+    rstudio/rmarkdown
