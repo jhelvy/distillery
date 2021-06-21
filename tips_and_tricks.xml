@@ -7,7 +7,20 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>What's he building in there?</title>
+      <dc:creator>Michael McCarthy</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-06-19-distill-tidytales</link>
+      <description>Customizing a {distill} website. Covers: Page and article metadata tricks with {metathis}, adding collapsible and movable Utterances comments sections to posts, and using post templates with {distilltools}.</description>
+      <category>metathis</category>
+      <category>utterances</category>
+      <category>distilltools</category>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-06-19-distill-tidytales</guid>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-06-19-distill-tidytales/images/distillclub.png" medium="image" type="image/png" width="2052" height="2373"/>
+    </item>
     <item>
       <title>Custom Syntax Highlighting for {distill} Part 2: Creating the Palette</title>
       <dc:creator>Ella Kaye</dc:creator>

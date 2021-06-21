@@ -2,78 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://distillery.rbind.io/</loc>
-    <lastmod>2021-06-14T13:01:30+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:11+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/showcase.html</loc>
-    <lastmod>2021-06-14T13:01:30+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:11+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/tips_and_tricks.html</loc>
-    <lastmod>2021-06-14T13:01:30+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:11+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://distillery.rbind.io/posts/2021-06-19-distill-tidytales/</loc>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-04-11-how-to-create-a-gallery-in-distill/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-04-02-personalizing-the-distill-template/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-04-01-deploy-previews-with-netlifly/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-24-automagic-tabs-in-distillrmarkdown-files-and-time-series-analysis/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/</loc>
-    <lastmod>2021-06-14T13:01:29+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-16-postcards-distill/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-03-12-making-a-darkmode-for-your-distill-site/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2021-02-08-distill-it-down/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill/</loc>
-    <lastmod>2021-06-14T13:01:28+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
   <url>
     <loc>https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill/</loc>
-    <lastmod>2021-06-14T13:01:27+00:00</lastmod>
+    <lastmod>2021-06-21T20:32:10+00:00</lastmod>
   </url>
 </urlset>
