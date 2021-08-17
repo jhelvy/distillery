@@ -141,7 +141,7 @@ List of sites in showcase:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hitesh Fulwani</td>
-<td style="text-align: left;"><a href="https://hitesh-fulwani.github.io/hitesh-f/">site</a></td>
+<td style="text-align: left;"><a href="https://hitesh-fulwani.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/Hitesh-Fulwani/hitesh-f">source</a></td>
 </tr>
 <tr class="even">
@@ -295,26 +295,31 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/jthomasmock/radix_themockup">source</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">The Q</td>
+<td style="text-align: left;"><a href="https://qntkhvn.netlify.app/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/qntkhvn/qblog">source</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">The Scrapbook</td>
 <td style="text-align: left;"><a href="https://eliocamp.github.io/scrapbook/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/eliocamp/scrapbook">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Tidy Tales</td>
 <td style="text-align: left;"><a href="https://tidytales.ca">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mccarthy-m-g/tidytales">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Umair Durrani</td>
 <td style="text-align: left;"><a href="https://udurrani.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/durraniu/udurrani_distill">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">werk.statt.codes</td>
 <td style="text-align: left;"><a href="https://werk.statt.codes/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/werkstattcodes/distill_clean">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Westchester Covid-19 Tracking</td>
 <td style="text-align: left;"><a href="https://westchester-covid.mattherman.info/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mfherman/westchester-covid">source</a></td>
