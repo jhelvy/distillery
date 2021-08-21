@@ -19,8 +19,8 @@ jobs:
 
       - name: Query dependencies
         run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          install.packages('devtools')
+          saveRDS(devtools::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
 
       - name: Cache R packages
@@ -32,8 +32,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages("remotes")
-          remotes::install_deps(dependencies = TRUE)
+          install.packages("devtools")
+          devtools::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
       - name: Render Site
