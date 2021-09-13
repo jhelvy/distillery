@@ -45,9 +45,9 @@ jobs:
           source("build_site.R")
         shell: Rscript {0}
 
-      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: _site # The folder the action should deploy.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site # The folder the action should deploy.
