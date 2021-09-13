@@ -46,7 +46,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           ACCESS_TOKEN: ${{ secrets.GH_PAT }}
           BRANCH: gh-pages # The branch the action should deploy to.
