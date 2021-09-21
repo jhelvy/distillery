@@ -7,7 +7,19 @@
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Leaving known waters</title>
+      <dc:creator>Christian A. Gebhard</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-08-14-new-additions</link>
+      <description>Over the last weeks and months I have collected three features for the blog itself that I want to implement. Covers: A custom parallax scrolling landing page, Utterances comments and a custom 404 error page. None are built into the {distill} package, so there's some manual work needed. I'll go through the changes here.</description>
+      <category>tutorial</category>
+      <category>html</category>
+      <category>css</category>
+      <guid>https://distillery.rbind.io/posts/2021-08-14-new-additions</guid>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-08-14-new-additions/images/windrose_black.png" medium="image" type="image/png" width="956" height="928"/>
+    </item>
     <item>
       <title>What's he building in there?</title>
       <dc:creator>Michael McCarthy</dc:creator>
