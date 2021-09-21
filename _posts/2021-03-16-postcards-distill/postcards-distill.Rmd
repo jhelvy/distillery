@@ -1,8 +1,8 @@
 ---
 title: 'M-F-E-O: postcards + distill'
 description: The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.
+date: '2021-03-16'
 author: Alison Hill
-date: 03-16-2021
 preview: featured.jpg
 categories:
   - tutorial

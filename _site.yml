@@ -7,6 +7,13 @@ output_dir: _site
 base_url: https://distillery.rbind.io
 repository_url: https://github.com/jhelvy/distillery
 creative_commons: CC BY-SA
+favicon: images/favicon.ico
+collections:
+  posts:
+    categories: true
+    categories_metadata: true
+    authors_metadata: false
+    feed_iems_max: 20 # default
 navbar:
   search: false
   right:
@@ -18,6 +25,8 @@ navbar:
       href: showcase.html
     - icon: fab fa-github
       href: https://github.com/jhelvy/distillery
+    - icon: fa fa-rss
+      href: tips_and_tricks.xml
 
 output:
   distill::distill_article:

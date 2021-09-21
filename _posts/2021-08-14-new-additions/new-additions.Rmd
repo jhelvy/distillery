@@ -6,7 +6,6 @@ author:
   - name: Christian A. Gebhard
     url: https://jollydata.blog/about.html
 date: 2021-08-21
-base_url: https://jollydata.blog/posts/2021-08-21-new-additions
 categories:
   - tutorial
   - html

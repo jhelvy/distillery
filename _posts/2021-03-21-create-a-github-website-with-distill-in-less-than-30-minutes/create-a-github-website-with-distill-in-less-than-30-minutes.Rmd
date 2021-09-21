@@ -13,7 +13,10 @@ categories:
   - tutorial
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 3
     self_contained: false
+    code_folding: false
 ---
 
 > Note: This post was originally written by [Andreas Handel](https://www.andreashandel.com) and copied here on March 26, 2021 - see the original post [here](https://www.andreashandel.com/post/distill-github-website/) for a potentially updated version.
