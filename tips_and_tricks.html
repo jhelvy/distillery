@@ -91,23 +91,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="The Distillery: Tips &amp; Tricks"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://distillery.rbind.io/./images/distillery.png"/>
+  <meta property="og:image:width" content="282"/>
+  <meta property="og:image:height" content="282"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="The Distillery"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
-  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:title" content="The Distillery: Tips &amp; Tricks"/>
+  <meta property="twitter:image" content="https://distillery.rbind.io/./images/distillery.png"/>
+  <meta property="twitter:image:width" content="282"/>
+  <meta property="twitter:image:height" content="282"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Tips & Tricks"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","preview","listing"]}},"value":[{"type":"character","attributes":{},"value":["Tips & Tricks"]},{"type":"character","attributes":{},"value":["images/distillery.png"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2197,6 +2204,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="https://github.com/jhelvy/distillery">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
+<a href="tips_and_tricks.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2343,9 +2353,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["tutorial","html","css","utterances","github","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 21, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Christian A. Gebhard</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-08-14-new-additions/images/windrose_black.png"/>
@@ -2367,9 +2374,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["metathis","utterances","distilltools","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">June 19, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Michael McCarthy</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-06-19-distill-tidytales/images/distillclub.png"/>
@@ -2389,9 +2393,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["color","accessibility","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">May 26, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ella Kaye</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/ek-syntax-highlighting-palette.png"/>
@@ -2410,9 +2411,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["distilltools","color","accessibility","tutorial","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">May 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ella Kaye</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/more-theme-in-action.png"/>
@@ -2433,9 +2431,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">May 20, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Etienne Bacher</div>
-</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-04-11-how-to-create-a-gallery-in-distill/gallery_image.jpg"/>
@@ -2453,9 +2448,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">April 5, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Eric Ekholm</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-04-02-personalizing-the-distill-template/img/personalized_distill.PNG"/>
@@ -2473,9 +2465,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["deploy","tutorial","netlify","github"]}</script>
 <div class="metadata">
 <div class="publishedDate">April 1, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Shannon Pileggi</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-04-01-deploy-previews-with-netlifly/img/netlifly-checks.png"/>
@@ -2495,10 +2484,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["features","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Karina Bartolomé</div>
-<div class="dt-author">Rafael Zambrano</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="https://karbartolome-blog.netlify.app/posts/AutomagicTabs/icono.png"/>
@@ -2516,9 +2501,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["features","tutorial","html","css"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 25, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">John Paul Helveston</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-03-24-customizing-distill-with-htmltools-and-css/images/css_html.png"/>
@@ -2538,9 +2520,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["github","starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 21, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Andreas Handel</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-03-21-create-a-github-website-with-distill-in-less-than-30-minutes/featured.png"/>
@@ -2559,9 +2538,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["github","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 19, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Etienne Bacher</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg"/>
@@ -2579,9 +2555,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 16, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Alison Hill</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-03-16-postcards-distill/featured.jpg"/>
@@ -2599,9 +2572,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["tutorial","features"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 12, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Jannik Buhr</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-03-12-making-a-darkmode-for-your-distill-site/images/cookies.png"/>
@@ -2619,9 +2589,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["blogdown","starting"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 26, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Roland Schmidt</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png"/>
@@ -2639,9 +2606,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["github","features","tutorial","utterances"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 20, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Vebash Naidoo</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg"/>
@@ -2661,9 +2625,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 8, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Lisa Lendway</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png"/>
@@ -2681,9 +2642,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["starting","blogdown","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Dec. 12, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Frie Preu</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png"/>
@@ -2702,9 +2660,6 @@ function init_posts_list() {
 <script class="post-metadata" type="text/json">{"categories":["starting","tutorial"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 1, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Thomas Mock</div>
-</div>
 </div>
 <div class="thumbnail">
 <img data-src="posts/2020-07-31-building-a-blog-with-distill/modern.jpeg"/>

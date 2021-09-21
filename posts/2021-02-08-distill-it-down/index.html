@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -92,6 +91,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <link rel="canonical" href="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon.ico"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-02-08"/>
@@ -2158,7 +2158,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2224,6 +2225,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <a href="https://github.com/jhelvy/distillery">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
+<a href="../../tips_and_tricks.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2265,7 +2269,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>Then, like many in the US and other parts of the world experienced, the news came that I would be teaching online for the rest of the semester, my husband would be working from home, and we’d have our elementary school kids home learning, too. So, creating my website took a backseat. I gave myself about 2 hours one afternoon to try to get a blogdown site up and running, but I kept getting bogged down in the details and quickly gave up.</p>
 <center>
 <figure>
-<img src="images/blogdown_start.png" alt="" /><figcaption>My blogdown attempt</figcaption>
+<img src="images/blogdown_start.png" alt="My blogdown attempt" /><figcaption aria-hidden="true">My blogdown attempt</figcaption>
 </figure>
 </center>
 <p>I just looked back at my attempt and it’s not as terrible as I initially thought. But, for me, the blogdown site was more than I needed. Ideally, I wanted something simpler, but what else was there?</p>
@@ -2283,7 +2287,7 @@ I want to use this now but just can't find the time. But thanks for sharing. I'v
 <p>Fast forward to mid-May 2020. My summer break had started, and one of the first things I did was finally watch the <em>Sharing on Short Notice</em> webinar. I loved their analogy of “Climbing R Markdown Mountain” and was surprised to learn that the two tools I had heard of, bookdown and blogdown, were two of the more complex tools. This webinar was also where I heard of <a href="https://www.netlify.com/">Netlify</a> (a platform for easily deploying a website) for the first time.</p>
 <center>
 <figure>
-<img src="images/rmarkdown_mountain.png" alt="" /><figcaption>Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon</figcaption>
+<img src="images/rmarkdown_mountain.png" alt="Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon" /><figcaption aria-hidden="true">Illustration from Sharing on Short Notice, A. Hill &amp; D. De Leon</figcaption>
 </figure>
 </center>
 <p>It wasn’t until August when I finally put the tools to action. I was in the thick of prepping course materials for my Introductory Data Science course. I knew I wanted to put them online both to make them easier for my students to access and to make them accessible to people other than my students. In the past, I had just uploaded either R Markdown files or knitted html files (with the Download Rmd option) to the course moodle site (moodle is a course management system).</p>

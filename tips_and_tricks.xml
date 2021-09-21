@@ -6,6 +6,11 @@
     <atom:link href="https://distillery.rbind.io/tips_and_tricks.xml" rel="self" type="application/rss+xml"/>
     <description>A distill site dedicated to showcasing other distill websites and blogs
 </description>
+    <image>
+      <title>The Distillery</title>
+      <url>https://distillery.rbind.io/images/favicon.ico</url>
+      <link>https://distillery.rbind.io</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>

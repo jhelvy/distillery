@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -92,6 +91,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <link rel="canonical" href="https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon.ico"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2020-12-12"/>
@@ -2158,7 +2158,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2224,6 +2225,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <a href="https://github.com/jhelvy/distillery">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
+<a href="../../tips_and_tricks.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2260,7 +2264,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>Anyway, at the risk of becoming one of those blogs that only blogs about blogging frameworks<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, here are some tips and tricks I learned over the last 1.5 weeks<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p><strong>Edit 2020-12-14</strong>: thanks to the magic of Twitter / with the help of <a href="https://twitter.com/ma_salmon/status/1338382964275761154">Maëlle Salmon</a>, I found the “meme” (more like comic, d’uh) I was talking about in footnote 1 - shoutout to you if you know what I’m talking about because you read the footnote! Enjoy!</p>
 <figure>
-<img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" class="external" alt="" /><figcaption>Image from <a href="https://rakhim.org/images/honestly-undefined/blogging.jpg" class="uri">https://rakhim.org/images/honestly-undefined/blogging.jpg</a></figcaption>
+<img src="https://rakhim.org/images/honestly-undefined/blogging.jpg" class="external" alt="Image from https://rakhim.org/images/honestly-undefined/blogging.jpg" /><figcaption aria-hidden="true">Image from <a href="https://rakhim.org/images/honestly-undefined/blogging.jpg" class="uri">https://rakhim.org/images/honestly-undefined/blogging.jpg</a></figcaption>
 </figure>
 <h2 id="internal-links">Internal links</h2>
 <p>In Hugo I always specified internal links within my site like so:</p>
@@ -2273,22 +2277,22 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h2 id="redirecting-your-old-urls">Redirecting your old URLs</h2>
 <p>I was not able to configure my distill site so that it would replicate the exact URLs of my old Hugo/blogdown page. Some of those were not so nice anyway, e.g. my about page was under <code>frie.codes/page/about/</code> and not at <code>frie.codes/about</code>. I didn’t want to have breaking links, so I wanted to find a way to redirect users to the new URLs.</p>
 <p>Turns out if you use Netlify, you can set up either a <code>_redirects</code> file or include your redirects in <code>netlify.toml</code>. While the latter is a bit more verbose, it has the advantage that you don’t have to take care of it ending up in <code>_site</code>. Here’s a snippet from my <code>netlify.toml</code>:</p>
-<pre class="toml"><code># Redirects from what the browser requests to what we serve
-[[redirects]]
-  from = &quot;/post/&quot;
-  to = &quot;/&quot;
-[[redirects]]
-  from = &quot;/git-commit-wordcloud-rstats/&quot;
-  to = &quot;/posts/git-commit-wordcloud-rstats&quot;
-[[redirects]]
-  from = &quot;/using-r-to-remove-audiobooks-from-spotify/&quot;
-  to = &quot;/posts/using-r-to-remove-audiobooks-from-spotify&quot;
-[[redirects]]
-  from = &quot;/automate-the-boring-stuff/&quot;
-  to = &quot;/posts/automate-the-boring-stuff/&quot;
-[[redirects]]
-  from = &quot;/oldrscripts-intro-to-r/&quot;
-  to = &quot;/posts/oldrscripts-intro-to-r/&quot;</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode toml"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Redirects from what the browser requests to what we serve</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">redirects</span><span class="kw">]]</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">from</span> <span class="op">=</span> <span class="st">&quot;/post/&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">to</span> <span class="op">=</span> <span class="st">&quot;/&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">redirects</span><span class="kw">]]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">from</span> <span class="op">=</span> <span class="st">&quot;/git-commit-wordcloud-rstats/&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">to</span> <span class="op">=</span> <span class="st">&quot;/posts/git-commit-wordcloud-rstats&quot;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">redirects</span><span class="kw">]]</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">from</span> <span class="op">=</span> <span class="st">&quot;/using-r-to-remove-audiobooks-from-spotify/&quot;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">to</span> <span class="op">=</span> <span class="st">&quot;/posts/using-r-to-remove-audiobooks-from-spotify&quot;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">redirects</span><span class="kw">]]</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">from</span> <span class="op">=</span> <span class="st">&quot;/automate-the-boring-stuff/&quot;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">to</span> <span class="op">=</span> <span class="st">&quot;/posts/automate-the-boring-stuff/&quot;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">redirects</span><span class="kw">]]</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">from</span> <span class="op">=</span> <span class="st">&quot;/oldrscripts-intro-to-r/&quot;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">to</span> <span class="op">=</span> <span class="st">&quot;/posts/oldrscripts-intro-to-r/&quot;</span></span></code></pre></div>
 <p>You can check out the relevant documentation <a href="https://docs.netlify.com/routing/redirects/">here</a> and my <code>netlify.toml</code> <a href="https://gitlab.com/friep/blog/-/blob/main/netlify.toml">here</a>. I suspect similar things are possible with other hosting providers, so I’d google something like “hosting provider redirects”.</p>
 <h2 id="folder-structure">Folder structure</h2>
 <p>In blogdown/Hugo, I could set “nice” slugs (the part in the URL after the main domain, e.g. <code>curl-vs-rcurl</code> in <code>https://frie.codes/curl-vs-rcurl</code>) via the <code>slug</code> yaml frontend matter option…</p>
@@ -2301,26 +2305,26 @@ slug: curl-vs-rcurl
 tags: [ds-texts]
 ---</code></pre>
 <p>…while at the same time keeping my folders nicely organized by date:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">content/post</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>├── <span class="ex">2019-01-05-dot-dot-dot-underscore-camel</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>├── <span class="ex">2019-01-05-to-for-loop-or-not-to-for-loop</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>├── <span class="ex">2019-05-19_introducing-this-blog</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>├── <span class="ex">2019-05-20-curl-vs-rcurl</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>├── <span class="ex">2019-06-19_oldrscripts-intro-to-r</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>├── <span class="ex">2019-07-23_switching-to-gitlab</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>├── <span class="ex">2019-10-19-automate-the-boring-stuff</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>├── <span class="ex">2020-08-30-using-r-to-remove-audiobooks-from-spotify</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>└── <span class="ex">2020-11-25-create-a-wordcloud-of-your-github-commits</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">content/post</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-01-05-dot-dot-dot-underscore-camel</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-01-05-to-for-loop-or-not-to-for-loop</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-05-19_introducing-this-blog</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-05-20-curl-vs-rcurl</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-06-19_oldrscripts-intro-to-r</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-07-23_switching-to-gitlab</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2019-10-19-automate-the-boring-stuff</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">2020-08-30-using-r-to-remove-audiobooks-from-spotify</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>└── <span class="ex">2020-11-25-create-a-wordcloud-of-your-github-commits</span></span></code></pre></div>
 <p>Because distill’s building logic is much simpler<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, this is not possible in distill as far as I understand: You either have to commit to slugs like <code>2020-11-26-git-commit-wordcloud-rstats</code> or accept a folder structure like this:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">_posts</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>├── <span class="ex">automate-the-boring-stuff</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>├── <span class="ex">curl-vs-rcurl</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>├── <span class="ex">git-commit-wordcloud-rstats</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>├── <span class="ex">introducing-this-blog</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>├── <span class="ex">misc-distill-things</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>├── <span class="ex">oldrscripts-intro-to-r</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>├── <span class="ex">switching-to-gitlab</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>└── <span class="ex">using-r-to-remove-audiobooks-from-spotify</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">_posts</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">automate-the-boring-stuff</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">curl-vs-rcurl</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">git-commit-wordcloud-rstats</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">introducing-this-blog</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">misc-distill-things</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">oldrscripts-intro-to-r</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>├── <span class="ex">switching-to-gitlab</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>└── <span class="ex">using-r-to-remove-audiobooks-from-spotify</span></span></code></pre></div>
 <p>This is not ideal and makes me a bit unhappy but alas.. you can’t have simplicity and complex features at the same time. If I missed something obvious and this is possible after all, please shoot me a message on <a href="https://twitter.com/ameisen_strasse">Twitter</a> or via Email (see footer). I’d love to be wrong on this one!</p>
 <h2 id="theming-and-customization">Theming and Customization</h2>
 <p>The <a href="https://rstudio.github.io/distill/#theming">docs on theming</a> are quite good and I think there will be more and more websites implemented in distill so more examples will be available. I only changed the fonts and the colors and added some small css for the profile picture on my <a href="/about.html">about page</a>. You can check out the <code>theme.css</code> <a href="https://gitlab.com/friep/blog/-/blob/main/theme.css">here</a>.</p>
