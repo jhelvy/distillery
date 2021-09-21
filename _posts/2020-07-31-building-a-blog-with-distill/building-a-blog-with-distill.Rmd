@@ -5,7 +5,7 @@ description: |
 author:
   - name: Thomas Mock
     url: https://twitter.com/thomas_mock
-date: 08-01-2020
+date: 2020-08-01
 base_url: https://themockup.blog
 categories:
   - starting
