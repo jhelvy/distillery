@@ -16,6 +16,9 @@
       <category>tutorial</category>
       <category>html</category>
       <category>css</category>
+      <category>utterances</category>
+      <category>github</category>
+      <category>features</category>
       <guid>https://distillery.rbind.io/posts/2021-08-14-new-additions</guid>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-08-14-new-additions/images/windrose_black.png" medium="image" type="image/png" width="956" height="928"/>
@@ -113,6 +116,8 @@
       <description>How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.</description>
       <category>features</category>
       <category>tutorial</category>
+      <category>html</category>
+      <category>css</category>
       <guid>https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css</guid>
       <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css/images/css_html.png" medium="image" type="image/png" width="4780" height="1575"/>
@@ -181,6 +186,7 @@
       <category>github</category>
       <category>features</category>
       <category>tutorial</category>
+      <category>utterances</category>
       <guid>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</guid>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
