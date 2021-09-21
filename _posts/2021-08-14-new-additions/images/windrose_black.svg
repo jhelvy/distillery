@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="74.522987mm"
+   height="72.366302mm"
+   viewBox="0 0 74.522987 72.366302"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   sodipodi:docname="windrose_black.svg"
+   inkscape:export-filename="/home/christian/Projekte/jolly data/blog/_posts/2021-08-14-new-additions/images/windrose_black.png"
+   inkscape:export-xdpi="325.89401"
+   inkscape:export-ydpi="325.89401"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-midpoints="true"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="1"
+     inkscape:cx="343.5"
+     inkscape:cy="133.5"
+     inkscape:window-width="1874"
+     inkscape:window-height="1051"
+     inkscape:window-x="46"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="38.784932,36.965764"
+       orientation="0,-1"
+       id="guide953" />
+    <sodipodi:guide
+       position="38.784932,36.965764"
+       orientation="1,0"
+       id="guide1533" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.118641,-30.750006)">
+    <path
+       sodipodi:type="star"
+       style="font-variation-settings:'wght' 700;fill:#f39f5c;fill-opacity:1;stroke-width:5.66929;stroke-linecap:round"
+       id="path867"
+       inkscape:flatsided="false"
+       sodipodi:sides="4"
+       sodipodi:cx="199.95052"
+       sodipodi:cy="250.01781"
+       sodipodi:r1="93.032478"
+       sodipodi:r2="22.791304"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0.7704329"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 292.98299,250.01781 -76.67722,15.87291 -16.35525,77.15957 -15.87292,-76.67723 -77.15956,-16.35525 76.67723,-15.87291 16.35525,-77.15957 15.87291,76.67723 z"
+       transform="matrix(0.13843643,0.13843643,-0.13843643,0.13843643,59.83471,3.8585357)" />
+    <path
+       sodipodi:type="star"
+       style="font-variation-settings:'wght' 700;fill:#1bc7dc;fill-opacity:1;stroke-width:5.66929;stroke-linecap:round"
+       id="path846"
+       inkscape:flatsided="false"
+       sodipodi:sides="4"
+       sodipodi:cx="199.95052"
+       sodipodi:cy="250.01781"
+       sodipodi:r1="93.032478"
+       sodipodi:r2="22.791304"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0.7704329"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 292.98299,250.01781 -76.67722,15.87291 -16.35525,77.15957 -15.87292,-76.67723 -77.15956,-16.35525 76.67723,-15.87291 16.35525,-77.15957 15.87291,76.67723 z"
+       transform="scale(0.26458333)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="48.807835"
+       y="39.232399"
+       id="text1919"><tspan
+         sodipodi:role="line"
+         id="tspan1917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="48.807835"
+         y="39.232399">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-56.157936"
+       y="-94.131134"
+       id="text1919-1"
+       transform="scale(-1)"><tspan
+         sodipodi:role="line"
+         id="tspan1917-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="-56.157936"
+         y="-94.131134">S</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="63.023178"
+       y="-79.775703"
+       id="text1919-6"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         id="tspan1917-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="63.023178"
+         y="-79.775703">E</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-71.553314"
+       y="24.501299"
+       id="text1919-8"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan1917-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="-71.553314"
+         y="24.501299">W</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="81.923569"
+       y="-12.467522"
+       id="text1537"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         id="tspan1535"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="81.923569"
+         y="-12.467522">NE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="5.4399123"
+       y="-106.27587"
+       id="text1537-3"
+       transform="rotate(135)"><tspan
+         sodipodi:role="line"
+         id="tspan1535-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="5.4399123"
+         y="-106.27587">SE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-86.320259"
+       y="-30.375753"
+       id="text1537-8"
+       transform="rotate(-135)"
+       inkscape:transform-center-y="2.3262307"><tspan
+         sodipodi:role="line"
+         id="tspan1535-37"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="-86.320259"
+         y="-30.375753">SW</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;letter-spacing:0px;word-spacing:0px;fill:#394755;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-13.384675"
+       y="63.341255"
+       id="text1537-9"
+       transform="rotate(-45)"><tspan
+         sodipodi:role="line"
+         id="tspan1535-378"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Bitter;-inkscape-font-specification:'Bitter, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;fill:#394755;fill-opacity:1;stroke-width:0.264583"
+         x="-13.384675"
+         y="63.341255">NW</tspan></text>
+  </g>
+</svg>

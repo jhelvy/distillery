@@ -21,7 +21,7 @@ twitter:
   creator: "@thomas_mock"
 ---
 
-> Note: This post was originally written by [Thomas Mock](https://twitter.com/thomas_mock) and copied here on March 16, 2021 - see the original post [here](](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/) for a potentially updated version.
+> Note: This post was originally written by [Thomas Mock](https://twitter.com/thomas_mock) and copied here on March 16, 2021 - see the original post [here](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/) for a potentially updated version.
 
 ![Modern building](modern.jpeg)
 
