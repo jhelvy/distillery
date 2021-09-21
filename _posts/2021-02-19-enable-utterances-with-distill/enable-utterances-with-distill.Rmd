@@ -10,6 +10,7 @@ categories:
   - github
   - features
   - tutorial
+  - utterances
 output:
   distill::distill_article:
     toc: true

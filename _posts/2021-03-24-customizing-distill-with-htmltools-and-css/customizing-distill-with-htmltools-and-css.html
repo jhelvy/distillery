@@ -110,12 +110,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Customizing distill with {htmltools} and CSS"]},{"type":"character","attributes":{},"value":["How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["John Paul Helveston"]}]}]},{"type":"character","attributes":{},"value":["03-25-2021"]},{"type":"character","attributes":{},"value":["images/css_html.png"]},{"type":"character","attributes":{},"value":["features","tutorial"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Customizing distill with {htmltools} and CSS"]},{"type":"character","attributes":{},"value":["How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["John Paul Helveston"]}]}]},{"type":"character","attributes":{},"value":["03-25-2021"]},{"type":"character","attributes":{},"value":["images/css_html.png"]},{"type":"character","attributes":{},"value":["features","tutorial","html","css"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/css_html.png","images/inspect.gif","images/text_wrap.png"]}
+  {"type":"character","attributes":{},"value":["customizing-distill-with-htmltools-and-css_files/anchor-4.2.2/anchor.min.js","customizing-distill-with-htmltools-and-css_files/bowser-1.9.3/bowser.min.js","customizing-distill-with-htmltools-and-css_files/distill-2.2.21/template.v2.js","customizing-distill-with-htmltools-and-css_files/header-attrs-2.7/header-attrs.js","customizing-distill-with-htmltools-and-css_files/jquery-1.11.3/jquery.min.js","customizing-distill-with-htmltools-and-css_files/popper-2.6.0/popper.min.js","customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy-bundle.umd.min.js","customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy-light-border.css","customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy.css","customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy.umd.min.js","customizing-distill-with-htmltools-and-css_files/webcomponents-2.0.0/webcomponents.js","images/css_html.png","images/inspect.gif","images/text_wrap.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1433,8 +1433,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="customizing-distill-with-htmltools-and-css_files/header-attrs-2.7/header-attrs.js"></script>
-  <script src="customizing-distill-with-htmltools-and-css_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="customizing-distill-with-htmltools-and-css_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="customizing-distill-with-htmltools-and-css_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="customizing-distill-with-htmltools-and-css_files/popper-2.6.0/popper.min.js"></script>
   <link href="customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="customizing-distill-with-htmltools-and-css_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -1469,6 +1469,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="dt-tags">
 <div class="dt=tag">features</div>
 <div class="dt=tag">tutorial</div>
+<div class="dt=tag">html</div>
+<div class="dt=tag">css</div>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>How I added lots of little features to my distill site with the {htmltools} package, CSS, and a handful of little R functions.</p></p>
@@ -1537,7 +1539,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>For most situations, this works great, but there are also times where I need a tag that isn’t yet supported. In those case, you can insert the tags yourself as a string and use the <code>tag()</code> function to create custom tags. For example, the <code>&lt;aside&gt;</code> tag is used in distill to put content in the sidebar, but {htmltools} does not have an <code>aside()</code> function. Instead, I can create those tages like this:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>content</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></span><span class='op'>(</span><span class='st'>"aside"</span>, <span class='st'>"Hello World"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>content</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>tag</a></span><span class='op'>(</span><span class='st'>"aside"</span>, <span class='st'>"Hello World"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>content</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -1560,12 +1562,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Generates &lt;aside&gt;text&lt;/aside&gt;</span>
 <span class='va'>aside</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></span><span class='op'>(</span><span class='st'>"aside"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>tag</a></span><span class='op'>(</span><span class='st'>"aside"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 <span class='co'># Generates &lt;center&gt;text&lt;/center&gt;</span>
 <span class='va'>center</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></span><span class='op'>(</span><span class='st'>"center"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>tag</a></span><span class='op'>(</span><span class='st'>"center"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>text</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 <span class='co'># Generates &lt;aside&gt;&lt;center&gt;text&lt;/center&gt;&lt;/aside&gt;</span>
@@ -1623,7 +1625,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Generates &lt;i class="icon"&gt;&lt;/i&gt;</span>
 <span class='va'>make_icon</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>icon</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></span><span class='op'>(</span><span class='st'>"i"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>class <span class='op'>=</span> <span class='va'>icon</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='fu'>htmltools</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>tag</a></span><span class='op'>(</span><span class='st'>"i"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>class <span class='op'>=</span> <span class='va'>icon</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 </code></pre>
 </div>

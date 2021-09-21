@@ -11,6 +11,9 @@ categories:
   - tutorial
   - html
   - css
+  - utterances
+  - github
+  - features
 output:
   distill::distill_article:
     self_contained: false

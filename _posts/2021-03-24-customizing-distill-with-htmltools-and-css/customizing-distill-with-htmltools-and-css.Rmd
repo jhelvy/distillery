@@ -8,6 +8,8 @@ preview: "images/css_html.png"
 categories:
   - features
   - tutorial
+  - html
+  - css
 output:
   distill::distill_article:
     self_contained: false
