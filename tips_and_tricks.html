@@ -2238,7 +2238,7 @@ function init_posts_list() {
       $(posts).removeClass('post-preview-last');
 
       // apply limits if need be
-      var max_posts = 25;
+      var max_posts = 6;
       var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
       if (apply_limits && posts.length > max_posts) {
         posts = $(posts).slice(0, max_posts);
