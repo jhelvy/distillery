@@ -31,6 +31,8 @@ Imports:
     R.utils
 Remotes:
     EllaKaye/distilltools,
+    rstudio/distill,
     rstudio/fontawesome,
     rstudio/webshot2,
     rstudio/rmarkdown
+    
