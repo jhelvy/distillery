@@ -105,149 +105,159 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/MilesMcBain/milesmcbain.com/">source</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">CDU Data Science Team</td>
+<td style="text-align: left;"><a href="https://cdu-data-science-team.github.io/team-blog/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/CDU-data-science-team/team-blog">source</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Data Sci Dani</td>
 <td style="text-align: left;"><a href="https://datascidani.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/danielle-b/datascidani2">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Elea Feit</td>
 <td style="text-align: left;"><a href="https://eleafeit.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/eleafeit/emf">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ella Kaye</td>
 <td style="text-align: left;"><a href="https://ellakaye.rbind.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/EllaKaye/ellakaye-distill">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Emi Tanaka</td>
 <td style="text-align: left;"><a href="https://emitanaka.org/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/emitanaka/emitanaka.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Eric Ekholm</td>
 <td style="text-align: left;"><a href="https://www.ericekholm.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/ekholme/ee-website">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Etienne Bacher</td>
 <td style="text-align: left;"><a href="https://www.etiennebacher.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/etiennebacher/personal_website_distill">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Harry Fisher</td>
 <td style="text-align: left;"><a href="https://hfshr.xyz">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/hfshr/distill_blog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Hitesh Fulwani</td>
 <td style="text-align: left;"><a href="https://hitesh-fulwani.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/Hitesh-Fulwani/hitesh-f">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ijeamaka Anyene</td>
 <td style="text-align: left;"><a href="https://ijeamaka-anyene.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/Ijeamakaanyene/ijeamaka-anyene">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Infrequently Frequentist</td>
 <td style="text-align: left;"><a href="https://www.infreq.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/odaniel1/InfrequentlyFrequentist">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">IPUMS PMA Data Analysis Hub</td>
 <td style="text-align: left;"><a href="https://ipums.github.io/pma-data-hub/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/ipums/pma-data-hub">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Jannik Buhr</td>
 <td style="text-align: left;"><a href="https://jmbuhr.de">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jmbuhr/jmbuhr.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Jeff’s Journal</td>
 <td style="text-align: left;"><a href="https://jeffreyasselin.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jassassin68/my-distill-site">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Jenna Eagleson</td>
 <td style="text-align: left;"><a href="https://jeagleso.github.io/website/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jeagleso/website">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">jeremydata</td>
 <td style="text-align: left;"><a href="https://jeremydata.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jeremy-allen/jeremydata_blog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">John Paul Helveston</td>
 <td style="text-align: left;"><a href="https://www.jhelvy.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jhelvy/jhelvy.com">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">jolly data blog</td>
 <td style="text-align: left;"><a href="https://jollydata.blog">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/nucleic-acid/jollydatablog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Joseph Casillas</td>
 <td style="text-align: left;"><a href="https://www.jvcasillas.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/jvcasillas/jvcasillas.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">June Choe</td>
 <td style="text-align: left;"><a href="https://yjunechoe.github.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/yjunechoe/yjunechoe.github.io">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Kaija Gahm</td>
 <td style="text-align: left;"><a href="https://kaijagahm.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/kaijagahm/kaija_bean">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Kyle Cuilla</td>
 <td style="text-align: left;"><a href="https://kcanalytics.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/kcuilla/kc_analytics">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Lisa Lendway</td>
 <td style="text-align: left;"><a href="https://lisalendway.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/llendway/lisalendway_distill">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">LiteralFightNerd</td>
 <td style="text-align: left;"><a href="https://literalfightnerd.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/NateLatshaw/LiteralFightNerd">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Lore Abad</td>
 <td style="text-align: left;"><a href="https://loreabad6.github.io/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/loreabad6/loreabad6.github.io">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Max Rohde</td>
 <td style="text-align: left;"><a href="https://maximilianrohde.com">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/maxdrohde/blog">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Miha Gazvoda</td>
 <td style="text-align: left;"><a href="https://mihagazvoda.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mihagazvoda/mihagazvoda.com">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Muhsin Ciftci</td>
 <td style="text-align: left;"><a href="https://muhsinciftci.netlify.app/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/muhsinciftci/mydistill-website">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Open Source Football</td>
 <td style="text-align: left;"><a href="https://www.opensourcefootball.com/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mrcaseb/open-source-football">source</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Pedro J. Pérez</td>
 <td style="text-align: left;"><a href="https://perezp44.github.io/pjperez.web/01_blog.html">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/perezp44/pjperez.web">source</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Philosopher Analyst</td>
+<td style="text-align: left;"><a href="https://lextuga007.github.io/PhilosopherAnalyst/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/Lextuga007/PhilosopherAnalyst">source</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Phoebe Thatcher</td>
@@ -325,11 +335,16 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://github.com/durraniu/udurrani_distill">source</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Understanding Your Data</td>
+<td style="text-align: left;"><a href="https://cdu-data-science-team.github.io/understanding-your-data/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/CDU-data-science-team/understanding-your-data">source</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">werk.statt.codes</td>
 <td style="text-align: left;"><a href="https://werk.statt.codes/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/werkstattcodes/distill_clean">source</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Westchester Covid-19 Tracking</td>
 <td style="text-align: left;"><a href="https://westchester-covid.mattherman.info/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mfherman/westchester-covid">source</a></td>
