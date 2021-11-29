@@ -12,7 +12,22 @@
       <link>https://distillery.rbind.io</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Enable giscus in Distill</title>
+      <dc:creator>Joel Nitta</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-11-24_using-giscus</link>
+      <description>How to use the giscus commenting system on a Distill blog</description>
+      <category>tutorial</category>
+      <category>html</category>
+      <category>utterances</category>
+      <category>giscus</category>
+      <category>github</category>
+      <category>features</category>
+      <guid>https://distillery.rbind.io/posts/2021-11-24_using-giscus</guid>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-11-24_using-giscus/img/adam-solomon-WHUDOzd5IYU-unsplash.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Leaving known waters</title>
       <dc:creator>Christian A. Gebhard</dc:creator>
