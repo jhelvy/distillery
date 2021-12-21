@@ -12,7 +12,20 @@
       <link>https://distillery.rbind.io</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Modifying the GitHub repo containing my Distill website</title>
+      <dc:creator>Shannon Pileggi</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-12-13-modifying-the-github-repo-containing-my-distill-website</link>
+      <description>Adventures with giscus (easier) and GitHub Actions (harder)</description>
+      <category>tutorial</category>
+      <category>giscus</category>
+      <category>github</category>
+      <category>deploy</category>
+      <guid>https://distillery.rbind.io/posts/2021-12-13-modifying-the-github-repo-containing-my-distill-website</guid>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-12-13-modifying-the-github-repo-containing-my-distill-website/woof_today.png" medium="image" type="image/png" width="1627" height="927"/>
+    </item>
     <item>
       <title>Enable giscus in Distill</title>
       <dc:creator>Joel Nitta</dc:creator>
@@ -34,6 +47,7 @@
       <link>https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs</link>
       <description>Notes on adding comments to distill pages.</description>
       <category>tutorial</category>
+      <category>discus</category>
       <guid>https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs</guid>
       <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs/distill-preview.png" medium="image" type="image/png" width="1000" height="750"/>
@@ -171,6 +185,7 @@
       <description>How can you automatically render README, Distill website...</description>
       <category>github</category>
       <category>tutorial</category>
+      <category>deploy</category>
       <guid>https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill</guid>
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-03-18-use-github-actions-with-r-markdown-and-distill/gha_image.jpg" medium="image" type="image/jpeg"/>
@@ -243,17 +258,6 @@
       <guid>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</guid>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png" medium="image" type="image/png" width="517" height="238"/>
-    </item>
-    <item>
-      <title>Building a blog with distill</title>
-      <dc:creator>Thomas Mock</dc:creator>
-      <link>https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill</link>
-      <description>I love simplicity.</description>
-      <category>starting</category>
-      <category>tutorial</category>
-      <guid>https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill</guid>
-      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://distillery.rbind.io/posts/2020-07-31-building-a-blog-with-distill/modern.jpeg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
