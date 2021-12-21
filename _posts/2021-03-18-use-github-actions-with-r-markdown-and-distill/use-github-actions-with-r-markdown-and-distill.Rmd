@@ -8,6 +8,7 @@ preview: gha_image.jpg
 categories:
   - github
   - tutorial
+  - deploy
 output:
   distill::distill_article:
     toc: true

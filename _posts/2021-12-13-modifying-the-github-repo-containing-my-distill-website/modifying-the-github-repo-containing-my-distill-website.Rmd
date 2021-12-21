@@ -1,0 +1,180 @@
+---
+title: "Modifying the GitHub repo containing my Distill website"
+description: |
+  Adventures with giscus (easier) and GitHub Actions (harder)
+author:
+  - name: Shannon Pileggi
+    url: {}
+twitter:
+  site: "@PipingHotData"
+  creator: "@PipingHotData"
+date: 2021-12-13
+preview: woof_today.png
+categories:
+  - tutorial
+  - giscus
+  - github
+  - deploy
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    self_contained: false
+creative_commons: CC BY
+---
+
+> Note: This post was originally written by [Shannon Pileggi](https://www.pipinghotdata.com/) and copied here on December 21, 2021 - see the original post [here](https://www.pipinghotdata.com/posts/2021-12-13-modifying-the-github-repo-containing-my-distill-website/) for a potentially updated version.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi=1)
+```
+
+```{r thumbnail, eval=TRUE, echo=FALSE}
+#| fig.cap: > 
+#|   Artwork by [`@allison_horst`](https://twitter.com/allison_horst?lang=en). Except in my case, I just needed 12 days of intermittent attempts.
+#| fig.alt: > 
+#|    R logo has a worried face; little puffball monster is sitting,
+#|    looking grumpy, with hat in hand and caption that says "i just
+#|    need a minute."
+knitr::include_graphics("woof_today.png")
+```
+
+# TL; DR
+
+I made two modifications to my distill website and the corresponding GitHub repository:
+
+1.  Added [giscus](https://giscus.app/) commenting to my blog - this was fairly straightforward and completed within 1 to 2 hours.
+
+2.  Added GitHub actions to automatically update the repository's `README` with blog stats - this took several attempts over the course of a few days.
+
+# Giscus commenting
+
+*Straightforward and completed within 1 to 2 hours.*
+
+Updating the commenting mechanism on my website from discus was something I had been meaning to do for a while, but held off on because you never know when a seemingly small change will take you down a rabbit hole.
+
+I went for it, and thanks to Joel's awesome post [Enable giscus in Distill](https://www.joelnitta.com/posts/2021-11-24_using-giscus/){target="_blank_"} it was a pretty quick and easy process. 🙌
+
+<blockquote class="twitter-tweet">
+
+<p lang="en" dir="ltr">
+
+tonight i intended to update my <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> blog from disqus to utterances, but then i found this great post by <a href="https://twitter.com/joel_nitta?ref_src=twsrc%5Etfw">@joel_nitta</a> about ✨giscus✨! thanks, Joel! 👏<br><br>i hope the new giscus gets used - go ahead, pipe up!😉<a href="https://t.co/Wx1j80TKVD">https://t.co/Wx1j80TKVD</a>
+
+</p>
+
+--- Shannon Pileggi (@PipingHotData) <a href="https://twitter.com/PipingHotData/status/1465878389852676107?ref_src=twsrc%5Etfw">December 1, 2021</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+
+# GitHub Actions README
+
+*Several attempts over the course of a few days.*
+
+After the amazingly quick success of the giscus implementation, I was ready to tackle more! I thought a mini-project on my blog would be a nice entry point to learn GitHub Actions, and I decided to replicate Matt Dray's post [Up-to-date blog stats in your README](https://www.rostrum.blog/2021/04/14/gha-readme/){target="_blank_"}. Between intricacies with both the `README` and the GitHub Action workflow `yaml`, this happened:
+
+<blockquote class="twitter-tweet">
+
+<p lang="en" dir="ltr">
+
+how is figuring out <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> github actions going, you ask? preeetttty well 👍 <a href="https://t.co/Boj7KvXCAi">pic.twitter.com/Boj7KvXCAi</a>
+
+</p>
+
+--- Shannon Pileggi (@PipingHotData) <a href="https://twitter.com/PipingHotData/status/1466822863286063115?ref_src=twsrc%5Etfw">December 3, 2021</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+I mean, sometimes you can skip reading documentation fully, make a few tweaks to your code, cross your fingers, and hope that everything works. GitHub Actions is probably not one of those things. 😬 Below are a few of the errors I suffered through to get this working; hopefully I can save you some of the pain!
+
+### GitHub Actions
+
+-   [`Workflow #1 (error)`](https://github.com/shannonpileggi/pipinghotdata_distill/runs/4391092220?check_suite_focus=true){target="_blank_"} I needed to add `{distill}` as an installed package in my workflow. 🤷
+
+-   [`Workflow #2 (error)`](https://github.com/shannonpileggi/pipinghotdata_distill/runs/4404442737?check_suite_focus=true){target="_blank_"} I was lazy with my README and workflow and loaded `tidvyerse` instead of the specific packages I needed, which didn't go well. I tried to resolve this via the `pak` route (see next error), which also didn't go well, and ended up trimming back the dependencies to the essential ones.
+
+<aside>
+Check out Alison Hill working through some [unexpected GitHub Actions problems](https://www.youtube.com/watch?v=_ptrgqx2zUs&t=2754s){target="_blank"} with bookdown & Netlify!
+</aside>
+
+
+-   [`Workflow #10 (error)`](https://github.com/shannonpileggi/pipinghotdata_distill/runs/4410903654?check_suite_focus=true){target="_blank_"} I tried a few different things to install packages in the workflow with `pak` instead of `install.packages`. I attempted to use [`r-lib/actions/setup-r-dependencies`](https://github.com/r-lib/actions/tree/master/setup-r-dependencies){target="_blank_"}, and I really should have read the documentation thoroughly. My blog repo is not a package and does not have `DESCRIPTION` file. I tried to add a `DESCRIPTION` file to coerce this, but really, this workflow setup is made for packages. I also attempted to review the source of the workflow and make some tweaks to achieve something similar outside of the package framework, but to no avail. My workflow currently uses `install.packages()`. I could have tried [`r-lib/actions/setup-renv`](https://github.com/r-lib/actions/tree/master/setup-renv){target="_blank_"} instead, but I was tired. There are many errors in my workflow history that correspond to this experimentation.
+
+### README
+
+-   [`Workflow #30 (no error)`](https://github.com/shannonpileggi/pipinghotdata_distill/runs/4499533757?check_suite_focus=true){target="_blank_"} I thought I would get fancy and make the ggplot graphic interactive through `{ggiraph}` with hover over and click effects. This didn't error out, but it also didn't work, which I should have anticipated, as the rendered file is a `.md` and not a `.Rmd`.
+
+-   [`Workflow #26 (no error)`](https://github.com/shannonpileggi/pipinghotdata_distill/actions/runs/1562057755){target="_blank_"} I had many workflows that didn't error out, but also did not result in an updated `README`. I actually had a lot of trouble getting the `README` to work. Some things I learned include:
+
+    -   [`usethis::use_readme_rmd()`](https://usethis.r-lib.org/reference/use_readme_rmd.html){target="*blank*"} is designed for use with R packages, and again, didn't work well on my blog repo.
+
+    -   [`devtools::build_rmd()`](https://usethis.r-lib.org/reference/use_readme_rmd.html){target="*blank*"} is designed for use with R packages, and again, didn't work well on my blog repo.
+
+    -   After I ditched these and my `README` still wasn't rendering correctly, I really, truly thought I was going crazy. I finally found a [solution on RStudio Community](https://community.rstudio.com/t/readme-rmd-in-a-bookdown-repo/93191/7){target="_blank_"} by updating `rmarkdown::render("README.Rmd")` to `rmarkdown::render("README.Rmd", "github_document")` in the `YAML` of the GitHub Action workflow. I wonder if {distill} has some `YAML` stuff going on that required the `"github_document"` argument.
+
+
+
+After much perseverance and persistence, I prevailed with my first GitHub Action. 💪 
+
+```{r gha, eval=TRUE, echo=FALSE}
+#| fig.cap: > 
+#|   Updated README file for the [`pipinghotdata_distill`](https://github.com/shannonpileggi/pipinghotdata_distill) 
+#|   GitHub repository, with the stats section automatically 
+#|   updated daily with GitHub Actions. 
+#| fig.alt: > 
+#|    The "some stats" section is automatically updated, including a rugline type
+#|    graphic with a single vertical line on the date of a each post.
+knitr::include_graphics("readme.PNG")
+```
+
+Perhaps reading the documentation more closely or slowing down to think through things might have worked better for this situation. If you want to have a laugh or or want to feel better about your own struggling efforts, browse through my 34 [commits](https://github.com/shannonpileggi/pipinghotdata_distill/commits/master){target="_blank"} or check out the corresponding [GitHub Action history](https://github.com/shannonpileggi/pipinghotdata_distill/actions){target="_blank"} Dec 1 - 12, 2021. Despite the frustration, I remain grateful for these experiences as I learned a lot.
+
+# Afterwards
+
+So what happened after these changes?
+
+### Giscus
+
+One unexpected side effect of using giscus is all of the automatic notifications I receive about the discussion. I get notifications for:
+
+1. on my blog: all comments
+
+2. on blogs by others:
+
+   + replies to my comments
+   
+   + all comments subsequent to mine, by anyone, as we are now all engaged in the same GitHub discussion.
+   
+The last one was a bit surprising to me, but I like it for now!
+
+
+### GitHub Actions
+
+Now that I am using GitHub Actions on the `README` of my repository, I am no longer the only contributor to my repository! 😯  This means
+that when I open up my R project, I now need to remember to pull before I start working on my website.
+
+In addition, despite my GitHub Actions working, I ran out of free time as shown in the [`workflow #39 error`](https://github.com/shannonpileggi/pipinghotdata_distill/actions/runs/1572539486){target="_blank"}. 🤦 I guess I either need to figure out `{pak}` out with GitHub Actions to hopefully speed things up, or experiment less to get my actions right.😆
+
+# Acknowledgements
+
+Thanks to:
+
+ * Dan Sjoberg and Travis Gerke for talking me through some GitHub Action concepts!
+ 
+ * Allison Horst for the amazing [illustrations](https://github.com/allisonhorst/stats-illustrations){target="_blank"}.
+ 
+ * Joel Nitta for the [giscus post](https://www.joelnitta.com/posts/2021-11-24_using-giscus/){target="_blank"}.
+ 
+ * Matt Dray for the  [readme github action post](https://www.rostrum.blog/2021/04/14/gha-readme/){target="_blank"}.
+ 
+ * Christophe Dervieux for being a hero on [RStudio Community](https://community.rstudio.com/t/readme-rmd-in-a-bookdown-repo/93191/7){target="_blank"}.
+ 
