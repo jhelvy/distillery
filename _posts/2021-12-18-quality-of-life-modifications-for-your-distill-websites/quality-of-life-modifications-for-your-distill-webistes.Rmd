@@ -1,0 +1,384 @@
+---
+title: "Quality of life modifications for your distill websites"
+description: |
+  In this post, you can find simple but useful enhancements that can be applied to your distill website. From enhancing your table of contents tab to adding a 'copy to clipboard button' in source code chunks, learn how you can make your distill website even more awesome!
+author:
+  - name: Jewel Johnson
+    url: https://jeweljohnsonj.github.io/jeweljohnson.github.io/
+date: 2021-12-18
+categories:
+  - features
+  - twitter
+  - tutorial
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+preview: meme.gif
+creative_commons: CC BY
+---
+
+> Note: This post was originally written by [Jewel Johnson](https://jeweljohnsonj.github.io/jeweljohnson.github.io/) and copied here on March 19, 2021 - see the original post [here](https://jeweljohnsonj.github.io/jeweljohnson.github.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-webistes/) for a potentially updated version.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+```{r, xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+---
+# xaringanExtra package will help us to have inbuilt tabs insdie the article
+---
+
+```{r panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+## Quality of life mods for distill websites
+
+In my one month time of learning about the `distill` r-package, I was fascinated by how amazing it is. Without knowing much about HTML or CSS coding, using the `distill` package, one can build a website from scratch. What was even more amazing was that the package had an active and friendly community who have written excellent and easy to follow [tutorials](https://rstudio.github.io/distill/) aiming at beginners like me. Almost everything I know about the `distill` package was thanks to these tutorials. Along the way, I also learned how to implement a few interesting features that can make a distill website even better. As a thank you for all the help I have received from this community, I would like to share some of my findings that might prove useful. Most of these findings are born out of curiosity coupled with Google search and from the source codes of the brilliant websites featured in the [distill website showcase](https://jhelvy.github.io/distillery/showcase.html).
+
+## 1. Making the table of contents more useful
+
+If you had used the `Rmarkdown` package for making websites before you began using the `distill` package, one thing you will immediately appreciate is the 'table of contents (toc)' in `Rmarkdown`. I feel that the toc in `Rmarkdown` is better than the toc in `distill`. The purpose of a toc is for enabling quick navigation through the contents of an article via the headers, so the toc should always be accessible to the reader. In distill articles, however, because of the way they manage the layout of the figures and other elements, a floating toc that is fixed even when the page is scrolled down is not possible out of the box. This [issue](https://github.com/rstudio/distill/issues/16) has been raised in GitHub and hopefully, the developers will find an elegant way to reimagine the toc. Nevertheless, all is not lost, from a stack overflow [question](https://stackoverflow.com/questions/67323162/floating-toc-in-distill-for-r/67387516?noredirect=1#comment119140135_67387516) on having a floating fixed toc for distill articles, the answer by [Dr Rich Pauloo](https://stackoverflow.com/users/8367943/rich-pauloo) provides relief. The code provided by Dr Pauloo allows the toc to be fixed on the left side even when you scroll down the page. But the down side is that by doing so, the toc will overlap over any element which is extending over the body layout. Also, the default font for the toc in distill is too small I feel, so if you increase the font size while using this code, it will create even more overlapping. So what can be done? 
+
+One thing I thought of implementing was that I will use the [code](https://stackoverflow.com/questions/67323162/floating-toc-in-distill-for-r/67387516?noredirect=1#comment119140135_67387516) by Dr Pauloo and fix the toc on top-left but with a transparent background. But when I hover over the toc headers it should zoom in on the screen, making the font bigger but over a white background, so that it is more legible. I used white colour as that was my background colour in the article body. I also changed the scrolling behaviour from 'smooth' to 'auto' as it made navigating via toc snappier and more responsive. 
+
+If you are adamant about having a fixed toc like me then you just have to tolerate the overlap problem. Another issue is that by using this code, when your website is viewed on mobile devices, the toc overlaps with the main text. But apart from that, I did not find any other major issues. The modified code is given below. 
+
+Either insert the code below to your main theme CSS file, if you are using a custom theme for your distill website. Otherwise, insert the code in a separate .css file and insert it in the article where you want to implement this feature. 
+
+```{css}
+html {
+  scroll-behavior: auto;
+}
+d-article {
+    contain: none;
+}
+
+/* the value in left: will allow you to change the left edge gap */
+/* try using the value I have provided and check if the text goes beyond */
+/* the edge of the screen when you hover over using the mouse pointer */
+/* otherwise modify the values till you get a desirable result */
+
+#TOC {
+  position: fixed;
+  z-index: 50;
+  background: none; /* makes the toc background layer transparent */    
+  left: 1.5em; /* changes the left edge gap */
+  top: 6em; /* changes the top edge gap */
+}
+
+.d-contents nav a:hover {
+    color: black;
+    transform: scale(1.7); /* change scale to control hover zoom, now it is in 1:7 ratio */
+    padding-left:20%; /* change percentage value to control left gap during hover */
+    background-color: white; /* background colour on hover, kept as white as it is my bg colour */
+    display: block; /* keep it as block to station the text on hover */
+}
+
+/* Hide the ToC when resized to mobile or tablet:  480px, 768px, 900px */
+@media screen and (max-width: 900px) {
+#TOC {
+    position: relative;
+  }
+}
+```
+
+For inserting multiple CSS files use the following code.
+
+```{r, eval=FALSE}
+---
+title: "Untitled"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+css: [style.css, hover.css] #the hover.css file will be containing the above modified code
+---
+```
+
+If done properly, you will have a toc just like mine, which is shown on the left side of this page. If you come across any problems while implementing this feature please put them as a comment below this article. I will do my best to solve them.
+
+## 2. Adding a visitor counter
+
+If you fancy a visitor counter on your website and additionally you would also like to know information like the location data of your visitors, how many people are currently online viewing your website etc. then you can add an HTML widget to your page which shows the visitor count. This can be done by following the steps below.
+
+1. Visit https://www.freecounterstat.com/ and click on 'originals'. I chose this website as it requires no annoying sign-in or account creation. Plus it is a free service.
+
+```{r, echo=FALSE, fig.cap="Figure from the Front page of https://www.freecounterstat.com/"}
+knitr::include_graphics("step1.png")
+```
+
+2. Pick the theme you like and customize the widget till you are content. Add relevant details like location, category of your website etc and remember to pick the 'standard' layout if you want the counter to be displayed horizontally. The difference between hit counter and visitor counter is that the hit counter only tracks visits for the page it is installed on whereas the visitor counter tracks all users who have visited any of your pages on your website. So select the 'visitor counter'. You can either make the stats public or private, choose public as it also allows the readers to see your visitor data. Then finally prove that 'you are not a robot' and press 'submit query'.
+
+```{r, echo=FALSE, fig.cap="Customizing your widget, Figure from the Front page of https://www.freecounterstat.com/"}
+knitr::include_graphics("step2.png")
+```
+
+3. The first code shown inside the red rectangle in the figure below has a javascript code that allows you to access various interesting information about the visitors to your webpage. Copy the first code.
+
+```{r, echo=FALSE, fig.cap="The code for the visitor counter widget, Figure from https://www.freecounterstat.com/"}
+knitr::include_graphics("step3.png")
+```
+
+4. Insert the copied code which displays the widget in your distill article of liking. For example, the code below will place the counter in the centre of the distill article and will have 'visitors' written above it. Paste the code that you have copied between the `<center>` tags. You can take a look at my [file](https://github.com/jeweljohnsonj/jeweljohnson.github.io/blob/main/index.Rmd) for reference. If done properly you will have the visitor counter widget placed in the centre position like in this [page](https://jeweljohnsonj.github.io/jeweljohnson.github.io/). 
+
+```html
+<center>Visitors<center>
+<center>
+/* paste the code you copied here */
+</div><center>
+```
+## 3. Adding next/previous button
+
+If you are making a tutorial and have sequential sections or chapters, then you might need navigation buttons at the end of each chapter for easy navigation. In the picture below you can see that I used it for my R tutorial articles. Have a look at my [file](https://github.com/jeweljohnsonj/jeweljohnson.github.io/blob/main/project1.Rmd) for reference.
+
+```{r, echo=FALSE, fig.cap="Source: https://jeweljohnsonj.github.io/jeweljohnson.github.io/project1.html "}
+knitr::include_graphics("button.png")
+```
+
+Use the following code inside your distill article to get navigation buttons at the end of your page. Change the href values to your respective html files and change the text accordingly for right and left sided buttons. Insert the code given below at the end of your article.
+
+```html
+<br> 
+
+<a href="project3.html" class="btn button_round" style="float: right;">Next chapter:
+<br> 3. Even more customizations in ggplot2</a>
+
+<a href="project1.html" class="btn button_round" style="float: left;">Previous chapter:
+<br> 1. Data visualization using ggplot2</a>
+```
+You should also add the following code to your main CSS theme file. You can change the values in the code to modify the button as you like.
+
+```{css}
+/* next and previous buttons at the end of the article */
+
+.btn {
+  border: none; /* button border */
+  background-color: #000000; /* button background colour */
+  padding: 14px 28px; /* length and width of the button */
+  font-size: 16px; /* font size of text inside the button */
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button_round {border-radius: 12px;} /* makes the button round */
+
+```
+
+
+## 4. Having social media share buttons
+
+You can display social media share buttons for enabling easy sharing of your articles, like what I have, on the right side of this webpage.
+
+1. Visit https://www.addtoany.com/buttons/for/website and fill up the relevant details and get your html code. The reason for choosing this website over others was that you could use their service for free without signing up for an account.
+
+2. Then simply paste that code directly anywhere in your distill article to enable the share buttons. 
+
+Have a look at my [file](https://github.com/jeweljohnsonj/jeweljohnson.github.io/blob/main/project1.Rmd) for reference.
+
+```{r, echo=FALSE, fig.cap="Source: https://www.addtoany.com/buttons/for/website"}
+knitr::include_graphics("share_code.png")
+```
+
+## 5. Adding last updated date in the appendix
+
+Showing when your article was last updated can prove useful for returning visitors. As it will allow them to see that the article has been modified. You can include this information in the appendix using the code below. Insert this code directly to your distill article.
+
+```` {.clike}
+## Last updated on {.appendix}
+```{r,echo=FALSE}`r ''`
+Sys.time()
+```
+````
+Now, this might not be very elegant, but it gets the job done in just one line of code. There is a more elegant way of including the "last updated date" in the appendix as explained by [Dr Danielle Navarro](https://djnavarro.net/). You can read more about it [here](https://blog.djnavarro.net/posts/2021-09-30_on-blogging-reproducibly/#step-5-let-your-readers-know). But it requires setting up a few prerequisites. 
+
+## 6. Displaying your twitter feed
+
+If you want to display your tweet activity on your webpage then follow the steps below.
+
+1. First go to your Twitter profile and copy your Twitter profile link address. Then visit https://publish.twitter.com/#. Your profile link would look like this -> `'https://twitter.com/[YOUR TWITTER USERNAME]`
+2. Paste the link that you have copied on the input bar and press enter. 
+3. Select the 'embedded timeline' for showcasing the live feed of your Twitter activity and then copy the HTML widget code. 
+4. Now you can insert the code directly anywhere on any distill page. When done correctly you will get your own widget like mine as shown below. 
+
+<a class="twitter-timeline" data-width="300" data-height="600" data-theme="dark" href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw">Tweets by jeweljohnsonj</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I placed my Twitter feed on the blog page where my posts are listed. By following the [guide](https://rstudio.github.io/distill/blog.html#custom-html) from the distill package tutorial, which allows one to add custom HTML files to the side section of a page, I was able to place the twitter feed on the right side of my [blog page](https://jeweljohnsonj.github.io/jeweljohnson.github.io/blog_posts.html). 
+
+To do the same, first, open a text file in R Studio and using the template code below, paste the HTML code that you copied between the `<div>` tags in the code.
+
+```html
+<div class="sidebar-section custom">
+  <!--place the code here -->
+ 
+</div>
+```
+Then save the file as twitter.html (or in any name you like but save it as an HTML file) and then include it in the distill blog list page by modifying your collection section in your _site.yml file, like shown below.
+ 
+```{r, eval=FALSE}
+collections:
+  posts:
+    custom: twitter.html #the html file containing the twitter feed widget code, add this code
+```
+
+Have a look at my [file](https://github.com/jeweljohnsonj/jeweljohnson.github.io/blob/main/_custom.html) for reference. If done properly you are now the proud owner of a Twitter feed widget in your distill website. Good job!
+
+## 7. Changing overflow to contain elements within the article body
+
+Sometimes you will have text in your code chunks that will go over the boundary of your article body. This is especially true if you add comments to your codes in the code chunks. You can see in the picture below, the earlier version of this page that you are viewing did not have the text contained within the article body, which made it messy to read at one time. But fear not! you can use the `overflow` property in CSS to fix this issue. When properly implemented it will convert the code chunks containing long text into a scrollable window chunk. Add the code below to your main CSS theme file. This code was inspired by the source codes of [Dr Joel Nitta's website](https://www.joelnitta.com/).
+
+```{css}
+/* making code chunks with scroll bar */
+
+/* the code below will change output chunk properties */
+d-article pre { 
+  border-radius: 5px; /* rounded chunk window*/
+  font-size: 12px; /* output text size */
+  color: black; /* output text colour */
+  background-color: #F5F5F5; /* output chunk background colour */
+  padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
+  overflow: auto !important; /* enables scroll bar */ 
+}
+
+/* the code below will change source code chunk properties */
+d-article div.sourceCode pre { 
+  border-radius: 5px;
+  background-color: #F8F8FF;
+  color: black;
+  padding: 5px 5px 5px 18px;
+  overflow: auto !important;
+}
+```
+
+::: {.l-page}
+::: {.panelset}
+::: {.panel}
+## Before overflow change {.panel-name}
+
+> Before changing the overflow property, the comments in the code chuks overflowed the article body
+
+```{r, echo=FALSE, fig.cap="Earlier version of this page", fig.align = 'center', layout="l-body-outset"}
+knitr::include_graphics("before.png")
+```
+
+:::
+::: {.panel}
+## After overflow change {.panel-name}
+
+> After changing the overflow property, the comments in the code chunks are contained inside the code chunk via a scrollable window.
+
+```{r, echo=FALSE, fig.cap="Current version of this page", fig.align = 'center', layout="l-body-outset"}
+knitr::include_graphics("after.png")
+```
+
+:::
+:::
+:::
+
+## 8. Copy to clipboard button in source code chunks
+
+Gone are the days of dragging your mouse pointer to select text. A copy to clipboard button on your source code chunk will make everyone's life easy by allowing one to copy the whole code in the chunk window with a single click. This is extremely useful if you are making tutorial articles or learning materials for a course, where there is a high chance that students will want to copy and use your code. So for implementing the copy to clipboard button, follow the steps below.
+
+1. You will need the `xaringanExtra` and `htmltools` packages installed in your R library to make this work. If you have not installed the packages then run the code shown below.
+
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("gadenbuie/xaringanExtra")
+install.packages("htmltools")
+```
+
+2. Then simply insert the code shown below directly to anywhere in your distill article. If you want to customize your icons then visit https://fontawesome.com/v4.7/icons/ and choose the icon of your liking, then change `fa-ICON NAME` in the code below. For example, changing 'fa-clone' to 'fa-coffee' will give a coffee cup icon as the 'copy to clipboard button'. Also change the hex code in `color: ` to the colour of your liking. If done properly you will see a 'copy' button on the top-right position of your source code chunk.
+
+```` {.clike}
+```{r, xaringanExtra-clipboard, echo=FALSE}`r ''`
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+````
+
+## Summary
+
+So in short in this article we have learned;
+
+1. How to modify the toc to have it fixed on the left side and zoom in on hover
+
+2. How to add a visitor counter
+
+3. How to add navigation buttons at the end of the page
+
+4. How to add social media share buttons
+
+5. How to add last updated date of a article in the appendix
+
+6. How to display your Twitter feed on your distill website
+
+7. How to add a scrolling code chunk window
+
+8. How to add a copy to clipboard button in source code chunks
+
+I hope this was useful and in case you come across some problem while implementing these features, please specify them in the comments. I will try my best to fix them. In case if anyone is wondering how I was able to make panel sets within this webpage just follow this amazing tutorial [guide](https://pkg.garrickadenbuie.com/xaringanExtra/#/panelset). They are features from the `xaringanExtra` r-package. Thanks!
+
+## Last updated on {.appendix}
+
+```{r, echo=FALSE}
+Sys.time()
+```
+
+## Acknowledgments {.appendix}
+I would like to thank [Awanti Shastri](https://twitter.com/AwantiShastri) for taking her valuable time to proofread this article. I also appreciate the valuable feedback and suggestions she gave for this article.
+
+## References {.appendix}
+
+1. The stackoverflow question on fixed toc in distill articles: https://stackoverflow.com/questions/67323162/floating-toc-in-distill-for-r/67387516?noredirect=1#comment119140135_67387516
+
+2. Visiter counter source: https://www.freecounterstat.com/
+
+3. Social media share buttons source: https://www.addtoany.com/buttons/for/website
+
+4. Twitter feed widget source: https://publish.twitter.com/#
+
+5. For changing the icons visit: https://fontawesome.com/v4.7/icons/
+
+6. For implementing panelsets in distill articles: https://pkg.garrickadenbuie.com/xaringanExtra/#/panelset
+
+7. JJ Allaire, Rich Iannone, Alison Presmanes Hill and Yihui Xie (2021). distill: 'R Markdown' Format for Scientific and
+  Technical Writing. R package version 1.3. https://CRAN.R-project.org/package=distill
+  
+8. Garrick Aden-Buie and Matthew T. Warkentin (2021). xaringanExtra: Extras And Extensions for Xaringan Slides. R package
+  version 0.5.5. https://github.com/gadenbuie/xaringanExtra
+
+<!-- adding share buttons on the right side of the page -->
+
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:0px; top:150px; data-a2a-url="https://jeweljohnsonj.github.io/jeweljohnson.github.io/" data-a2a-title="One-carat Blog">
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_telegram"></a>
+<a class="a2a_button_google_gmail"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_reddit"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_facebook_messenger"></a>
+</div>
+<script>
+var a2a_config = a2a_config || {};
+a2a_config.onclick = 1;
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
