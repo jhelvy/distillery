@@ -29,6 +29,16 @@
       <media:content url="https://distillery.rbind.io/posts/2021-11-24_using-giscus/img/adam-solomon-WHUDOzd5IYU-unsplash.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
+      <title>Adding Disqus to distill blogs</title>
+      <dc:creator>Zoë Turner</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs</link>
+      <description>Notes on adding comments to distill pages.</description>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs</guid>
+      <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-11-12-adding-disqus-to-distill-blogs/distill-preview.png" medium="image" type="image/png" width="1000" height="750"/>
+    </item>
+    <item>
       <title>Leaving known waters</title>
       <dc:creator>Christian A. Gebhard</dc:creator>
       <link>https://distillery.rbind.io/posts/2021-08-14-new-additions</link>
@@ -221,16 +231,6 @@
       <guid>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</guid>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
-    </item>
-    <item>
-      <title>Adding Disqus to distill blogs</title>
-      <dc:creator>Zoë Turner</dc:creator>
-      <link>https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs</link>
-      <description>Notes on adding comments to distill pages.</description>
-      <category>tutorial</category>
-      <guid>https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs</guid>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs/distill-preview.png" medium="image" type="image/png" width="4000" height="3000"/>
     </item>
     <item>
       <title>Misc tricks when migrating from blogdown to distill</title>
