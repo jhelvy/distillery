@@ -12,7 +12,19 @@
       <link>https://distillery.rbind.io</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Quality of life modifications for your distill websites</title>
+      <dc:creator>Jewel Johnson</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-websites</link>
+      <description>In this post, you can find simple but useful enhancements that can be applied to your distill website. From enhancing your table of contents tab to adding a 'copy to clipboard button' in source code chunks, learn how you can make your distill website even more awesome!</description>
+      <category>features</category>
+      <category>twitter</category>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-websites</guid>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-websites/meme.gif" medium="image" type="image/gif"/>
+    </item>
     <item>
       <title>Modifying the GitHub repo containing my Distill website</title>
       <dc:creator>Shannon Pileggi</dc:creator>
@@ -246,18 +258,6 @@
       <guid>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</guid>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
-    </item>
-    <item>
-      <title>Misc tricks when migrating from blogdown to distill</title>
-      <dc:creator>Frie Preu</dc:creator>
-      <link>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</link>
-      <description>Some small things I learned as I migrated my blog from blogdown to distill.</description>
-      <category>starting</category>
-      <category>blogdown</category>
-      <category>tutorial</category>
-      <guid>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</guid>
-      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill/blogdown_distill.png" medium="image" type="image/png" width="517" height="238"/>
     </item>
   </channel>
 </rss>
