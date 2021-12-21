@@ -19,7 +19,7 @@ preview: meme.gif
 creative_commons: CC BY
 ---
 
-> Note: This post was originally written by [Jewel Johnson](https://jeweljohnsonj.github.io/jeweljohnson.github.io/) and copied here on March 19, 2021 - see the original post [here](https://jeweljohnsonj.github.io/jeweljohnson.github.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-webistes/) for a potentially updated version.
+> Note: This post was originally written by [Jewel Johnson](https://jeweljohnsonj.github.io/jeweljohnson.github.io/) and copied here on December 21, 2021 - see the original post [here](https://jeweljohnsonj.github.io/jeweljohnson.github.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-webistes/) for a potentially updated version.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T)
