@@ -12,7 +12,21 @@
       <link>https://distillery.rbind.io</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Upgrading Distill Blog Settings</title>
+      <dc:creator>Shamindra Shrotriya</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-12-21-upgrading-distill-blog-settings</link>
+      <description>The second part of a series on how I upgraded this `Distill` themed blog</description>
+      <category>features</category>
+      <category>disqus</category>
+      <category>tutorial</category>
+      <category>netlify</category>
+      <category>analytics</category>
+      <guid>https://distillery.rbind.io/posts/2021-12-21-upgrading-distill-blog-settings</guid>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-12-21-upgrading-distill-blog-settings/images/step_01_disqus_02.png" medium="image" type="image/png" width="706" height="568"/>
+    </item>
     <item>
       <title>Quality of life modifications for your distill websites</title>
       <dc:creator>Jewel Johnson</dc:creator>
@@ -247,17 +261,6 @@
       <guid>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</guid>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Distill it down</title>
-      <dc:creator>Lisa Lendway</dc:creator>
-      <link>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</link>
-      <description>My experiences with building webpages and websites using some of the simpler R Studio tools.</description>
-      <category>starting</category>
-      <category>tutorial</category>
-      <guid>https://distillery.rbind.io/posts/2021-02-08-distill-it-down</guid>
-      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
     </item>
   </channel>
 </rss>
