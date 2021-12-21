@@ -223,6 +223,16 @@
       <media:content url="https://distillery.rbind.io/posts/2021-02-08-distill-it-down/images/strawberry-thumbnail.png" medium="image" type="image/png" width="400" height="400"/>
     </item>
     <item>
+      <title>Adding Disqus to distill blogs</title>
+      <dc:creator>Zoë Turner</dc:creator>
+      <link>https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs</link>
+      <description>Notes on adding comments to distill pages.</description>
+      <category>tutorial</category>
+      <guid>https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs</guid>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2021-01-31-adding-disqus-to-distill-blogs/distill-preview.png" medium="image" type="image/png" width="4000" height="3000"/>
+    </item>
+    <item>
       <title>Misc tricks when migrating from blogdown to distill</title>
       <dc:creator>Frie Preu</dc:creator>
       <link>https://distillery.rbind.io/posts/2020-12-12-tricks-blogdown-to-distill</link>
