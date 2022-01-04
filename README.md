@@ -379,5 +379,10 @@ List of sites in showcase:
 <td style="text-align: left;"><a href="https://westchester-covid.mattherman.info/">site</a></td>
 <td style="text-align: left;"><a href="https://github.com/mfherman/westchester-covid">source</a></td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;"><a href="https://bibliometriar.com/">site</a></td>
+<td style="text-align: left;"><a href="https://github.com/guillermo-orjuela/bibliometriar">source</a></td>
+</tr>
 </tbody>
 </table>
