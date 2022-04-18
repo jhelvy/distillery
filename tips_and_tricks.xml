@@ -12,7 +12,22 @@
       <link>https://distillery.rbind.io</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>A poor man's TOC in {distill}</title>
+      <dc:creator>Radovan Miletić</dc:creator>
+      <link>https://distillery.rbind.io/posts/2022-01-24-the-toc-in-distill</link>
+      <description>A floating Table of Contents (TOC) in {distill} in fixed position with Toggle (show/hide) button and Scrolling Active States.</description>
+      <category>tutorial</category>
+      <category>css</category>
+      <category>javascript</category>
+      <category>html</category>
+      <category>toc</category>
+      <category>features</category>
+      <guid>https://distillery.rbind.io/posts/2022-01-24-the-toc-in-distill</guid>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://distillery.rbind.io/posts/2022-01-24-the-toc-in-distill/images/painting1.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Upgrading Distill Blog Settings</title>
       <dc:creator>Shamindra Shrotriya</dc:creator>
@@ -248,19 +263,6 @@
       <guid>https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill</guid>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://distillery.rbind.io/posts/2021-02-24-thank-you-blogdown-hello-distill/distill_logo_small.png" medium="image" type="image/png" width="2190" height="1156"/>
-    </item>
-    <item>
-      <title>Enable utterances with distill</title>
-      <dc:creator>Vebash Naidoo</dc:creator>
-      <link>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</link>
-      <description>Interested in giving your readers the ability to comment on your {distill} blog? Look no further than utteranc.es.</description>
-      <category>github</category>
-      <category>features</category>
-      <category>tutorial</category>
-      <category>utterances</category>
-      <guid>https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill</guid>
-      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://distillery.rbind.io/posts/2021-02-19-enable-utterances-with-distill/preview2_small_.jpg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>

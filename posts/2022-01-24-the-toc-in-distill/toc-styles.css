@@ -1,0 +1,68 @@
+/* This hack is needed to temporary disable the predefined layout style */
+d-article {
+    contain: none;
+  }
+  
+.d-contents nav h3 {
+    text-indent: 25px;
+  }
+
+/* ScrollSpy active styles (see JAVASCRIPT tab for activation) */
+.d-contents nav ul li.active > a { 
+    font-weight: bold;  
+    /* border-left: 1px solid #2780e3; */
+    color: #0f2e3d !important;
+  }
+
+/* 💡 This small transition makes setting of the active state smooth */
+.d-contents nav a {
+	  transition: all 0.1s ease-in-out;
+  }
+  
+/* Sidebar Navigation */
+#TOC {
+  opacity: 1;
+  position: fixed;
+  left: calc(7%);
+  top: calc(5.5%);
+  /* width: 20%; */
+  max-width: 260px;
+  max-height: 85%;
+  overflow-y: auto;
+  background: white;            /* Optional, remove to enable the blur filter (just for fun). */
+  backdrop-filter: blur(10px);  /* Optional, wouldn't not work with Firefox browser. */
+  padding: 10px;                /* Optional */
+  /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border-radius: 1px; */
+  transition: all 0.5s;   
+  z-index: 999;
+  }
+
+#TOC.hide { 
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s;
+  }
+
+/* Optional, remove to disable the hover effect */
+#TOC:hover {
+  opacity: 1;
+  transition: all 0.5s;
+  }
+
+/* Hide the TOC when resized to mobile or tablet:  480px, 768px, 900px */
+@media screen and (max-width: 1000px) {
+#TOC {
+    position: relative;
+    left: 0;
+    top: 0;
+    max-width: none;
+    max-height: none;
+    overflow-y: auto;
+    border: none;
+    background: none; }
+    .d-contents nav h3 {
+      text-indent: 0; }
+    input[type="button" i] {  
+      display: none; }
+  }
