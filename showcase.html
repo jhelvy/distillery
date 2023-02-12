@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,9 +52,9 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span. { color: #00769e; } /* Normal */
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { color: #657422; } /* Attribute */
@@ -89,13 +89,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--radix_placeholder_meta_tags-->
   <title>The Distillery: Showcase</title>
-  
+
   <meta property="description" itemprop="description" content="A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!"/>
-  
+
   <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
   <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
-  
-  
+
+
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="The Distillery: Showcase"/>
   <meta property="og:type" content="article"/>
@@ -105,7 +105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="og:image:height" content="282"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="The Distillery"/>
-  
+
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:title" content="The Distillery: Showcase"/>
@@ -113,23 +113,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="twitter:image" content="https://distillery.rbind.io/./images/distillery.png"/>
   <meta property="twitter:image:width" content="282"/>
   <meta property="twitter:image:height" content="282"/>
-  
+
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
-  
+
   <script type="text/json" id="radix-rmarkdown-metadata">
   {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output","base_url","preview","params"]}},"value":[{"type":"character","attributes":{},"value":["Showcase"]},{"type":"character","attributes":{},"value":["A showcase of distill websites and blogs. Add yours [here](https://github.com/jhelvy/distillery)!\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://distillery.rbind.io"]},{"type":"character","attributes":{},"value":["images/distillery.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["update_all","check_url"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
   <meta name="distill:offset" content=""/>
-  
+
   <script type="application/javascript">
-  
+
     window.headroom_prevent_pin = false;
-  
+
     window.document.addEventListener("DOMContentLoaded", function (event) {
-  
+
       // initialize headroom for banner
       var header = $('header').get(0);
       var headerHeight = header.offsetHeight;
@@ -146,13 +146,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       if(window.location.hash)
         headroom.unpin();
       $(header).addClass('headroom--transition');
-  
+
       // offset scroll location for banner on hash change
       // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
       window.addEventListener("hashchange", function(event) {
         window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
       });
-  
+
       // responsive menu
       $('.distill-site-header').each(function(i, val) {
         var topnav = $(this);
@@ -161,7 +161,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           topnav.toggleClass('responsive');
         });
       });
-  
+
       // nav dropdowns
       $('.nav-dropbtn').click(function(e) {
         $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
@@ -176,99 +176,99 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       });
     });
   </script>
-  
+
   <style type="text/css">
-  
+
   /* Theme (user-documented overrideables for nav appearance) */
-  
+
   .distill-site-nav {
     color: rgba(255, 255, 255, 0.8);
     background-color: #0F2E3D;
     font-size: 15px;
     font-weight: 300;
   }
-  
+
   .distill-site-nav a {
     color: inherit;
     text-decoration: none;
   }
-  
+
   .distill-site-nav a:hover {
     color: white;
   }
-  
+
   @media print {
     .distill-site-nav {
       display: none;
     }
   }
-  
+
   .distill-site-header {
-  
+
   }
-  
+
   .distill-site-footer {
-  
+
   }
-  
-  
+
+
   /* Site Header */
-  
+
   .distill-site-header {
     width: 100%;
     box-sizing: border-box;
     z-index: 3;
   }
-  
+
   .distill-site-header .nav-left {
     display: inline-block;
     margin-left: 8px;
   }
-  
+
   @media screen and (max-width: 768px) {
     .distill-site-header .nav-left {
       margin-left: 0;
     }
   }
-  
-  
+
+
   .distill-site-header .nav-right {
     float: right;
     margin-right: 8px;
   }
-  
+
   .distill-site-header a,
   .distill-site-header .title {
     display: inline-block;
     text-align: center;
     padding: 14px 10px 14px 10px;
   }
-  
+
   .distill-site-header .title {
     font-size: 18px;
     min-width: 150px;
   }
-  
+
   .distill-site-header .logo {
     padding: 0;
   }
-  
+
   .distill-site-header .logo img {
     display: none;
     max-height: 20px;
     width: auto;
     margin-bottom: -4px;
   }
-  
+
   .distill-site-header .nav-image img {
     max-height: 18px;
     width: auto;
     display: inline-block;
     margin-bottom: -3px;
   }
-  
-  
-  
+
+
+
   @media screen and (min-width: 1000px) {
     .distill-site-header .logo img {
       display: inline-block;
@@ -283,17 +283,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 12px;
     }
   }
-  
-  
+
+
   .distill-site-header .nav-toggle {
     display: none;
   }
-  
+
   .nav-dropdown {
     display: inline-block;
     position: relative;
   }
-  
+
   .nav-dropdown .nav-dropbtn {
     border: none;
     outline: none;
@@ -307,7 +307,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1px;
     z-index: 2;
   }
-  
+
   .nav-dropdown-content {
     display: none;
     position: absolute;
@@ -322,18 +322,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 4px;
     padding-bottom: 4px;
   }
-  
+
   .nav-dropdown-content hr {
     margin-top: 4px;
     margin-bottom: 4px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .nav-dropdown-active {
     display: block;
   }
-  
+
   .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
     color: black;
     padding: 6px 24px;
@@ -341,7 +341,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     display: block;
     text-align: left;
   }
-  
+
   .nav-dropdown-content .nav-dropdown-header {
     display: block;
     padding: 5px 24px;
@@ -351,21 +351,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #999999;
     white-space: nowrap;
   }
-  
+
   .nav-dropdown:hover .nav-dropbtn {
     color: white;
   }
-  
+
   .nav-dropdown-content a:hover {
     background-color: #ddd;
     color: black;
   }
-  
+
   .nav-right .nav-dropdown-content {
     margin-left: -45%;
     right: 0;
   }
-  
+
   @media screen and (max-width: 768px) {
     .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
     .distill-site-header a.nav-toggle {
@@ -385,8 +385,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       margin-left: 0;
     }
   }
-  
-  
+
+
   @media screen and (max-width: 768px) {
     .distill-site-header.responsive {position: relative; min-height: 500px; }
     .distill-site-header.responsive a.nav-toggle {
@@ -411,9 +411,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       text-align: left;
     }
   }
-  
+
   /* Site Footer */
-  
+
   .distill-site-footer {
     width: 100%;
     overflow: hidden;
@@ -424,19 +424,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-bottom: 30px;
     text-align: center;
   }
-  
+
   /* Headroom */
-  
+
   d-title {
     padding-top: 6rem;
   }
-  
+
   @media print {
     d-title {
       padding-top: 4rem;
     }
   }
-  
+
   .headroom {
     z-index: 1000;
     position: fixed;
@@ -444,68 +444,68 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     left: 0;
     right: 0;
   }
-  
+
   .headroom--transition {
     transition: all .4s ease-in-out;
   }
-  
+
   .headroom--unpinned {
     top: -100px;
   }
-  
+
   .headroom--pinned {
     top: 0;
   }
-  
+
   /* adjust viewport for navbar height */
   /* helps vertically center bootstrap (non-distill) content */
   .min-vh-100 {
     min-height: calc(100vh - 100px) !important;
   }
-  
+
   </style>
-  
+
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-  
+
   <style type="text/css">
-  
+
   body {
     background-color: white;
   }
-  
+
   .pandoc-table {
     width: 100%;
   }
-  
+
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-  
+
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-  
+
   .pagedtable-footer {
     font-size: 15px;
   }
-  
+
   d-byline .byline {
     grid-template-columns: 2fr 2fr;
   }
-  
+
   d-byline .byline h3 {
     margin-block-start: 1.5em;
   }
-  
+
   d-byline .byline .authors-affiliations h3 {
     margin-block-start: 0.5em;
   }
-  
+
   .authors-affiliations .orcid-id {
     width: 16px;
     height:16px;
@@ -514,12 +514,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     vertical-align: middle;
     padding-bottom: 2px;
   }
-  
+
   d-title .dt-tags {
     margin-top: 1em;
     grid-column: text;
   }
-  
+
   .dt-tags .dt-tag {
     text-decoration: none;
     display: inline-block;
@@ -533,24 +533,25 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
-  
+
   .html-widget {
     margin-bottom: 2.0em;
   }
-  
+
   .l-screen-inset {
     padding-right: 16px;
   }
-  
+
   .l-screen .caption {
     margin-left: 10px;
   }
-  
+
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -558,75 +559,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .shaded-content {
     background: white;
   }
-  
+
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-  
+
   .hidden {
     display: none !important;
   }
-  
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-  
+
   d-appendix {
     padding-top: 30px;
   }
-  
+
   d-article>p>img {
     width: 100%;
   }
-  
+
   d-article h2 {
     margin: 1rem 0 1.5rem 0;
   }
-  
+
   d-article h3 {
     margin-top: 1.5rem;
   }
-  
+
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-  
+
   /* Tweak code blocks */
-  
+
   d-article div.sourceCode code,
   d-article pre code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: auto;
   }
-  
+
   d-article div.sourceCode {
     background-color: white;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
-  
+
   d-article pre {
     font-size: 12px;
     color: black;
@@ -638,50 +639,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   d-article pre a {
     border-bottom: none;
   }
-  
+
   d-article pre a:hover {
     border-bottom: none;
     text-decoration: underline;
   }
-  
+
   d-article details {
     grid-column: text;
     margin-bottom: 0.8em;
   }
-  
+
   @media(min-width: 768px) {
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: visible !important;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
   }
-  
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
+  }
+
   d-article pre {
     font-size: 14px;
   }
-  
+
   }
-  
+
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -689,9 +695,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   /* CSS for d-contents */
-  
+
   .d-contents {
     grid-column: text;
     color: rgba(0,0,0,0.8);
@@ -703,7 +709,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 0.25em;
     justify-self: start;
   }
-  
+
   @media(min-width: 1000px) {
     .d-contents.d-contents-float {
       height: 0;
@@ -714,78 +720,78 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 2em;
     }
   }
-  
+
   .d-contents nav h3 {
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 1em;
   }
-  
+
   .d-contents li {
     list-style-type: none
   }
-  
+
   .d-contents nav > ul {
     padding-left: 0;
   }
-  
+
   .d-contents ul {
     padding-left: 1em
   }
-  
+
   .d-contents nav ul li {
     margin-top: 0.6em;
     margin-bottom: 0.2em;
   }
-  
+
   .d-contents nav a {
     font-size: 13px;
     border-bottom: none;
     text-decoration: none
     color: rgba(0, 0, 0, 0.8);
   }
-  
+
   .d-contents nav a:hover {
     text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-  
+
   .d-contents nav > ul > li > a {
     font-weight: 600;
   }
-  
+
   .d-contents nav > ul > li > ul {
     font-weight: inherit;
   }
-  
+
   .d-contents nav > ul > li > ul > li {
     margin-top: 0.2em;
   }
-  
-  
+
+
   .d-contents nav ul {
     margin-top: 0;
     margin-bottom: 0.25em;
   }
-  
+
   .d-article-with-toc h2:nth-child(2) {
     margin-top: 0;
   }
-  
-  
+
+
   /* Figure */
-  
+
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-  
+
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-  
+
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -793,42 +799,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-  
+
   /* Citations */
-  
+
   d-article .citation {
     color: inherit;
     cursor: inherit;
   }
-  
+
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
   }
-  
+
   /* Citation hover box */
-  
+
   .tippy-box[data-theme~=light-border] {
     background-color: rgba(250, 250, 250, 0.95);
   }
-  
+
   .tippy-content > p {
     margin-bottom: 0;
     padding: 2px;
   }
-  
-  
+
+
   /* Tweak 1000px media break to show more text */
-  
+
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -844,11 +850,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-  
+
     .grid {
       grid-column-gap: 16px;
     }
-  
+
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -857,7 +863,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       font-size: 13px;
     }
   }
-  
+
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -873,16 +879,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-  
+
     .grid {
       grid-column-gap: 32px;
     }
   }
-  
-  
+
+
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-  
+
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -899,9 +905,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
+
   /* Include appendix styles here so they can be overridden */
-  
+
   d-appendix {
     contain: layout style;
     font-size: 0.8em;
@@ -913,7 +919,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 60px;
     padding-bottom: 48px;
   }
-  
+
   d-appendix h3 {
     grid-column: page-start / text-start;
     font-size: 15px;
@@ -922,59 +928,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-bottom: 0;
     color: rgba(0,0,0,0.65);
   }
-  
+
   d-appendix h3 + * {
     margin-top: 1em;
   }
-  
+
   d-appendix ol {
     padding: 0 0 0 15px;
   }
-  
+
   @media (min-width: 768px) {
     d-appendix ol {
       padding: 0 0 0 30px;
       margin-left: -30px;
     }
   }
-  
+
   d-appendix li {
     margin-bottom: 1em;
   }
-  
+
   d-appendix a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   d-appendix > * {
     grid-column: text;
   }
-  
+
   d-appendix > d-footnote-list,
   d-appendix > d-citation-list,
   d-appendix > distill-appendix {
     grid-column: screen;
   }
-  
+
   /* Include footnote styles here so they can be overridden */
-  
+
   d-footnote-list {
     contain: layout style;
   }
-  
+
   d-footnote-list > * {
     grid-column: text;
   }
-  
+
   d-footnote-list a.footnote-backlink {
     color: rgba(0,0,0,0.3);
     padding-left: 0.5em;
   }
-  
-  
-  
+
+
+
   /* Anchor.js */
-  
+
   .anchorjs-link {
     /*transition: all .25s linear; */
     text-decoration: none;
@@ -985,86 +991,86 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: none;
     border-bottom: none;
   }
-  
+
   /* Social footer */
-  
+
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-  
+
   .disqus-comments {
     margin-right: 30px;
   }
-  
+
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-  
+
   #disqus_thread {
     margin-top: 30px;
   }
-  
+
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-  
+
   .article-sharing a:hover {
     border-bottom: none;
   }
-  
+
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .subscribe p {
     margin-bottom: 0.5em;
   }
-  
-  
+
+
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-  
-  
+
+
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .custom p {
     margin-bottom: 0.5em;
   }
-  
+
   /* Styles for listing layout (hide title) */
   .layout-listing d-title, .layout-listing .d-title {
     display: none;
   }
-  
+
   /* Styles for posts lists (not auto-injected) */
-  
-  
+
+
   .posts-with-sidebar {
     padding-left: 45px;
     padding-right: 45px;
   }
-  
+
   .posts-list .description h2,
   .posts-list .description p {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   .posts-list .description h2 {
     font-weight: 700;
     border-bottom: none;
     padding-bottom: 0;
   }
-  
+
   .posts-list h2.post-tag {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 12px;
@@ -1073,7 +1079,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 60px;
     margin-bottom: 24px;
   }
-  
+
   .posts-list .post-preview {
     text-decoration: none;
     overflow: hidden;
@@ -1081,29 +1087,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 24px 0;
   }
-  
+
   .post-preview-last {
     border-bottom: none !important;
   }
-  
+
   .posts-list .posts-list-caption {
     grid-column: screen;
     font-weight: 400;
   }
-  
+
   .posts-list .post-preview h2 {
     margin: 0 0 6px 0;
     line-height: 1.2em;
     font-style: normal;
     font-size: 24px;
   }
-  
+
   .posts-list .post-preview p {
     margin: 0 0 12px 0;
     line-height: 1.4em;
     font-size: 16px;
   }
-  
+
   .posts-list .post-preview .thumbnail {
     box-sizing: border-box;
     margin-bottom: 24px;
@@ -1114,32 +1120,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 100%;
     display: block;
   }
-  
+
   .posts-list .metadata {
     font-size: 12px;
     line-height: 1.4em;
     margin-bottom: 18px;
   }
-  
+
   .posts-list .metadata > * {
     display: inline-block;
   }
-  
+
   .posts-list .metadata .publishedDate {
     margin-right: 2em;
   }
-  
+
   .posts-list .metadata .dt-authors {
     display: block;
     margin-top: 0.3em;
     margin-right: 2em;
   }
-  
+
   .posts-list .dt-tags {
     display: block;
     line-height: 1em;
   }
-  
+
   .posts-list .dt-tags .dt-tag {
     display: inline-block;
     color: rgba(0,0,0,0.6);
@@ -1152,24 +1158,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   .posts-list img {
     opacity: 1;
   }
-  
+
   .posts-list img[data-src] {
     opacity: 0;
   }
-  
+
   .posts-more {
     clear: both;
   }
-  
-  
+
+
   .posts-sidebar {
     font-size: 16px;
   }
-  
+
   .posts-sidebar h3 {
     font-size: 16px;
     margin-top: 0;
@@ -1177,39 +1183,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 400;
     text-transform: uppercase;
   }
-  
+
   .sidebar-section {
     margin-bottom: 30px;
   }
-  
+
   .categories ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .categories li {
     color: rgba(0, 0, 0, 0.8);
     margin-bottom: 0;
   }
-  
+
   .categories li>a {
     border-bottom: none;
   }
-  
+
   .categories li>a:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
-  
+
   .categories .active {
     font-weight: 600;
   }
-  
+
   .categories .category-count {
     color: rgba(0, 0, 0, 0.4);
   }
-  
-  
+
+
   @media(min-width: 768px) {
     .posts-list .post-preview h2 {
       font-size: 26px;
@@ -1245,55 +1251,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-bottom: 24px;
     }
   }
-  
-  
+
+
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-  
+
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-  
+
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-  
+
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-  
+
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-  
+
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-  
+
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-  
-  
+
+
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -1305,11 +1311,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 40px;
     padding-bottom: 48px;
   }
-  
+
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-  
+
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -1326,7 +1332,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -1346,14 +1352,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 900px;
   }
   }
-  
+
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-  
+
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -1364,27 +1370,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   .downlevel .posts-list .post-preview {
     color: inherit;
   }
-  
-  
-  
+
+
+
   </style>
-  
+
   <script type="application/javascript">
-  
+
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -1393,20 +1399,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       return window.load_distill_framework === undefined;
     }
   }
-  
+
   // show body when load is complete
   function on_load_complete() {
-  
+
     // add anchors
     if (window.anchors) {
       window.anchors.options.placement = 'left';
       window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
     }
-  
-  
+
+
     // set body to visible
     document.body.style.visibility = 'visible';
-  
+
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -1419,39 +1425,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         });
       });
     }
-  
+
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-  
+
   function init_distill() {
-  
+
     init_common();
-  
+
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-  
+
     // create d-title
     $('.d-title').changeElementType('d-title');
-  
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-  
+
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-  
+
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-  
+
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-  
+
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
+
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -1467,10 +1473,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     });
     // remove footnotes
     $('.footnotes').remove();
-  
+
     // move refs into #references-listing
     $('#references-listing').replaceWith($('#refs'));
-  
+
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
@@ -1480,16 +1486,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-  
+
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
+
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-  
+
       // capture layout
       var layout = $(this).attr('data-layout');
-  
+
       // apply layout to markdown level block elements
       var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
@@ -1502,40 +1508,41 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).wrap(layout_div);
         }
       });
-  
-  
+
+
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-  
+
     // remove code block used to force  highlighting css
     $('.distill-force-highlighting-css').parent().remove();
-  
+
     // remove empty line numbers inserted by pandoc when using a
-    // custom syntax highlighting theme
-    $('code.sourceCode a:empty').remove();
-  
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
     // load distill framework
     load_distill_framework();
-  
+
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-  
+
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-  
+
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-  
+
       // article with toc class
       $('.d-contents').parent().addClass('d-article-with-toc');
-  
+
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-  
+
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
@@ -1550,12 +1557,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).append(a);
         }
       });
-  
+
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-  
+
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -1567,11 +1574,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-  
+
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-  
+
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -1591,33 +1598,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-  
+
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-  
+
       // remove d-appendix and d-footnote-list local styles
       $('d-appendix > style:first-child').remove();
       $('d-footnote-list > style:first-child').remove();
-  
+
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-  
+
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1629,7 +1642,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
-  
+
       // fix footnotes in tables (#411)
       // replacing broken distill.pub feature
       $('table d-footnote').each(function() {
@@ -1645,7 +1658,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
                   x += elem.offsetLeft;
                   y += elem.offsetTop;
               }
-  
+
               return { left: x, top: y };
           }
           // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
@@ -1654,39 +1667,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           this.show([offset.left + bbox.width, offset.top + bbox.height]);
         }
       })
-  
+
       // clear polling timer
       clearInterval(tid);
-  
+
       // show body now that everything is ready
       on_load_complete();
     }
-  
+
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-  
+
   }
-  
+
   function init_downlevel() {
-  
+
     init_common();
-  
+
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-  
+
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-  
+
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-  
+
     // remove toc
     $('.d-contents').remove();
-  
+
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -1694,62 +1707,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-  
-  
+
+
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-  
+
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-  
+
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-  
+
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-  
+
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-  
+
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-  
+
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-  
+
     $('body').addClass('downlevel');
-  
+
     on_load_complete();
   }
-  
-  
+
+
   function init_common() {
-  
+
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-  
+
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-  
+
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-  
+
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-  
+
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
@@ -1763,35 +1776,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-  
+
       }
     });
-  
+
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-  
+
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
         $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
-  
+
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-  
+
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-  
+
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-  
+
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -1805,31 +1818,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
     });
   }
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-  
+
   </script>
-  
+
   <style type="text/css">
   /* base variables */
-  
+
   /* Edit the CSS properties in this file to create a custom
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
      you may set its value to: unset
      All rows must end with a semi-colon.                      */
-  
+
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
-  
-  
-  
+
+
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -1849,7 +1862,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
-  
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -1857,13 +1870,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-size:       0.8rem;
     --body-color:      rgba(0, 0, 0, 0.8);
   }
-  
+
   /*-- ARTICLE TABLE OF CONTENTS --*/
   .d-contents {
     --heading-size:    18px;
     --contents-size:   13px;
   }
-  
+
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
     --heading-size:    15px;
@@ -1871,10 +1884,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --text-size:       0.8em;
     --text-color:      rgba(0, 0, 0, 0.5);
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   /* These properties only apply to Distill sites and blogs  */
-  
+
   .distill-site-header {
     --title-size:       18px;
     --text-color:       rgba(255, 255, 255, 0.8);
@@ -1882,32 +1895,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
   </style>
   <style type="text/css">
   /* base variables */
-  
+
   /* Edit the CSS properties in this file to create a custom
      Distill theme. Only edit values in the right column
      for each row; values shown are the CSS defaults.
      To return any property to the default,
      you may set its value to: unset
      All rows must end with a semi-colon.                      */
-  
+
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
-  
-  
-  
+
+
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -1927,7 +1940,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
-  
+
   /*-- ARTICLE METADATA --*/
   d-byline {
     --heading-size:    0.6rem;
@@ -1935,13 +1948,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-size:       0.8rem;
     --body-color:      rgba(0, 0, 0, 0.8);
   }
-  
+
   /*-- ARTICLE TABLE OF CONTENTS --*/
   .d-contents {
     --heading-size:    18px;
     --contents-size:   13px;
   }
-  
+
   /*-- ARTICLE APPENDIX --*/
   d-appendix {
     --heading-size:    15px;
@@ -1949,10 +1962,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --text-size:       0.8em;
     --text-color:      rgba(0, 0, 0, 0.5);
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   /* These properties only apply to Distill sites and blogs  */
-  
+
   .distill-site-header {
     --title-size:       18px;
     --text-color:       #ededeb;
@@ -1960,30 +1973,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
     --hover-color:      white;
     --bkgd-color:       #0F2E3D;
   }
-  
+
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
-  
-  
-  
+
+
+
   /*-- SHOWCASE --*/
-  
+
   .filterDiv {
     display: none; /* Hidden by default */
   }
-  
+
   /* The "show" class is added to the filtered elements */
   .show {
     display: block;
   }
-  
+
   /* Style the buttons */
   .btn {
     border: none;
@@ -1993,19 +2006,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     background-color: var(--bkgd-color, #0F2E3D);
     cursor: pointer;
   }
-  
+
   /* Add a light grey background on mouse-over */
   .btn:hover {
     background-color: #143d52;
     color: white
   }
-  
+
   /* Add a dark background to the active button */
   .btn.active {
     background-color: #1e5c7b;
     color: white;
   }
-  
+
   .icon-link {
     font-size: 0.7rem;
     background-color: var(--color-primary);
@@ -2014,7 +2027,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin: 0 2px 0 2px;
     border-radius: 5px; /* Rounded edges */
   }
-  
+
   .icon-link:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
@@ -2022,43 +2035,43 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">
   /* base style */
-  
+
   /* FONT FAMILIES */
-  
+
   :root {
     --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   body,
   .posts-list .post-preview p,
   .posts-list .description p {
     font-family: var(--body-font), var(--body-default);
   }
-  
+
   h1, h2, h3, h4, h5, h6,
   .posts-list .post-preview h2,
   .posts-list .description h2 {
     font-family: var(--heading-font), var(--heading-default);
   }
-  
+
   d-article div.sourceCode code,
   d-article pre code {
     font-family: var(--mono-font), var(--mono-default);
   }
-  
-  
+
+
   /*-- TITLE --*/
   d-title h1,
   .posts-list > h1 {
     color: var(--title-color, black);
   }
-  
+
   d-title h1 {
     font-size: var(--title-size, 50px);
   }
-  
+
   /*-- HEADERS --*/
   d-article h1,
   d-article h2,
@@ -2068,7 +2081,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article h6 {
     color: var(--header-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   /*-- BODY --*/
   d-article > p,  /* only text inside of <p> tags */
   d-article > ul, /* lists */
@@ -2076,20 +2089,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--body-color, rgba(0, 0, 0, 0.8));
     font-size: var(--body-size, 1.06rem);
   }
-  
-  
+
+
   /*-- CODE --*/
   d-article div.sourceCode code,
   d-article pre code {
     font-size: var(--code-size, 14px);
   }
-  
+
   /*-- ASIDE --*/
   d-article aside {
     font-size: var(--aside-size, 12px);
     color: var(--aside-color, rgba(0, 0, 0, 0.6));
   }
-  
+
   /*-- FIGURE CAPTIONS --*/
   figure .caption,
   figure figcaption,
@@ -2097,84 +2110,85 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: var(--fig-cap-size, 13px);
     color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
   }
-  
+
   /*-- METADATA --*/
   d-byline h3 {
     font-size: var(--heading-size, 0.6rem);
     color: var(--heading-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   d-byline {
     font-size: var(--body-size, 0.8rem);
     color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   d-byline a,
   d-article d-byline a {
     color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
-  
+
   /*-- TABLE OF CONTENTS --*/
   .d-contents nav h3 {
     font-size: var(--heading-size, 18px);
   }
-  
+
   .d-contents nav a {
     font-size: var(--contents-size, 13px);
   }
-  
+
   /*-- APPENDIX --*/
   d-appendix h3 {
     font-size: var(--heading-size, 15px);
     color: var(--heading-color, rgba(0, 0, 0, 0.65));
   }
-  
+
   d-appendix {
     font-size: var(--text-size, 0.8em);
     color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   d-appendix d-footnote-list a.footnote-backlink {
     color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
-  
+
   /*-- WEBSITE HEADER + FOOTER --*/
   .distill-site-header .title {
     font-size: var(--title-size, 18px);
     font-family: var(--navbar-font), var(--heading-default);
   }
-  
+
   .distill-site-header a,
   .nav-dropdown .nav-dropbtn {
     font-family: var(--navbar-font), var(--heading-default);
   }
-  
+
   .nav-dropdown .nav-dropbtn {
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     font-size: var(--text-size, 15px);
   }
-  
+
   .distill-site-header a:hover,
   .nav-dropdown:hover .nav-dropbtn {
     color: var(--hover-color, white);
   }
-  
+
   .distill-site-header {
     font-size: var(--text-size, 15px);
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     background-color: var(--bkgd-color, #0F2E3D);
   }
-  
+
   .distill-site-footer {
     font-size: var(--text-size, 15px);
     color: var(--text-color, rgba(255, 255, 255, 0.8));
     background-color: var(--bkgd-color, #0F2E3D);
   }
-  
+
   .distill-site-footer a:hover {
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.20.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2189,7 +2203,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       if (!/posts/.test(location.pathname)) {
         return;
       }
-  
+
       var script = document.createElement("script");
       script.src = "https://utteranc.es/client.js";
       script.setAttribute("repo", "jhelvy/distillery");
@@ -2197,7 +2211,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       script.setAttribute("crossorigin", "anonymous");
       script.setAttribute("label", "comments 💬");
       script.setAttribute("theme", "github-dark");
-  
+
       /* wait for article to load, append script to article element */
       var observer = new MutationObserver(function (mutations, observer) {
         var article = document.querySelector("d-article");
@@ -2208,11 +2222,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           article.appendChild(script);
         }
       });
-  
+
       observer.observe(document.body, { childList: true });
     });
   </script>
-  
+
   <!--/radix_placeholder_site_in_header-->
 
 
@@ -2269,6 +2283,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <button class="btn" onclick="filterSelection(&#39;darkmode&#39;)">Darkmode</button></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="filterDiv">
+<h3>
+API Food Assets Map
+</h3>
+<center>
+<img src="images/sites/api_food_assets_map.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://foodmap.apicouncil.org" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/rfortherestofus/api-food-asset-map" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
 <div class="filterDiv postcard">
 <h3>
 Adam Garber
@@ -2287,7 +2319,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Alex K. Gold
 </h3>
@@ -2305,7 +2337,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Alice Walsh
 </h3>
@@ -2318,24 +2350,6 @@ Site
 </a>
 <br/>
 <a href="https://github.com/awalsh17/awalsh17.github.io" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-API Food Assets Map
-</h3>
-<center>
-<img src="images/sites/api_food_assets_map.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://foodmap.apicouncil.org" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/rfortherestofus/api-food-asset-map" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -2359,7 +2373,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Associação Brasileira de Jurimetria
 </h3>
@@ -2431,7 +2445,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Before I Sleep
 </h3>
@@ -2467,7 +2481,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Blog of the Record Linkage Interest Group
 </h3>
@@ -2485,7 +2499,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 CDU Data Science Team
 </h3>
@@ -2503,7 +2517,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Data Sci Dani
 </h3>
@@ -2516,6 +2530,24 @@ Site
 </a>
 <br/>
 <a href="https://github.com/danielle-b/datascidani2" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
+<div class="filterDiv academic">
+<h3>
+Data Zoo Gang
+</h3>
+<center>
+<img src="images/sites/data_zoo_gang.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://www.datazoogang.de" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/data-zoo-gang/DZG_website" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -2575,7 +2607,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Emil Hvitfeldt AoC Solutions
 </h3>
@@ -2701,6 +2733,24 @@ Source
 </a>
 <hr/>
 </div>
+<div class="filterDiv">
+<h3>
+IPUMS PMA Data Analysis Hub
+</h3>
+<center>
+<img src="images/sites/ipums_pma_data_analysis_hub.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://ipums.github.io/pma-data-hub/" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/ipums/pma-data-hub" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
 <div class="filterDiv postcard">
 <h3>
 Ijeamaka Anyene
@@ -2737,25 +2787,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
-<h3>
-IPUMS PMA Data Analysis Hub
-</h3>
-<center>
-<img src="images/sites/ipums_pma_data_analysis_hub.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://ipums.github.io/pma-data-hub/" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/ipums/pma-data-hub" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Jeff’s Journal
 </h3>
@@ -2786,24 +2818,6 @@ Site
 </a>
 <br/>
 <a href="https://github.com/jeagleso/website" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-jeremydata
-</h3>
-<center>
-<img src="images/sites/jeremydata.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://jeremydata.com/" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/jeremy-allen/jeremydata_blog" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -2865,17 +2879,35 @@ Source
 </div>
 <div class="filterDiv postcard">
 <h3>
-jolly data blog
+Joseph Casillas
 </h3>
 <center>
-<img src="images/sites/jolly_data_blog.png" width="600" style="float: left; width: 80%;"/>
+<img src="images/sites/joseph_casillas.png" width="600" style="float: left; width: 80%;"/>
 </center>
-<a href="https://jollydata.blog" class="icon-link">
+<a href="https://www.jvcasillas.com/" class="icon-link">
 <i class="fas fa-external-link-alt" style="display: inline-block"></i>
 Site
 </a>
 <br/>
-<a href="https://github.com/nucleic-acid/jollydatablog" class="icon-link">
+<a href="https://github.com/jvcasillas/jvcasillas.github.io" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
+<div class="filterDiv">
+<h3>
+June Choe
+</h3>
+<center>
+<img src="images/sites/june_choe.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://yjunechoe.github.io/" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/yjunechoe/yjunechoe.github.io" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -2894,42 +2926,6 @@ Site
 </a>
 <br/>
 <a href="https://github.com/JonGretar/JonGretar.github.io" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv postcard">
-<h3>
-Joseph Casillas
-</h3>
-<center>
-<img src="images/sites/joseph_casillas.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://www.jvcasillas.com/" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/jvcasillas/jvcasillas.github.io" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv ">
-<h3>
-June Choe
-</h3>
-<center>
-<img src="images/sites/june_choe.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://yjunechoe.github.io/" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/yjunechoe/yjunechoe.github.io" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -2989,7 +2985,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 LiteralFightNerd
 </h3>
@@ -3043,7 +3039,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Max Rohde
 </h3>
@@ -3061,7 +3057,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Miha Gazvoda
 </h3>
@@ -3097,7 +3093,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Notes From a Data Witch
 </h3>
@@ -3115,7 +3111,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Open Source Football
 </h3>
@@ -3133,7 +3129,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Pedro J. Pérez
 </h3>
@@ -3151,7 +3147,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Philosopher Analyst
 </h3>
@@ -3187,7 +3183,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Piping Hot Data
 </h3>
@@ -3205,7 +3201,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 R-Vogg-Blog
 </h3>
@@ -3259,7 +3255,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Sciencificity Blog
 </h3>
@@ -3277,7 +3273,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Sean Angiolillo
 </h3>
@@ -3403,7 +3399,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 The Mockup Blog
 </h3>
@@ -3457,7 +3453,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Tidy Tales
 </h3>
@@ -3493,7 +3489,7 @@ Source
 </a>
 <hr/>
 </div>
-<div class="filterDiv ">
+<div class="filterDiv">
 <h3>
 Understanding Your Data
 </h3>
@@ -3506,24 +3502,6 @@ Site
 </a>
 <br/>
 <a href="https://github.com/CDU-data-science-team/understanding-your-data" class="icon-link">
-<i class="fab fa-github" style="display: inline-block"></i>
-Source
-</a>
-<hr/>
-</div>
-<div class="filterDiv darkmode">
-<h3>
-werk.statt.codes
-</h3>
-<center>
-<img src="images/sites/werk_statt_codes.png" width="600" style="float: left; width: 80%;"/>
-</center>
-<a href="https://werk.statt.codes/" class="icon-link">
-<i class="fas fa-external-link-alt" style="display: inline-block"></i>
-Site
-</a>
-<br/>
-<a href="https://github.com/werkstattcodes/distill_clean" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -3542,6 +3520,60 @@ Site
 </a>
 <br/>
 <a href="https://github.com/mfherman/westchester-covid" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
+<div class="filterDiv">
+<h3>
+jeremydata
+</h3>
+<center>
+<img src="images/sites/jeremydata.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://jeremydata.com/" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/jeremy-allen/jeremydata_blog" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
+<div class="filterDiv postcard">
+<h3>
+jolly data blog
+</h3>
+<center>
+<img src="images/sites/jolly_data_blog.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://jollydata.blog" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/nucleic-acid/jollydatablog" class="icon-link">
+<i class="fab fa-github" style="display: inline-block"></i>
+Source
+</a>
+<hr/>
+</div>
+<div class="filterDiv darkmode">
+<h3>
+werk.statt.codes
+</h3>
+<center>
+<img src="images/sites/werk_statt_codes.png" width="600" style="float: left; width: 80%;"/>
+</center>
+<a href="https://werk.statt.codes/" class="icon-link">
+<i class="fas fa-external-link-alt" style="display: inline-block"></i>
+Site
+</a>
+<br/>
+<a href="https://github.com/werkstattcodes/distill_clean" class="icon-link">
 <i class="fab fa-github" style="display: inline-block"></i>
 Source
 </a>
@@ -3570,12 +3602,21 @@ Source
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Made with <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14px;width:14px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>, <a href="https://github.com/jhelvy"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:14px;width:12.25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M160 80C160 112.8 140.3 140.1 112 153.3V241.1C130.8 230.2 152.7 224 176 224H272C307.3 224 336 195.3 336 160V153.3C307.7 140.1 288 112.8 288 80C288 35.82 323.8 0 368 0C412.2 0 448 35.82 448 80C448 112.8 428.3 140.1 400 153.3V160C400 230.7 342.7 288 272 288H176C140.7 288 112 316.7 112 352V358.7C140.3 371 160 399.2 160 432C160 476.2 124.2 512 80 512C35.82 512 0 476.2 0 432C0 399.2 19.75 371 48 358.7V153.3C19.75 140.1 0 112.8 0 80C0 35.82 35.82 0 80 0C124.2 0 160 35.82 160 80V80zM80 104C93.25 104 104 93.25 104 80C104 66.75 93.25 56 80 56C66.75 56 56 66.75 56 80C56 93.25 66.75 104 80 104zM368 56C354.7 56 344 66.75 344 80C344 93.25 354.7 104 368 104C381.3 104 392 93.25 392 80C392 66.75 381.3 56 368 56zM80 456C93.25 456 104 445.3 104 432C104 418.7 93.25 408 80 408C66.75 408 56 418.7 56 432C56 445.3 66.75 456 80 456z"/></svg></a>, and the <a href="https://cran.r-project.org/"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:14px;width:15.89px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a> <a href="https://github.com/rstudio/distill">distill</a> package <br/><span style="font-size:0.8rem;">Last updated on June 07, 2022</span></p>
+<p>Made with
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:14px;width:14px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg>,
+<a
+href="https://github.com/jhelvy"><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:14px;width:12.25px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3v87.8c18.8-10.9 40.7-17.1 64-17.1h96c35.3 0 64-28.7 64-64v-6.7C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V160c0 70.7-57.3 128-128 128H176c-35.3 0-64 28.7-64 64v6.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V352 153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm232 0c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24zM80 456c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24z"/></svg></a>,
+and the <a
+href="https://cran.r-project.org/"><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:14px;width:15.89px;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#ededeb;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg></a>
+<a href="https://github.com/rstudio/distill">distill</a> package
+<br/><span style="font-size:0.8rem;">Last updated on February 12,
+2023</span></p>
 <!-- Add function to open links to external links in new tab, from: -->
 <!-- https://yihui.name/en/2018/09/target-blank/ -->
 <script src="js/external-link.js"></script>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 
